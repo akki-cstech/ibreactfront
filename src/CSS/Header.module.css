@@ -1,0 +1,16 @@
+
+.heading {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+.heading img{
+    width: 166px;
+    height: 35px;
+}
+
+.searchDiv{
+    display: flex;
+    justify-content: center;
+}
