@@ -1,0 +1,36 @@
+.fooSec{
+    color: #fff;
+    padding: 10px;
+}
+
+.parentGrid{
+    padding: 0 15px;
+    margin: 0 auto !important;
+}
+
+.fooHead{
+    color: #ffffffa8;
+    font-size: 27px;
+    display: flex;
+    justify-content: center;
+}
+
+.bottomGrid{
+    margin: 0 7%;
+}
+
+.leftpane{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.copyright{
+    font-size: 16px;
+    line-height: 25px;
+    margin: 6px;
+}
+
+.fooItems h5{
+    margin: 6px;
+}
