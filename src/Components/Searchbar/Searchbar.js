@@ -1,43 +1,43 @@
 import React from 'react'
 import styles from '../../CSS/Searchbar.module.css'
-import {Button} from '@material-ui/core'
+import { Button, Grid } from '@material-ui/core'
 
 const Searchbar = () => {
     return (
         <>
-            <div className={styles.searchDiv}>
+            <Grid container className={styles.searchDiv}>
 
-                <div className={styles.inputDiv}>
-                    <fieldset className={styles.searchFieldset}>
+                <Grid item xs={9} className={styles.inputDiv}>
 
-                        <input className={styles.searchInput} type="search" name="search" placeholder='Search' />
+                    <input className={styles.searchInput} type="search" name="search" placeholder='Search' />
 
-                    </fieldset>
-                </div>
+                </Grid>
 
-                <div className={styles.dropDiv}>
-                    <fieldset className={styles.searchFieldset}>
-
-                        <select className={styles.sSelect}>
-
-                            <option value="tvShow">Image</option>
-                            <option value="other">Video</option>
-
-                        </select>
-
-                    </fieldset>
-                </div>
-
-                <div className={styles.dropDiv}>
-                    <fieldset className={styles.searchFieldset}>
-
-                        <Button className={styles.searchBtn} variant="contained"><i className={`${styles.searchIcon} fas fa-search`}></i></Button>
-
-                    </fieldset>
-                </div>
+                <Grid item xs={3}>
 
 
-            </div>
+                    <Grid container>
+                        <Grid item xs={6} className={styles.dropDiv}>
+
+                                <select className={styles.sSelect}>
+
+                                    <option value="tvShow">Image</option>
+                                    <option value="other">Video</option>
+
+                                </select>
+
+                        </Grid>
+
+                        <Grid item xs={6} className={styles.dropDiv}>
+
+                                <Button className={styles.searchBtn} variant="contained"><i className={`${styles.searchIcon} fas fa-search`}></i></Button>
+
+                        </Grid>
+                    </Grid>
+                </Grid>
+
+
+            </Grid>
 
         </>
     )
