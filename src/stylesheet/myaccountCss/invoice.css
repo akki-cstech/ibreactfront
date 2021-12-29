@@ -1,0 +1,298 @@
+
+#tax_invoice {width:930px; background:#fff; font-size:14px; color:#000000; font-family:Trebuchet MS; margin:0px auto; float:none; line-height:0px;}
+
+#invoice_details {border: 1px solid #000;width: 920px;background:#fff;font-size:12px;color:#000000;font-family:Trebuchet MS;margin:0 auto;float:left;}
+#invoice_details #customerdetails-pane {width:100%; float:left;}
+#invoice_details #customerdetails-pane #order_number {width:320px; float:left; padding:3px 0; text-align:center; border-right:1px solid #000; border-bottom:1px solid #000;}
+#invoice_details #customerdetails-pane #order_date {width:319px; padding:3px 0; float:left; text-align:center; border-bottom:1px solid #000;}
+#invoice_details #contactDetails {width:100%; float:left; border-bottom:1px solid #000;}
+#invoice_details #contactDetails #sellerDetails {width:320px; float:left; padding:3px 0; border-right:1px solid #000;}
+#sellerDetails_new {width:50%;float: left;border-left: 0px solid #000;}
+#sellerDetails_new #comp_details{font-family: "Barcode"; font-size:54px; color:#000000; text-align:center; margin:23px 0px; padding: 10px 0 11px 0;}
+#sellerDetails_new #invoice-companydetails-pane{    width: 100%;float: left; margin: 0px auto;}
+#invoice_details #contactDetails #sellerDetails #invoice-companydetails-pane {width:96%; float:left; padding:2%;}
+#invoice_details #contactDetails #sellerDetails #invoice-companydetails-pane .title {font-size:18px; color:#000000; font-weight:bold; margin-bottom:5px;}
+#invoice_details #contactDetails #sellerDetails #invoice-companydetails-pane #comp_logo {text-align:center; padding:5px 0px;}
+#invoice_details #contactDetails #sellerDetails #invoice-companydetails-pane #comp_name {font-size:18px; color:#000000; font-weight:bold;}
+#invoice_details #contactDetails #sellerDetails #invoice-companydetails-pane #comp_details {font-size:12px; color:#000000; line-height:18px;}
+#invoice_details #contactDetails #sellerDetails #invoice-companydetails-pane #comp_mobile {font-size:12px; color:#000000; line-height:18px;}
+#invoice_details #contactDetails #sellerDetails #invoice-companydetails-pane #comp_email {font-size:12px; color:#000000; line-height:18px;}
+#invoice_details #contactDetails #buyerDetails {width:420px; padding:3px 0; float:left; border-left:1px solid #000; margin-left:-1px; line-height:18px;    border-right: 1px #000 solid;}
+#invoice_details #contactDetails #buyerDetails #invoice-address-pane {width:96%; float:left; padding:2%;}
+#invoice_details #contactDetails #buyerDetails #invoice-address-pane .title {font-size:18px; color:#000000; font-weight:bold; margin-bottom:5px;}
+#invoice_details #contactDetails #buyerDetails #invoice-address-pane #shipping_details {text-align:left;font-size: 14px; line-height: 20px;}
+#invoice_details #contactDetails #buyerDetails #invoice-address-pane #shipping_details .name {font-size:14px; color:#000000; text-transform:uppercase; line-height:18px; font-weight:bold;}
+#invoice_details #dispatched {width:100%; float:left; font-size:12px; color:#000000; text-transform:uppercase;}
+#invoice_details #dispatched .via {width: 411px;float: left;padding: 5px;border-right:0px solid #000;line-height:26px;text-align:left;font-size: 12px;}
+#invoice_details #dispatched .via b{ font-weight:600 !important}
+#invoice_details #dispatched .s_head{ font-size:16px;}
+#invoice_details #dispatched .c_head{ font-size:16px; font-weight:600;}
+#invoice_details #dispatched .awb.fisrt {min-height: 140px;/* display:none; */}
+#invoice_details #dispatched .awb {width: 410px;padding: 5px;float:left;border-left:1px solid #000;margin-left:-1px;line-height:26px;text-align:left;word-wrap:break-word;font-size: 12px;}
+#invoice_details b{ font-weight:600 !important;}
+#invoice_details #productdetails-pane {border-top: 0px solid #000;clear:both;}
+#invoice_details #productdetails-pane .row_heading {display:table-row; vertical-align: middle;}
+#invoice_details #productdetails-pane .table, #invoice_details #productdetails-pane .table2 {-moz-border-bottom-colors:none;-moz-border-left-colors:none;-moz-border-right-colors:none;-moz-border-top-colors:none;border-color:#000 -moz-use-text-color -moz-use-text-color #000000;border-image:none;border-style:solid none none solid;border-width:0 0 1px 0;display:table;font-size:12px;width: 100%;}
+#invoice_details #productdetails-pane .row_heading .grid_heading {background:#EEEEEE;color:#000000;font-size: 11px;font-weight:bold;vertical-align:middle;border-bottom:1px solid #000;}
+#invoice_details #productdetails-pane .row_description .grid_box {color:#000000;font-size: 11px;font-weight:bold;vertical-align:middle;border-bottom:1px solid #000; height:90px;}
+#invoice_details #productdetails-pane .row_heading .col_hsn {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 60px;text-align:center;display: none;}
+#invoice_details #productdetails-pane .row_heading .col_cont {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding: 4px 2px;width: 11%;text-align:center;}
+#invoice_details #productdetails-pane .row_heading .col_con {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 94px;text-align:center;}
+#invoice_details #productdetails-pane .row_heading .col_img {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 96px;text-align:center;}
+#invoice_details #productdetails-pane .row_heading .col_vali {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 110px;text-align:center;}
+
+#invoice_details #productdetails-pane .row_heading .col_type {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 10%;text-align:center;}
+#invoice_details #productdetails-pane .row_heading .col_right {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 39%;text-align:center;}
+#invoice_details #productdetails-pane .row_heading .col_dim {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 16%;text-align:center;}
+#invoice_details #productdetails-pane .row_heading .col_val {border-right: 0px solid #000;display:table-cell;float:left;line-height:20px;padding: 4px 2px;width: 100px;text-align:center;}
+#invoice_details #productdetails-pane .row_heading .col_dis {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 80px;text-align:center;display: none;}
+#invoice_details #productdetails-pane .row_heading .col_tax {border-right:1px solid #000;display: none;float:left;line-height:20px;padding:4px 2px;width: 45px;text-align:center;}
+#invoice_details #productdetails-pane .row_heading .col_gst {border-right:1px solid #000;display: none;float:left;line-height:20px;padding:4px 2px;width: 70px;text-align:center;}
+#invoice_details #productdetails-pane .row_heading .col_ttl {border-right: 0px solid #000;display: none;float:left;line-height:20px;padding:4px 2px;width: 65px;text-align:center;}
+
+#invoice_details #productdetails-pane .row_description .col_hsn {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 60px;text-align:center;display: none;}
+#invoice_details #productdetails-pane .row_description .col_cont {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 11%;text-align:center;}
+#invoice_details #productdetails-pane .row_description .col_cont img{max-height:80px;max-width: 95px;}
+#invoice_details #productdetails-pane .row_description .col_con {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:30px 2px;width: 94px;text-align:center;}
+#invoice_details #productdetails-pane .row_description .col_img {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 96px;text-align:center;}
+#invoice_details #productdetails-pane .row_description .col_vali {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 110px;text-align:center;}
+
+#invoice_details #productdetails-pane .row_description .col_type {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:30px 2px;width: 10%;text-align:center;}
+#invoice_details #productdetails-pane .row_description .col_right {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:30px 2px;width: 39%;text-align:center;}
+#invoice_details #productdetails-pane .row_description .col_dim {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:30px 2px;width: 16%;text-align:center;}
+#invoice_details #productdetails-pane .row_description .col_val {border-right: 0px solid #000;display:table-cell;float:left;line-height:20px;padding:30px 30px;width: 126.3px;text-align: right;}
+#invoice_details #productdetails-pane .row_description .col_dis {border-right:1px solid #000;display: none;float:left;line-height:20px;padding:4px 2px;width: 80px;text-align:center;}
+#invoice_details #productdetails-pane .row_description .col_tax {border-right:1px solid #000; display:table-cell; float:left; line-height:20px; padding:4px 2px; width:207px; text-align:center;}
+#invoice_details #productdetails-pane .row_description .col_gst {border-right:1px solid #000;display: none;float:left;line-height:20px;padding:4px 2px;width: 70px;text-align:center;}
+#invoice_details #productdetails-pane .row_description .col_ttl {border-right: 0px solid #000;display: none;float:left;line-height:20px;padding:4px 2px;width: 65px;text-align:center;}
+
+
+#invoice_details #productdetails-pane .total_area{float: right;width: 100% !important;}
+#invoice_details #productdetails-pane .total_area div{ height:20px; border-bottom:1px #000 solid;}
+#invoice_details #productdetails-pane .total_area .col_hsn {display:table-cell;float:left;line-height:20px;padding: 0px 10px;width: 791px;text-align: right;border-right: 1px #000 solid;border-left: 0px #000 solid;}
+#invoice_details #productdetails-pane .total_area .col_cont {display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 75px;text-align:center;}
+#invoice_details #productdetails-pane .total_area .col_con {display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 70px;text-align:center;}
+#invoice_details #productdetails-pane .total_area .col_type {display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 40px;text-align:center;}
+#invoice_details #productdetails-pane .total_area .col_right {display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 50px;text-align:center;}
+#invoice_details #productdetails-pane .total_area .col_dim {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 110px;text-align:center;}
+#invoice_details #productdetails-pane .total_area .col_val {border-left: 1px solid #000;border-right:1px solid #000;display: none;float:left;line-height:20px;padding:4px 2px;width: 60px;display: none;text-align:center;}
+#invoice_details #productdetails-pane .total_area .col_dis {border-right:1px solid #000;display: none;float:left;line-height:20px;padding:4px 2px;width: 80px;text-align:center;}
+#invoice_details #productdetails-pane .total_area .col_tax {border-right:1px solid #000;display: none;float:left;line-height:20px;padding:4px 2px;width: 54px;text-align:center;}
+#invoice_details #productdetails-pane .total_area .col_gst {border-right:1px solid #000;display: none;float:left;line-height:20px;padding:4px 2px;width: 67px;text-align:center;}
+#invoice_details #productdetails-pane .total_area .col_ttl {border-right: 0px solid #000;display:table-cell;float:left;line-height:20px;padding:0px 29px;width: 127px;text-align: right;}
+
+#invoice_details #productdetails-pane .row_description .col_unit_price s {font-size:12px; color:#888888;}
+#invoice_details #productdetails-pane .row_description .col_unit_price b{ font-weight:600;}
+#invoice_details #productdetails-pane .row_description .col_qantity {border-bottom:1px solid #000000; border-right:1px solid #000000; display:table-cell; float:left; line-height:20px; padding:5px; width:30px; height:80px; text-align:center;}
+#invoice_details #productdetails-pane .row_description .col_tax {border-bottom:1px solid #000000;border-right:1px solid #000000;display: none;float:left;line-height:20px;padding: 4px 2px;width: 45px;text-align:center;}
+#invoice_details #productdetails-pane .row_description .col_sub_total {border-bottom:1px solid #000000; display:table-cell; float:left; line-height:20px; padding:5px; width:111px; height:80px; text-align:right;}
+
+
+#invoice_details #productdetails-pane-new {border-top: 0px solid #000;clear:both;}
+#invoice_details #productdetails-pane-new .row_heading {display:table-row; vertical-align: middle;}
+#invoice_details #productdetails-pane-new .table, #invoice_details #productdetails-pane .table2 {-moz-border-bottom-colors:none;-moz-border-left-colors:none;-moz-border-right-colors:none;-moz-border-top-colors:none;border-color:#000 -moz-use-text-color -moz-use-text-color #000000;border-image:none;border-style:solid none none solid;border-width:0 0 1px 0;display:table;font-size:12px;width: 100%;}
+#invoice_details #productdetails-pane-new .row_heading .grid_heading {background:#EEEEEE;color:#000000;font-size: 11px;font-weight:bold;vertical-align:middle;border-bottom:1px solid #000;}
+#invoice_details #productdetails-pane-new .row_description .grid_box {color:#000000;font-size: 11px;font-weight:bold;vertical-align:middle;border-bottom:1px solid #000; height:90px;}
+#invoice_details #productdetails-pane-new .row_heading .col_hsn {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 60px;text-align:center;display: none;}
+#invoice_details #productdetails-pane-new .row_heading .col_cont {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding: 4px 2px;width: 26%;text-align:center;}
+#invoice_details #productdetails-pane-new .row_heading .col_con {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 207px;text-align:center;}
+#invoice_details #productdetails-pane-new .row_heading .col_img {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 96px;text-align:center;}
+#invoice_details #productdetails-pane-new .row_heading .col_vali {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 110px;text-align:center;}
+
+#invoice_details #productdetails-pane-new .row_heading .col_type {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 19%;text-align:center;}
+#invoice_details #productdetails-pane-new .row_heading .col_right {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 38%;text-align:center;}
+#invoice_details #productdetails-pane-new .row_heading .col_dim {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 179px;text-align:center;}
+#invoice_details #productdetails-pane-new .row_heading .col_val {border-right: 0px solid #000;display:table-cell;float:left;line-height:20px;padding: 4px 2px;width: 100px;text-align:center;}
+#invoice_details #productdetails-pane-new .row_heading .col_dis {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 80px;text-align:center;display: none;}
+#invoice_details #productdetails-pane-new .row_heading .col_tax {border-right:1px solid #000;display: none;float:left;line-height:20px;padding:4px 2px;width: 45px;text-align:center;}
+#invoice_details #productdetails-pane-new .row_heading .col_gst {border-right:1px solid #000;display: none;float:left;line-height:20px;padding:4px 2px;width: 70px;text-align:center;}
+#invoice_details #productdetails-pane-new .row_heading .col_ttl {border-right: 0px solid #000;display: none;float:left;line-height:20px;padding:4px 2px;width: 65px;text-align:center;}
+
+#invoice_details #productdetails-pane-new .row_description .col_hsn {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 60px;text-align:center;display: none;}
+#invoice_details #productdetails-pane-new .row_description .col_cont {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 26%;text-align:center;}
+#invoice_details #productdetails-pane-new .row_description .col_con {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 207px;text-align:center;}
+#invoice_details #productdetails-pane-new .row_description .col_img {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 19%;text-align:center;}
+#invoice_details #productdetails-pane-new .row_description .col_vali {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 179px;text-align:center;}
+
+#invoice_details #productdetails-pane-new .row_description .col_type {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 10%;text-align:center;}
+#invoice_details #productdetails-pane-new .row_description .col_right {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 38%;text-align:center;}
+#invoice_details #productdetails-pane-new .row_description .col_dim {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 16%;text-align:center;}
+#invoice_details #productdetails-pane-new .row_description .col_val {border-right: 0px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 100px;text-align: right;}
+#invoice_details #productdetails-pane-new .row_description .col_dis {border-right:1px solid #000;display: none;float:left;line-height:20px;padding:4px 2px;width: 80px;text-align:center;}
+#invoice_details #productdetails-pane-new .row_description .col_tax {border-right:1px solid #000;display: none;float:left;line-height:20px;padding:4px 2px;width:207px;text-align:center;display: none;}
+#invoice_details #productdetails-pane-new .row_description .col_gst {border-right:1px solid #000;display: none;float:left;line-height:20px;padding:4px 2px;width: 70px;text-align:center;}
+#invoice_details #productdetails-pane-new .row_description .col_ttl {border-right: 0px solid #000;display: none;float:left;line-height:20px;padding:4px 2px;width: 65px;text-align:center;}
+
+
+#invoice_details #productdetails-pane-new .total_area{float: right;width: 100%;}
+#invoice_details #productdetails-pane-new .total_area div{ height:20px; border-bottom:1px #000 solid;}
+#invoice_details #productdetails-pane-new .total_area .col_hsn {display:table-cell;float:left;line-height:20px;padding: 4px 10px;width: 803px;text-align: right;border-right: 1px #000 solid;border-left: 0px #000 solid;}
+#invoice_details #productdetails-pane-new .total_area .col_cont {display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 75px;text-align:center;}
+#invoice_details #productdetails-pane-new .total_area .col_con {display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 70px;text-align:center;}
+#invoice_details #productdetails-pane-new .total_area .col_type {display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 40px;text-align:center;}
+#invoice_details #productdetails-pane-new .total_area .col_right {display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 50px;text-align:center;}
+#invoice_details #productdetails-pane-new .total_area .col_dim {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 110px;text-align:center;}
+#invoice_details #productdetails-pane-new .total_area .col_val {border-left: 1px solid #000;border-right:1px solid #000;display: none;float:left;line-height:20px;padding:4px 2px;width: 60px;display: none;text-align:center;}
+#invoice_details #productdetails-pane-new .total_area .col_dis {border-right:1px solid #000;display: none;float:left;line-height:20px;padding:4px 2px;width: 80px;text-align:center;}
+#invoice_details #productdetails-pane-new .total_area .col_tax {border-right:1px solid #000;display: none;float:left;line-height:20px;padding:4px 2px;width: 54px;text-align:center;}
+#invoice_details #productdetails-pane-new .total_area .col_gst {border-right:1px solid #000;display: none;float:left;line-height:20px;padding:4px 2px;width: 67px;text-align:center;}
+#invoice_details #productdetails-pane-new .total_area .col_ttl {border-right: 0px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 100px;text-align: right;}
+
+#invoice_details #productdetails-pane .row_description .col_unit_price s {font-size:12px; color:#888888;}
+#invoice_details #productdetails-pane .row_description .col_unit_price b{ font-weight:600;}
+#invoice_details #productdetails-pane .row_description .col_qantity {border-bottom:1px solid #000000; border-right:1px solid #000000; display:table-cell; float:left; line-height:20px; padding:5px; width:30px; height:80px; text-align:center;}
+#invoice_details #productdetails-pane .row_description .col_tax {border-bottom:1px solid #000000;border-right:1px solid #000000;display: none;float:left;line-height:20px;padding: 4px 2px;width: 45px;text-align:center;}
+#invoice_details #productdetails-pane .row_description .col_sub_total {border-bottom:1px solid #000000; display:table-cell; float:left; line-height:20px; padding:5px; width:111px; height:80px; text-align:right;}
+
+
+
+#invoice_details #amount_summary {border-bottom:0px solid #000; background-color:#EEE; text-align:right; font-size:11px;}
+#invoice_details #amount_summary .left{ width: 410px;  float: left; padding: 5px; text-align: left; background: #eee; border-right: 1px #000 solid;height:39px; border-bottom:1px #000 solid;}
+#invoice_details #amount_summary .products{    width: 424px; float: left; padding: 0px; background: #EEE;}
+#invoice_details #amount_summary .row {font-size:12px; color:#000000; padding:5px; border-bottom:1px solid #000;}
+#invoice_details #amount_summary .row:last-child {font-size:12px; color:#000000; padding:5px; border-bottom:1px solid #000;}
+#invoice_details #amount_summary .row .first {width:80%; float:left; font-weight:bold;}
+#invoice_details #amount_summary .row .second {width:20%; margin-left:80%;}
+#invoice_details #amount_summary .row2 {font-size:12px; color:#000000; padding:5px; text-align:left; background-color:#FFFFFF;}
+
+#declaration_new {width: 100%; font-size: 12px;color: #000000;}
+#declaration_new .left{float: left;width: 100%;padding: 10px;border-right: 0px #000 solid;border-bottom: 1px #000 solid;}
+#declaration_new .left .border{border: 1px #000 solid;margin: -1px;float: left;border-top: 1px;width: 100%;} 
+#declaration_new .left p{float: left;margin: 0px;padding: 0;/* border-right: 1px #000 solid; */font-size: 13px;line-height: 20px;}
+#declaration_new .right{  width: 424px; float: left; padding: 0px;}
+#declaration_new .right .border{border: 1px #000 solid;margin: -1px;float: left;border-top: 1px;} 
+#declaration_new .right .border p:first-child{ width: 200px; float: left; margin: 0px; padding: 5px; border-right: 1px #000 solid;}
+#declaration_new .right .border p:last-child{ width: 203px; float: left; padding: 5px; margin: 0px; font-weight:normal;}
+
+#invoice_details #declaration a {color:#f54f0c; text-decoration:none;}
+
+#companylogo {float:left;font-size:16px;border-top: 0px solid #000000;width:100%;padding:1% 0;}
+#companylogo .left {width: 100%; float: left; text-align: center; line-height: 14px; font-weight: bold;}
+#companylogo .left p{margin:0px; text-transform:uppercase;}
+#invoice_details #companylogo .left p{ margin:0px;    font-size: 12px;line-height: 18px;}
+#invoice_details #companylogo .right {width:33%; float:left; text-align:left;}
+#invoice_details #companylogo .right img {max-width:200px; max-height:50px;}
+#invoice_details #signature {width:98%; padding:1%; font-size:12px; color:#000000; font-weight:bold; border-top:1px solid #000000; float:left;}
+#invoice_details #heading {width:98%; padding:1%; text-align:center; font-size:18px; color:#000000; font-weight:bold; border-bottom:1px solid #000000;}
+#invoice_details #payment_instruction {font-size:12px; font-weight:bold; height:60px;}
+#invoice_details #payment_instruction #for_company_details {border-right:1px solid #000000; width:30%; padding:3px 10px; float:left;height:91%;}
+
+#invoice_header_new{display: inline-block;width: 100%;padding: 9px 0;border-bottom: 0px #000 solid;}
+#invoice_header_new .left{float: left; width: 240px;}
+#invoice_header_new .left img{ width: 200px;     padding-top: 0px;}
+#invoice_header_new .left .tagline{width: 78%;display: inline-block;text-align: right;margin-top: -12px;font-size: 14px;font-weight: 600;    color: #000;}
+#invoice_header_new .right{float: left;width: 100%;    margin-top: 0px; text-align:center;}
+#invoice_header_new .right h3{font-size: 24px;color: #000000;margin-bottom: 5px;float: left;text-align:center;text-transform: uppercase;font-weight:normal; width:34%;}
+#invoice_header_new .right h4{font-size: 14px;margin: 2px;line-height: 16px;text-align: center; font-weight:normal;}
+#invoice_header_new .logo-invoice{float: left;  width: 33%; text-align: left;}
+#invoice_header_new .logo-invoice img{  width: 170px;}
+#invoice_header_new .view-print{  float: right;  width: 33%;  text-align: right;}
+#invoice_header_new .view-print a{margin-top:30px; display:inline-block;}
+
+
+#invoice_details #invoice_header{display: inline-block;width: 100%;padding: 0;border-bottom: 1px #000 solid;}
+#invoice_details #invoice_header .left{float: left;width: 47.2%;border-right: 1px #000 solid;padding: 10px;font-size: 13px;line-height: 20px;}
+#invoice_details #invoice_header .left img{ width: 200px;     padding-top: 0px;}
+#invoice_details #invoice_header .left .tagline{width: 78%;display: inline-block;text-align: right;margin-top: -12px;font-size: 14px;font-weight: 600;    color: #000;}
+#invoice_details #invoice_header .left p{text-align:left;font-size: 14px;margin: 0px;line-height: 20px;}
+#invoice_details #invoice_header .left .p_txt{ width:100%; display:inline-block;}
+#invoice_details #invoice_header .right{float: left;width: 47%;margin-top: 0px;padding: 10px;text-align: left;font-size: 13px;margin: 0px 0px 0 -1px;line-height: 18px;border-left: 1px #000 solid;min-height: 110px;}
+#invoice_details #invoice_header .right p strong{font-size: 18px;color: #000000;font-weight: bold;margin-bottom: 5px;display: inline-block;}
+#invoice_details #invoice_header .right p{text-align:left;font-size: 13px;margin: 0px;line-height: 20px;}
+#invoice_details #invoice_header .right .t_rht{float: left;width: 285px;padding: 5px;border-bottom: 1px #000 solid;border-right: 1px #000 solid;}
+#invoice_details #invoice_header .right .t_rht.t_full{width: 486px; border-bottom: 0;}
+#invoice_details #invoice_header .right .t_rht.t_br{border-right:0px;width: 199.6px;}
+#invoice_details #invoice_header .right .t_rht.t_lst{border-bottom: 1px #000 solid;}
+#invoice_details #invoice_header .right.no-padding{padding:0px;width: 52.9%;}
+
+
+.total_amount{display: inline-block;width: 100%;padding: 0;border-bottom: 1px #000 solid;background: #eeeeee;font-weight: 600;}
+.total_amount .left{float: left;width: 48%;padding: 5px;font-size: 13px;line-height: 20px;}
+.total_amount .left p{text-align:left;font-size: 14px;margin: 0px;line-height: 20px;}
+.total_amount .right{float: right;width: 47%;margin-top: 0px;padding: 5px 20px;font-size: 13px;margin: 0px;line-height: 18px;text-align: right;}
+.total_amount .right p strong{font-size: 18px;color: #000000;font-weight: bold;margin-bottom: 5px;display: inline-block;}
+.total_amount .right p{text-align:left;font-size: 14px;margin: 0px;line-height: 20px;}
+
+#declaration{display: inline-block;width: 100%;padding: 0;border-bottom: 0px #000 solid;background: #fff;font-weight: 600;}
+#declaration .left{float: left;width: 73%;padding: 5px;font-size: 12px;line-height: 18px;border-right: 1px #000 solid;height: 177px;}
+#declaration .left h3{ font-size:14px; margin:0px;}
+#declaration .left p{text-align:left;font-size: 14px;margin: 0px;line-height: 20px;}
+#declaration .left ul {margin: 5px 10px;padding:0px;}
+#declaration .left ul li{ list-style: none;  font-size: 12px;  font-weight: normal;}
+#declaration .right{float: right;width: 24%;margin-top: 0px;padding: 5px;font-size: 13px;margin: 0px;line-height: 18px;text-align: center;}
+#declaration .right p strong{font-size: 18px;color: #000000;font-weight: bold;margin-bottom: 5px;display: inline-block;}
+#declaration .right p{text-align:left;font-size: 14px;margin: 0px;line-height: 20px;}
+#declaration .right h4{font-size: 12px;margin:0px;}
+
+
+@media screen and (max-width: 767px) {
+#tax_invoice { width: 100%;}
+#invoice_details {  width: 100%;}
+#invoice_details #invoice_header .left, #invoice_details #invoice_header .right { width: 95%;}
+#invoice_details #invoice_header .right { border: 0;  border-top: 1px #000 solid;}
+.total_amount .left {width: 60%;border-right: 1px #000 solid;font-size: 12px;}
+.total_amount .right {width: 33%;}
+
+#declaration{display: inline-block;width: 100%;padding: 0;border-bottom: 0px #000 solid;background: #fff;font-weight: 600;}
+#declaration .left{float: left;width: 95%;padding: 5px;font-size: 10px;line-height: 16px;border-right: 0px #000 solid;}
+#declaration .left h3{ font-size:14px; margin:0px;}
+#declaration .left p{text-align:left;font-size: 14px;margin: 0px;line-height: 20px;}
+#declaration .left ul {margin: 4px;padding:0px;}
+#declaration .left ul li{list-style: none;font-size: 10px;font-weight: normal;line-height: 16px;}
+#declaration .right{float: right;width: 97%;margin-top: 0px;padding: 5px;font-size: 13px;margin: 0px;line-height: 18px;text-align: center;}
+#declaration .right p strong{font-size: 18px;color: #000000;font-weight: bold;margin-bottom: 5px;display: inline-block;}
+#declaration .right p{text-align:left;font-size: 14px;margin: 0px;line-height: 20px;}
+#declaration .right h4{font-size: 12px;margin:0px;}
+
+#companylogo {float:left;font-size: 11px;border-top: 0px solid #000000;width:100%;padding:1% 0;}
+#companylogo .left {width: 100%;float: left;text-align: center;line-height: 15px;font-weight: bold;}
+#companylogo .left p{margin:0px; text-transform:uppercase;}
+
+#invoice_details #productdetails-pane .table, #invoice_details #productdetails-pane .table2 {width: 49.5%; float: left;}
+#invoice_details #productdetails-pane .row_description .grid_box { height: 20px;    width: 100%;    border-right: 0px solid #000;}
+#invoice_details #productdetails-pane .row_description .grid_box img{ width:30px;}
+#invoice_details #productdetails-pane .total_area{ width:100%;}
+
+#invoice_details #productdetails-pane .row_heading .col_hsn {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding: 4px 2px;width: 100%;text-align: left;}
+#invoice_details #productdetails-pane .row_heading .col_cont {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding: 4px 2px;width: 100%;text-align:left;}
+#invoice_details #productdetails-pane .row_heading .col_con {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 100%;text-align:left;}
+#invoice_details #productdetails-pane .row_heading .col_type {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 100%;text-align:left;}
+#invoice_details #productdetails-pane .row_heading .col_right {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 100%;text-align:left;}
+#invoice_details #productdetails-pane .row_heading .col_dim {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 100%;text-align:left;}
+#invoice_details #productdetails-pane .row_heading .col_val {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 100%;text-align:left;}
+#invoice_details #productdetails-pane .row_heading .col_dis {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 100%;text-align:left;}
+#invoice_details #productdetails-pane .row_heading .col_tax {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 100%;text-align:left;}
+#invoice_details #productdetails-pane .row_heading .col_gst {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 100%;text-align:left;}
+#invoice_details #productdetails-pane .row_heading .col_ttl {border-right: 1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 100%;text-align:left;}
+
+#invoice_details #productdetails-pane .total_area div{ height:20px; border-bottom:1px #000 solid;}
+#invoice_details #productdetails-pane .total_area .col_hsn {display:table-cell;float:left;line-height:20px;padding: 4px 9px; width: 95%;text-align: left;}
+#invoice_details #productdetails-pane .total_area .col_cont {display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 100%;text-align:center;}
+#invoice_details #productdetails-pane .total_area .col_con {display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 100%;text-align:center;}
+#invoice_details #productdetails-pane .total_area .col_type {display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 100%;text-align:center;}
+#invoice_details #productdetails-pane .total_area .col_right {display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 100%;text-align:center;}
+#invoice_details #productdetails-pane .total_area .col_dim {border-right:1px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 100%;text-align:center;}
+#invoice_details #productdetails-pane .total_area .col_val {border-left: 0px solid #000;border-right: 0px solid #000;display:table-cell;float:left;line-height:20px;padding: 4px 10px;width: 94%;text-align: right;}
+#invoice_details #productdetails-pane .total_area .col_dis {border-right: 0px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 99%;text-align:center;}
+#invoice_details #productdetails-pane .total_area .col_tax {border-right: 0px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 99%;text-align:center;}
+#invoice_details #productdetails-pane .total_area .col_gst {border-right: 0px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 99%;text-align:center;}
+#invoice_details #productdetails-pane .total_area .col_ttl {border-right: 0px solid #000;display:table-cell;float:left;line-height:20px;padding:4px 2px;width: 99%;text-align:center;}
+
+#declaration_new .left {  width: 94%;}
+#invoice_details #invoice_header .right.no-padding { padding: 0px;  width: 100%;}
+#invoice_details #invoice_header .right .t_rht { width: 97%;}
+#invoice_details #invoice_header .right .t_rht.t_br { border-right: 0px;  width: 97%;}
+#invoice_details #invoice_header .right .t_rht.t_lst {  border-bottom: 1px #000 solid;}
+
+#invoice_header_new .logo-invoice { float: left;  width: 100%;  text-align: center;}
+#invoice_header_new .right h3 { font-size: 24px;  color: #000000;  margin-bottom: 5px;  float: left;  text-align: left;  text-transform: uppercase;  font-weight: normal;}
+
+}
+
+/*#declaration .rordiv { width: 150px;height: 50px;-ms-transform: rotate(-45deg);-webkit-transform: rotate(-45deg);transform: rotate(-45deg);margin-top: 75px;margin-left: 30px;}*/
+#declaration .rordiv {margin-top:130px;}
+
+
+
+
+

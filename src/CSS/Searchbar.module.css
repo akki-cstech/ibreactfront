@@ -1,0 +1,54 @@
+.searchDiv{
+    display: flex;
+    flex-direction: row;
+    background: #fff;
+    width: 60% !important;
+    border-radius: 5px ;
+    padding: 2px;
+}
+
+.inputDiv{
+    display: flex; 
+    justify-content: center;
+}
+
+.inputDiv fieldset input{
+    border: 0;
+}
+
+
+.searchInput{
+    height: 100%;
+    width: 100%;
+    font-size: 1.4rem;
+    margin-left: 10px;
+    outline: none;
+    border: none;
+}
+
+
+
+.sSelect{
+    border: none;
+    width: 80px;
+    height: 100%;
+    font-size: 1rem;
+    outline: none;
+}
+
+.searchBtn{
+    background: #575757 !important;
+    height: 57px !important;
+    width: 57px;
+}
+
+.searchIcon{
+    font-size: 1.5rem;
+    font-weight: 0.5;
+    color: #fff;
+}
+
+.dropDiv{
+    display: flex;
+    justify-content: flex-end;
+}

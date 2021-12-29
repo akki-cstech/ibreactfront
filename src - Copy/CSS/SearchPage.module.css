@@ -1,0 +1,28 @@
+.filterDiv {
+    color: #fff;
+    font-size: 21px;
+    font-weight: 500;
+    margin-left: 2%;
+    margin-top: 3%;
+    display: flex;
+    align-items: center;
+
+}
+
+.iconDiv {
+    border: #fff solid 1px;
+    border-radius: 2px;
+    width: fit-content;
+    padding: 0.5%;
+    margin-right: 5px ;
+}
+
+.filIcon {
+    margin-right: 25px;
+}
+
+.imgDiv {
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center; */
+}

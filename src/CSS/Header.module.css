@@ -1,0 +1,65 @@
+
+.heading {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+.heading img{
+    width: 166px;
+    height: 35px;
+}
+
+.searchDiv{
+    display: flex;
+    justify-content: center;
+}
+
+.searchInput{
+    height: 100%;
+    width: 60% !important;
+    font-size: 1.4rem;
+    outline: none;
+    border: none;
+    background: #fff;
+    margin: 0 auto;
+    border-radius: 5px;
+    
+
+}
+
+.searchTextField {
+    color: black !important;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.leftPane{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 15px ;
+}
+
+.navbar{
+    display: flex;
+}
+
+.navItems{
+    display: none;
+}
+
+.pricing{
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 8px 10px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* .badge{
+    background-color: gray;
+} */
+

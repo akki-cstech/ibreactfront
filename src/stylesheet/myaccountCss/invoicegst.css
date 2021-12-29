@@ -1,0 +1,27 @@
+#invoice_details #productdetails-pane .table, #invoice_details #productdetails-pane .table2{
+    margin-bottom:0px;
+    
+}
+.table {
+    width: 100.3%;
+    max-width: 100.9%;
+    margin-bottom: 20px;
+}
+section{
+    padding-top:0px;
+}
+#invoice_details #productdetails-pane .row_heading .col_right{
+    width: 41% !important;
+}
+#invoice_details #productdetails-pane .row_heading .col_dim{
+    width: 16% !important;
+}
+#invoice_details #productdetails-pane .row_heading .col_type{
+    width: 16% !important;
+}
+#invoice_details #productdetails-pane .row_heading .col_con{
+    width: 16% !important;
+}
+#invoice_details #productdetails-pane .row_description .col_right{
+    width: 41% !important;
+}

@@ -1,0 +1,320 @@
+.page_title {
+   
+    width: 104%;
+    float: left;
+    text-align: left;
+    margin: 6px 0 5px -21px;
+}
+.page_title i{
+    margin-right:15px;
+}
+.page_title span {
+    display: inline-block;
+    position: relative;
+    font-size: 24px;
+    color: #000;
+    margin-bottom: -12px;
+    background-color: #fff;
+    width: 100%;
+    margin-top: 0px;
+    font-weight: normal;
+    top: 8px;
+    background:#f7f7f7;
+    padding:10px;
+     font-family: Trebuchet MS;
+}
+.step_order #full_border {
+	border:none !important;
+	}
+.ib-bnr #full_border {
+	border:none !important;
+	}
+.About_Us{
+	padding-bottom:25px;
+}
+.About_Us p{
+	line-height: 24px;
+	color:#000;
+	 font-family: Trebuchet MS;
+	 font-size:16px;
+	 text-align:justify;
+}
+#full_border {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 6px;
+    padding-top: 5px;
+    margin-bottom: 5px;
+     font-family: Trebuchet MS;
+}
+#full_border h4 {
+    display: inline;
+    border-bottom: 3px solid #333;
+    color: #000;
+    font-weight: bold;
+    font-size: 19px;
+    padding-bottom: 5px;
+     font-family: Trebuchet MS;
+}
+.more_info i{
+	padding: 16px 34px;
+    background: #333;
+    color: #fff;
+    font-size: 46px;
+}
+.more_info span{
+	color:#000;
+	font-weight:600;
+	 font-family: Trebuchet MS;
+	 font-size:16px;
+	 position: relative;
+    top: -13px;
+}
+.more_info {
+	margin-bottom:30px;
+	margin-top:40px;
+}
+@media only screen and (max-width: 400px) {
+#full_border h4 {
+	font-size: 14px;
+}
+}
+/***********testimonial css***************/
+.testimonial_box .testimonial {
+    float: left;
+    text-align: justify;
+    padding-right: 15px;
+    border-bottom: 1px solid #ddd;
+    padding: 30px 15px 30px 0;
+    width: 100%;
+}
+.pad0 {
+    padding: 0px;
+}
+.testimonial_box .testimonial h3 {
+    /*background-image: url(../images/testimonial_quotes.jpg);*/
+    background-repeat: no-repeat;
+    padding-left: 30px;
+    background-position: 0 0;
+    font-size: 20px;
+    font-family: Trebuchet MS;
+    color: #b2b3b3;
+    margin-top: 0px;
+    margin-left: -30px;
+}
+.testimonial img{
+	width:auto;
+	height:auto;
+}
+.testimonial_box .testimonial p {
+    font-size: 18px;
+    font-family: Trebuchet MS;
+    color: #666;
+}
+.testimonial_box .testimonial h4 {
+    font-size: 18px;
+    color: #000;
+    font-family: Trebuchet MS;
+}
+@media only screen and (max-width: 767px) {
+.testimonial_box .testimonial .col-md-2 {
+    width: 120px !important;
+    float: left;
+}
+.testimonial_box .testimonial h3 {
+    background-image:none;
+}
+.About_Us{
+	padding-left:10px;
+	padding-right:10px;
+}
+#Static_Pages .container-fluid {
+    padding-left: 15px !important; 
+}
+.more_info {
+    margin-bottom: 10px;
+    margin-top: 24px;
+}
+.About_Us p {
+    line-height: 24px;
+    color: #000;
+    font-family: Trebuchet MS;
+    font-size: 14px;
+}
+.page_title {
+   
+    margin: 21px 0 25px 0;
+}
+.page_title span{
+	font-size:20px;
+}
+.Table_bottomText {
+   
+    padding: 0px 20px !important;
+}
+}
+/***********testimonial css end***************/
+/************lightbox css***********/
+.My_AccountFields {
+    width: 100%;
+    float: left;
+    padding: 25px ;
+    background: #f7f7f7;
+    border: 1px solid #eee;
+  
+}
+.My_AccountFields a {
+    font-size: 18px;
+    line-height: 11px;
+    color: #000;
+    font-weight: 600;
+    font-family: Trebuchet MS;
+    display:block;
+    text-decoration:none;
+}
+#faqAccordion .panel-title a{
+	text-decoration:none;
+}
+.My_AccountFields a i{
+	margin-right:7px;
+}
+.My_AccountFields h4{
+	font-family: Trebuchet MS;
+	color: #000;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom:20px;
+}
+/************lightbox css end***********/
+/************ordering css************/
+.net_banking .detail {
+    font-size: 14px;
+    color: #010101;
+}
+.net_banking .detail .first {
+    float: left;
+    width: 250px;
+    font-weight: bold;
+    font-family: Trebuchet MS;
+}
+.net_banking .detail .second {
+    margin-left: 250px;
+    margin-bottom: 5px;
+    font-family: Trebuchet MS;
+}
+
+/***********ordering css end********/
+.About_Us ul li {
+    font-size: 16px;
+    font-family: Trebuchet MS;
+}
+.pad_left0 {
+	padding-left:0px;
+}
+.pad_right0{
+	padding-left:0px;
+}
+
+
+#Static_Pages .container-fluid{
+	padding-left:0px;
+}
+.step_order h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #010101;
+    padding-bottom: 0;
+    border-bottom: 0px solid #3697db;
+    margin-bottom: 30px;
+    margin-top: 0;
+    float: left;
+    width: 100%;
+    padding: 0;
+    line-height: 30px;
+}
+.step_order .steps h4 span {
+    background: #333;
+    float: left;
+    width: 51px;
+    height: 51px;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    padding: 12px;
+    margin-right: 30px;
+}
+.step_order .cont-us h4 {
+    border: 1px solid #ddd;
+    padding: 15px 0;
+    border-right: 0;
+    border-left: 0;
+    color: #000;
+    
+}
+.steps{
+	padding-top:15px;
+}
+.About_Us h4{
+	 font-family: Trebuchet MS;
+}
+#btnsendmail{
+	background:#000;
+	color:#fff;
+	border:1px solid #000;
+	padding:10px 18px;
+	margin-top: 15px;
+}
+.contact_details {
+    padding: 30px 0px;
+    height: 417px;
+    color: #333;
+}
+.row1 .left {
+    width: 100%;
+    float: left;
+    text-align: left;
+    border-bottom: 1px solid #c8c7cc;
+    font-size: 15px;
+}
+.row1 .left .first {
+    width: 40%;
+    float: left;
+    padding: 3px 0;
+}
+.row1 .left .second {
+    width: 60%;
+    float: left;
+    padding: 3px 0;
+    color: #000;
+    text-align: right;
+}
+.topright{
+	box-shadow: inset 5rem 0 7rem -2rem #F4F4F4;
+    padding: 15px 0px 0px 19px;
+}
+.id_details{
+	margin-top:20px;
+}
+#contactForm .controls .captcha {
+    float: left;
+    margin-top: 0px;
+    background: #000;
+    font-size: 16px;
+    color: #fff;
+    padding: 5%;
+    letter-spacing: 5px;
+    padding: 6px 3px;
+}
+
+
+.scrollup {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    border-radius: 50px;
+    bottom: 50px;
+    right: 100px;
+    display: none;
+    text-indent: -9999px;
+    /* background: url('https://appstore.home.mendix.com/logo/image?id=8838&changeddate=1407482806258') no-repeat; */
+    /* background-color: #000; */
+}

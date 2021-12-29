@@ -1,0 +1,950 @@
+.AfterSignIn .modal-header {
+    border-bottom: none
+}
+
+.AfterSignIn .modal-content {
+    padding: 22px 50px
+}
+
+#Save_Folder {
+    border-left: 1px solid #ddd
+}
+
+.New_LightBox .modal-title {
+    font-weight: 500;
+    margin-bottom: 10px
+}
+
+.New_LightBox .modal-header {
+    padding: 0;
+    height: 23px
+}
+
+.AfterSignIn ul {
+    padding-left: 0;
+    height: 150px;
+    overflow-y: scroll
+}
+
+#btn_submitdwld {
+    width: 28%;
+    padding: 6px 12px;
+    top: 0
+}
+
+#myModalDownloadAfterLogin .modal-footer {
+    padding-top: 0
+}
+
+#myModalDownloadAfterLogin .modal-header {
+    padding-bottom: 0;
+    padding-left: 0
+}
+
+.AfterSignIn ul li:hover {
+    background: #ddd
+}
+
+.AfterSignIn ul li {
+    list-style: none;
+    line-height: 28px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    padding: 7px
+}
+
+.AfterSignIn .btn {
+    background: #000;
+    color: #fff;
+    border: 1px solid #000;
+    width: 15%;
+    padding: 0;
+    font-size: 17px;
+    font-weight: 700;
+    float: right;
+    position: relative;
+    top: 22px
+}
+
+.AfterSignIn .modal-footer {
+    border-top: none
+}
+
+.AfterSignIn .form-control {
+    border: none;
+    border-bottom: 1px solid #333;
+    box-shadow: none;
+    border-radius: 0
+}
+
+.MoDal_Img p {
+    margin-top: 10px
+}
+
+.AfterSignIn .modal-title {
+    font-weight: 500;
+    font-size: 22px;
+    text-align: center
+}
+
+.AfterSignIn .modal-header .close {
+    margin-top: -3px;
+    font-size: 40px
+}
+
+.Whishlist_Modal .modal-dialog {
+    width: 450px;
+    margin: 30px auto
+}
+
+.Whishlist_Modal .modal-header .close {
+    margin-top: -3px;
+    font-size: 40px
+}
+
+.Whishlist_Modal hr {
+    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, .15), rgba(0, 0, 0, 0));
+    clear: both;
+    border: 0;
+    height: 1px;
+    margin: 0;
+    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, .15), rgba(0, 0, 0, 0))
+}
+
+.Whishlist_Modal .modal-header {
+    border-bottom: none;
+    padding: 30px 40px 30px 40px
+}
+
+.Whishlist_Modal .modal-body {
+    padding: 30px 40px 10px 40px
+}
+
+.Whishlist_Modal .modal-footer {
+    border-top: none;
+    padding: 10px 40px 50px 40px;
+    text-align: left
+}
+
+.Whishlist_Modal .modal-title {
+    font-size: 27px;
+    font-weight: 700
+}
+
+.Whishlist_Modal .form-control {
+    padding: 8px 12px;
+    height: 40px
+}
+
+.Whishlist_Modal .form-control:focus {
+    border: 1px solid #ddd!important;
+    box-shadow: none
+}
+
+.Whishlist_Modal input {
+    box-shadow: none!important
+}
+
+.Whishlist_Modal p {
+    margin-top: 10px
+}
+
+.Whishlist_Modal .modal-body .btn {
+    width: 100%;
+    padding: 9px 12px;
+    font-size: 18px;
+    font-weight: 700;
+    background: #000;
+    margin-top: 11px;
+    margin-bottom: 15px;
+    color: #fff
+}
+
+.Whishlist_Modal .modal-footer .btn {
+    background: #fff;
+    color: #000;
+    padding: 9px 12px;
+    font-size: 18px;
+    font-weight: 700;
+    width: 100%
+}
+
+.Whishlist_Modal .modal-footer p {
+    margin-bottom: 20px
+}
+
+.Whishlist_Modal .modal-footer .btn:hover {
+    background: #000;
+    color: #fff;
+    border: 1px solid #000
+}
+
+.error_message {
+    color: red
+}
+
+.largedown {
+    background-color: #e5f2e7
+}
+
+.smalldown {
+    background-color: #f5e8f5
+}
+
+.Horizontal_Image {
+    width: 900px!important;
+    height: 420px!important;
+    margin: 0 auto
+}
+
+.Horizontal_Image .gIleft {
+    top: 38%;
+    left: 10px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 11rem;
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    color: #fff
+}
+
+.Horizontal_Image .gIright {
+    top: 37%;
+    right: 30px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 11rem;
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    color: #fff
+}
+
+
+.galleryModal img {
+    margin-top: 25px;
+    
+}
+
+.Image_Text {
+    color: #fff;
+    margin-top: 3px;
+    position: absolute;
+    top: 0
+}
+
+.Horizontal_Image .Img_Id {
+    color: #fff;
+    margin-top: 5px;
+    text-align: right;
+    width: 900px;
+    position: absolute;
+    top: 0
+}
+
+.Horizontal_Image .Image_Count {
+    float: right;
+    margin-top: 0;
+    color: #fff;
+    position: absolute;
+    top: 0%;
+    width: 67%;
+    text-align:right;
+}
+
+.Vertical_Image {
+    width: 600px;
+    height: 100%;
+    margin: 0 auto
+}
+
+.Vertical_Image .Image_Text {
+    color: #fff;
+    margin-top: 3px;
+    position: absolute;
+    top: 0
+}
+
+.Vertical_Image img {
+    margin-top: 25px;
+    width: 100%;
+    height: 900px
+}
+
+.Vertical_Image .Img_Id {
+    color: #fff;
+    margin-top: 3px;
+    text-align: center;
+    width: 600px;
+    position: absolute;
+    top: 0
+}
+
+.Vertical_Image .Image_Count {
+    float: right;
+    margin-top: 0;
+    color: #fff;
+    position: absolute;
+    top: 3px;
+    right: 0;
+    left: 0;
+    width: 600px;
+    margin: 0 auto;
+    text-align: right
+}
+
+.Vertical_Image .gIleft {
+    top: 38%;
+    left: 10px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 11rem;
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    color: #fff
+}
+
+.Vertical_Image .gIright {
+    top: 37%;
+    right: 30px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 11rem;
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    color: #fff
+}
+
+.Vertical_Image .Icons {
+    margin-top: 0!important;
+    float: none
+}
+.Autofit_Start .card-columns .Horizontal_Image img{
+    margin-top:25px;
+}
+@media only screen and (max-width:767px) {
+    #divchng {
+        width: 83%!important
+    }
+    .Horizontal_Image .Icons {
+        margin-right: -4px!important
+    }
+    .Autofit_Start .card-columns .Horizontal_Image img {
+        margin-top: 0px;
+        height: 250px;
+        object-fit: contain;
+    }
+    .gIleft {
+        top: 45%;
+        left: 10px;
+        font-size: 5rem!important
+    }
+    .gIright {
+        top: 45%;
+        right: 10px;
+        font-size: 5rem!important
+    }
+    .Horizontal_Image .Image_Count {
+       margin-top:-86px;
+       position:initial;
+    }
+    .Horizontal_Image .Image_Text {
+        position: absolute;
+        top: 133px!important
+    }
+    .Horizontal_Image .Img_Id {
+        width: 82%;
+        position: absolute;
+        top: 132px!important;
+        font-size: 12px;
+    }
+    .Horizontal_Image .Left_IconsText {
+        float: left;
+        position: absolute;
+        top: 352px !important
+    }
+    .Vertical_Image .Left_IconsText {
+        float: left;
+        position: absolute;
+        top: auto !important
+    }
+    .Icons {
+        position: relative;
+        top: 140px!important;
+        margin-top: 0!important
+    }
+    .Horizontal_Image .Icons .fa {
+        color: #fff!important;
+        font-size: 15px!important
+    }
+    .Vertical_Image .Icons .fa {
+        color: #fff!important;
+        font-size: 15px!important
+    }
+    .Autofit_Start .card-columns #Total_ImageCss {
+        height: 215px;
+        margin: 0 auto;
+        position: relative;
+        top: 132px
+    }
+    .galleryModal #Total_ImageCss {
+        height: 250px;
+        margin: 0 auto;
+        position: relative;
+        top: 132px
+    }
+    .Vertical_Image img {
+        margin-top: -80px!important;
+        width: 100%;
+        height: 400px;
+        object-fit: contain;
+    }
+    .Vertical_Image[_ngcontent-c1] .Image_Count[_ngcontent-c1] {
+        position: absolute!important;
+        top: 5%!important;
+        right: 8%!important
+    }
+    .Vertical_Image[_ngcontent-c1] .Img_Id[_ngcontent-c1] {
+        width: 100%!important
+    }
+    .Vertical_Image .Left_IconsText {
+        margin-top: 205px;
+    }
+    .Autofit_Start .card-columns .Vertical_Image .Left_IconsText {
+        margin-top: 240px!important
+    }
+    .Vertical_Image .Icons {
+        margin-top: 290px;
+        float: none;
+        margin-left: -10px
+    }
+    .Autofit_Start .card-columns .Vertical_Image .Icons {
+        margin-top: 303px!important;
+        float: none;
+        margin-left: -10px
+    }
+    .Horizontal_Image .gIright {
+        top: 50%!important;
+        right: -25px!important
+    }
+    .Horizontal_Image .gIleft {
+        top: 50%!important;
+        left: -30px!important
+    }
+    .Vertical_Image .gIright {
+        top: 60%!important;
+        right: -30px!important
+    }
+    .Vertical_Image .gIleft {
+        top: 60%!important;
+        left: -30px!important
+    }
+    .Horizontal_Image .galleryIcon {
+        position: absolute;
+        font-size: 2rem;
+        width: 2rem;
+        height: 2rem;
+        text-align: center;
+        color: #fff;
+        top: -34px;
+        right: -4px
+    }
+    .Vertical_Image .galleryIcon {
+        position: absolute;
+        font-size: 2rem;
+        width: 2rem;
+        height: 2rem;
+        text-align: center;
+        color: #fff;
+        top: -51%;
+        right: -18px
+    }
+}
+
+.gIquit {
+    right: 25px;
+    top: 10px;
+    font-size: 50px
+}
+
+.galleryIcon {
+    position: absolute;
+    font-size: 2rem;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    color: #fff
+}
+
+.Horizontal_Image .Icons {
+    margin-right: -13px;
+}
+
+.Vertical_Image .Left_IconsText a {
+    color: #fff;
+    font-size: 15px;
+    margin-right: 7px
+}
+
+.Horizontal_Image .Left_IconsText {
+    float: left;
+    font-size: 16px;
+    margin-top: 4px!important
+}
+
+.Vertical_Image .Icons .fa {
+    font-size: 20px;
+    margin-left: 7px!important;
+    margin-right: 0!important
+}
+
+.Vertical_Image .Left_IconsText {
+    margin-top: 4px
+}
+
+.setResolution {
+    background: #000;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll
+}
+
+@media (min-width:1500px) and (max-width:1910px) {
+    .Vertical_Image .Image_Count {
+        float: right;
+        margin-top: 0;
+        color: #fff;
+        position: absolute;
+        top: .6%!important;
+        right: .5%!important
+    }
+}
+
+.Already-exit .text-danger {
+    color: #e21e24;
+    font-size: 16px
+}
+
+.Already-exit .text-success {
+    color: green;
+    font-size: 16px
+}
+
+#Save_Folder1 ul li {
+    border-bottom: none;
+    text-align: center
+}
+
+#Save_Folder1 ul li:hover {
+    background: #fff;
+    color: #000
+}
+
+#Save_Folder1 ul li a {
+    color: #42b3b3;
+    font-weight: 600;
+    font-size: 18px
+}
+
+#Save_Folder1 ul {
+    height: auto;
+    overflow: hidden
+}
+
+.New_LightBox .MoDal_Img img {
+    width: 100%!important
+}
+
+.MoDal_Img p {
+    text-align: center
+}
+
+#similar_images {
+    padding: 22px 0 15px 0;
+    overflow: hidden
+}
+
+#similar_images h2 {
+    font-size: 18px;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 15px
+}
+
+#similar_images ul {
+    padding-left: 2px
+}
+
+#similar_images ul li {
+    list-style-type: none;
+    margin-bottom: 5px;
+    font-size: 13px;
+    width: 20%;
+    float: left;
+    line-height: 25px
+}
+
+#similar_images ul li .similar_check {
+    margin-right: 5px;
+    margin-top: 6px
+}
+
+#similar_images ul li span {
+    position: absolute;
+    color: #000
+}
+
+#similar_images .selected_keywords_btn {
+    margin-top: 10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #d1d1d1
+}
+
+.term_and_restriction {
+    font-size: 12px;
+    color: #737373;
+    padding: 10px 0
+}
+
+.term_and_restriction p {
+    text-align: justify
+}
+
+.term_and_restriction span {
+    color: #269fcf;
+    font-weight: 700
+}
+
+.Search_keywordBtn {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px
+}
+
+.Search_keywordBtn .btn {
+    background: #000;
+    color: #fff;
+    padding: 7px 10px;
+    border-radius: 0;
+    border: 1px solid #000;
+    font-size: 17px;
+    font-weight: 600
+}
+
+.View_Similarimg .btn {
+    background: #fff;
+    color: #000;
+    padding: 7px 10px;
+    border-radius: 0;
+    border: 1px solid #000;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 7px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .12), 0 6px 20px 0 rgba(0, 0, 0, .02)
+}
+
+.View_Similarimg i {
+    margin-right: 7px
+}
+
+.similarItem {
+    float: left;
+    margin: 0 10px 15px 0;
+    background: #fff;
+    width: 100%;
+    height: 280px
+}
+
+.similarItem .productImage {
+    text-align: center;
+    height: 280px;
+    position: relative;
+    width: 100%;
+    background: #fff;
+    vertical-align: bottom;
+    display: table-cell
+}
+
+.similarItem img {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: auto
+}
+
+.View_Similarimg .btn {
+    width: 100%;
+    text-align: center
+}
+
+.View_Similarimg {
+    margin: 120px 0 0 0
+}
+
+.View_Similarimg p {
+    margin-bottom: 5px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #727272
+}
+
+.View_Similarimg span {
+    font-size: 13px;
+    font-weight: 400
+}
+
+.View_Similarimg p a {
+    color: #269fcf
+}
+
+.BottomSpace {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    margin-top: 20px
+}
+
+.BottomSpace1 {
+    margin-bottom: 20px
+}
+
+.Download_Search {
+    width: 100%;
+    display: table;
+    margin: 23px auto;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 25px 0
+}
+
+.Download_Search ul {
+    width: 75%;
+    display: table;
+    margin: 0 auto;
+    padding-left: 0
+}
+
+.Prospect_Name {
+    width: 24%;
+    float: left;
+    font-size: 15px
+}
+
+.Prospect_Name p {
+    margin-top: 5px;
+    margin-bottom: 0
+}
+
+.Download_Search ul li {
+    list-style: none
+}
+
+.Text_Boxn {
+    width: 39%;
+    float: left;
+    margin-right: 20px
+}
+
+.Res_Btn {
+    width: 34%;
+    float: left
+}
+
+.Text_Boxn input {
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 6px 12px
+}
+
+.Res_Btn i {
+    margin-right: 7px
+}
+
+.Res_Btn .btn {
+    background: #000;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 0;
+    border: 1px solid #000;
+    font-size: 15px;
+    font-weight: 600
+}
+
+@media only screen and (max-width:767px) {
+    .similarItem {
+        float: left;
+        margin: 0 10px 15px 0;
+        background: #fff;
+        width: 100%;
+        height: auto
+    }
+    .similarItem .productImage {
+        text-align: center;
+        height: auto;
+        position: relative;
+        width: 100%;
+        background: #fff;
+        vertical-align: bottom;
+        display: block
+    }
+    .similarItem img {
+        text-align: center;
+        position: relative;
+        width: auto;
+        height: auto
+    }
+    .View_Similarimg {
+        margin: 0;
+        width: 80%;
+        margin: 0 auto;
+    }
+    .View_Similarimg .btn {
+        width: 100%;
+    }
+    .Download_Search {
+        width: 100%
+    }
+    .Download_Search ul {
+        width: 100%
+    }
+    .Prospect_Name {
+        width: 100%;
+        margin-bottom: 10px;
+        text-align: center
+    }
+    .Text_Boxn {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+        text-align: center
+    }
+    .Res_Btn {
+        width: 100%;
+        margin-bottom: 10px;
+        text-align: center
+    }
+    #similar_images ul li {
+        list-style-type: none;
+        margin-bottom: 5px;
+        font-size: 13px;
+        width: 50%
+    }
+}
+
+[tooltip] {
+    position: relative
+}
+
+[tooltip]::after,
+[tooltip]::before {
+    text-transform: none;
+    font-size: .9em;
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+    position: absolute;
+    display: none;
+    opacity: 0
+}
+
+[tooltip]::before {
+    content: '';
+    border: 8px solid transparent;
+    z-index: 1001
+}
+
+[tooltip]::after {
+    content: attr(tooltip);
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+    min-width: 3em;
+    max-width: 21em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 1ch 1.5ch;
+    border-radius: .3ch;
+    box-shadow: 0 1em 2em -.5em rgba(0, 0, 0, .35);
+    background: #fff;
+    color: #000;
+    z-index: 1000;
+    border: 1px solid #ddd
+}
+
+[tooltip]:hover::after,
+[tooltip]:hover::before {
+    display: block
+}
+
+[tooltip='']::after,
+[tooltip='']::before {
+    display: none!important
+}
+
+[tooltip]:not([flow])::before,
+[tooltip][flow^=up]::before {
+    bottom: 100%;
+    border-bottom-width: 0;
+    border-top-color: #fff
+}
+
+[tooltip]:not([flow])::after,
+[tooltip][flow^=up]::after {
+    bottom: calc(100% + 8px)
+}
+
+[tooltip]:not([flow])::after,
+[tooltip]:not([flow])::before,
+[tooltip][flow^=up]::after,
+[tooltip][flow^=up]::before {
+    left: 50%;
+    transform: translate(-50%, -.5em)
+}
+
+@keyframes tooltips-vert {
+    to {
+        opacity: .9;
+        transform: translate(-50%, 0)
+    }
+}
+
+@keyframes tooltips-horz {
+    to {
+        opacity: .9;
+        transform: translate(0, -50%)
+    }
+}
+
+[tooltip]:not([flow]):hover::after,
+[tooltip]:not([flow]):hover::before,
+[tooltip][flow^=down]:hover::after,
+[tooltip][flow^=down]:hover::before,
+[tooltip][flow^=up]:hover::after,
+[tooltip][flow^=up]:hover::before {
+    animation: tooltips-vert .3s ease-out forwards
+}
+
+.container123 {
+    width: 57%;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.container123 h3 {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.container123 p {
+    margin-bottom: 20px;
+    font-size: 12px;
+    text-align: justify;
+}

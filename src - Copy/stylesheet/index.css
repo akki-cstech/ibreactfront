@@ -1,0 +1,50 @@
+body {
+  background: #000;
+  font-family: Trebuchet MS !important;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input {
+  color: #000 !important;
+  font-weight: 900 !important;
+  font-size: 20px !important;
+}
+
+.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input:focus {
+  color: #000 !important;
+  font-weight: 900 !important;
+  font-size: 20px !important;
+}
+
+input::-webkit-input-placeholder {
+  color: #000 !important;
+  font-weight: 900 !important;
+  font-size: 20px !important;
+  }
+   
+  input:-moz-placeholder { /* Firefox 18- */
+  color: #000 !important;  
+  font-weight: 900 !important;
+  font-size: 20px !important;
+  }
+   
+  input::-moz-placeholder {  /* Firefox 19+ */
+  color: #000 !important;
+  font-weight: 900 !important;
+  font-size: 20px !important;
+  }
+   
+  input:-ms-input-placeholder {  
+  color: #000 !important; 
+  font-weight: 900 !important;
+  font-size: 20px !important;
+  }
+  body {
+      margin: 0;
+      overflow-x: hidden;
+      font-family: Trebuchet MS!important;
+  }

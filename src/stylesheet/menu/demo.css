@@ -1,0 +1,38 @@
+
+nav:not(.mm-menu) {
+	display: none;
+}
+
+.header2,
+.content,
+.footer {
+	text-align: center;
+}
+.header2.fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+.header2 a {
+	display: block;
+	width: 50px;
+	height: 18px;
+	padding: 11px;
+	margin: 2px;
+	position: relative;
+	top: 0;
+	left: 0;
+}
+.header2 a:before,
+.header2 a:after {
+	content: '';
+	display: block;
+	background: #ff0000;
+	height: 2px;
+}
+.header2 a span {
+	background: #ff0000;
+	display: block;
+	height: 2px;
+	margin: 6px 0;
+}
