@@ -1,0 +1,150 @@
+{
+	"NewDataSet": {
+		"Table": [
+			{
+				"sno": "1541",
+				"catname": "Automobiles",
+				"refid": "1540",
+				"searchid": "Automobile",
+				"type": "1",
+				"sortid": "1",
+				"dispname": "Sectors & Industries >> Automobiles"
+			},
+			{
+				"sno": "1542",
+				"catname": "Banking & Finance",
+				"refid": "1540",
+				"searchid": "1xbnking",
+				"type": "1",
+				"sortid": "3",
+				"dispname": "Sectors & Industries >> Banking & Finance"
+			},
+			{
+				"sno": "1543",
+				"catname": "Education",
+				"refid": "1540",
+				"searchid": "Education",
+				"type": "1",
+				"sortid": "5",
+				"dispname": "Sectors & Industries >> Education"
+			},
+			{
+				"sno": "1544",
+				"catname": "Farming & Agriculture",
+				"refid": "1540",
+				"searchid": "Agriculture",
+				"type": "1",
+				"sortid": "7",
+				"dispname": "Sectors & Industries >> Farming & Agriculture"
+			},
+			{
+				"sno": "1545",
+				"catname": "Fashion & Jewellery",
+				"refid": "1540",
+				"searchid": "1xjewfa",
+				"type": "1",
+				"sortid": "9",
+				"dispname": "Sectors & Industries >> Fashion & Jewellery"
+			},
+			{
+				"sno": "1546",
+				"catname": "Food & Drink",
+				"refid": "1540",
+				"searchid": "Food",
+				"type": "1",
+				"sortid": "11",
+				"dispname": "Sectors & Industries >> Food & Drink"
+			},
+			{
+				"sno": "1547",
+				"catname": "Government & Rural",
+				"refid": "1540",
+				"searchid": "1xgov",
+				"type": "1",
+				"sortid": "13",
+				"dispname": "Sectors & Industries >> Government & Rural"
+			},
+			{
+				"sno": "1548",
+				"catname": "Healthcare & Pharmaceutical",
+				"refid": "1540",
+				"searchid": "1xpharma",
+				"type": "1",
+				"sortid": "15",
+				"dispname": "Sectors & Industries >> Healthcare & Pharmaceutical"
+			},
+			{
+				"sno": "1549",
+				"catname": "Internet & E-commerce",
+				"refid": "1540",
+				"searchid": "1xdialing 1xmobile",
+				"type": "1",
+				"sortid": "17",
+				"dispname": "Sectors & Industries >> Internet & E-commerce"
+			},
+			{
+				"sno": "1550",
+				"catname": "Luxurious Lifestyle",
+				"refid": "1540",
+				"searchid": "1xluxry",
+				"type": "1",
+				"sortid": "19",
+				"dispname": "Sectors & Industries >> Luxurious Lifestyle"
+			},
+			{
+				"sno": "1551",
+				"catname": "Personal Care & Fitness",
+				"refid": "1540",
+				"searchid": "1xpers",
+				"type": "1",
+				"sortid": "21",
+				"dispname": "Sectors & Industries >> Personal Care & Fitness"
+			},
+			{
+				"sno": "1552",
+				"catname": "Professional & Corporate",
+				"refid": "1540",
+				"searchid": "Professional",
+				"type": "1",
+				"sortid": "23",
+				"dispname": "Sectors & Industries >> Professional & Corporate"
+			},
+			{
+				"sno": "1553",
+				"catname": "Real Estate & Construction",
+				"refid": "1540",
+				"searchid": "1xdmper",
+				"type": "1",
+				"sortid": "25",
+				"dispname": "Sectors & Industries >> Real Estate & Construction"
+			},
+			{
+				"sno": "1554",
+				"catname": "Shopping & Retail",
+				"refid": "1540",
+				"searchid": "Shopping",
+				"type": "1",
+				"sortid": "27",
+				"dispname": "Sectors & Industries >> Shopping (FMCG & Consumer Goods)"
+			},
+			{
+				"sno": "1555",
+				"catname": "Telecommunications",
+				"refid": "1540",
+				"searchid": "1xtelepho",
+				"type": "1",
+				"sortid": "29",
+				"dispname": "Sectors & Industries >> Telecommunications"
+			},
+			{
+				"sno": "1556",
+				"catname": "Travel & Tourism",
+				"refid": "1540",
+				"searchid": "1xtrvel",
+				"type": "1",
+				"sortid": "31",
+				"dispname": "Sectors & Industries >> Travel & Tourism"
+			}
+		]
+	}
+}

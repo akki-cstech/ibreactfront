@@ -51,6 +51,7 @@
 .SearchPage_imgDiv__1vhMv {
     display: flex;
     flex-wrap: wrap;
+    padding: 0px 15px;
 }
 .SearchPage_imgDiv__1vhMv > div:nth-child(n).H {   
     flex-grow: 150!important;

@@ -161,21 +161,21 @@
     font-size: 11rem
 }
 
-.grid .productItemLarge280.V {
+.grid .productItem.V {
     flex-grow: 66.667!important;
     flex-basis: 192px!important;
     margin: 3px;
     position: relative
 }
 
-.grid .productItemLarge280.H {
+.grid .productItem.H {
     flex-grow: 150!important;
     flex-basis: 432px!important;
     margin: 3px;
     position: relative
 }
 
-.grid .productItemLarge280 .zoom {
+.grid .productItem .zoom {
     display: none;
     position: absolute;
     right: 0;
@@ -185,11 +185,11 @@
     color: #fff
 }
 
-.grid .productItemLarge280 .zoom a {
+.grid .productItem .zoom a {
     color: #fff
 }
 
-.grid .productItemLarge280:hover .zoom {
+.grid .productItem:hover .zoom {
     display: block
 }
 
@@ -326,7 +326,7 @@
     text-decoration: none
 }
 
-.grid .productItemLarge280 .zoom .fa {
+.grid .productItem .zoom .fa {
     font-size: 30px
 }
 

@@ -1,0 +1,258 @@
+{
+	"NewDataSet": {
+		"Table": [
+			{
+				"sno": "677",
+				"catname": "View All",
+				"refid": "215",
+				"searchid": "shopping",
+				"type": "1",
+				"sortid": "0",
+				"dispname": "Shopping & Retail >> View All"
+			},
+			{
+				"sno": "1182",
+				"catname": "With People",
+				"refid": "215",
+				"searchid": "Shopping people",
+				"type": "1",
+				"sortid": "4",
+				"dispname": "Shopping & Retail >> With People"
+			},
+			{
+				"sno": "1183",
+				"catname": "Without People",
+				"refid": "215",
+				"searchid": "Shopping nobody",
+				"type": "1",
+				"sortid": "7",
+				"dispname": "Shopping & Retail >> Without People"
+			},
+			{
+				"sno": "801",
+				"catname": "Men Only",
+				"refid": "215",
+				"searchid": "Men shopping 1xmeno",
+				"type": "1",
+				"sortid": "10",
+				"dispname": "Shopping & Retail >> Men Only"
+			},
+			{
+				"sno": "800",
+				"catname": "Women Only",
+				"refid": "215",
+				"searchid": "Women shopping 1xwo",
+				"type": "1",
+				"sortid": "13",
+				"dispname": "Shopping & Retail >> Women Only"
+			},
+			{
+				"sno": "1278",
+				"catname": "Kids",
+				"refid": "215",
+				"searchid": "kids only shopping",
+				"type": "1",
+				"sortid": "13",
+				"dispname": "Shopping & Retail >> Kids"
+			},
+			{
+				"sno": "1279",
+				"catname": "Teenagers",
+				"refid": "215",
+				"searchid": "teenagers shopping",
+				"type": "1",
+				"sortid": "14",
+				"dispname": "Shopping & Retail >> Teenagers"
+			},
+			{
+				"sno": "1280",
+				"catname": "Adults",
+				"refid": "215",
+				"searchid": "adults only shopping",
+				"type": "1",
+				"sortid": "15",
+				"dispname": "Shopping & Retail >> Adults"
+			},
+			{
+				"sno": "238",
+				"catname": "Couples",
+				"refid": "215",
+				"searchid": "couples shopping 2",
+				"type": "1",
+				"sortid": "16",
+				"dispname": "Shopping & Retail >> Couples"
+			},
+			{
+				"sno": "239",
+				"catname": "Families",
+				"refid": "215",
+				"searchid": "family shopping",
+				"type": "1",
+				"sortid": "19",
+				"dispname": "Shopping & Retail >> Families"
+			},
+			{
+				"sno": "1281",
+				"catname": "Seniors",
+				"refid": "215",
+				"searchid": "seniors shopping",
+				"type": "1",
+				"sortid": "20",
+				"dispname": "Shopping & Retail >> Seniors"
+			},
+			{
+				"sno": "1282",
+				"catname": "Festival Shopping",
+				"refid": "215",
+				"searchid": "festival shopping",
+				"type": "1",
+				"sortid": "21",
+				"dispname": "Shopping & Retail >> Festival Shopping"
+			},
+			{
+				"sno": "237",
+				"catname": "Friends",
+				"refid": "215",
+				"searchid": "friends shopping",
+				"type": "1",
+				"sortid": "22",
+				"dispname": "Shopping & Retail >> Friends"
+			},
+			{
+				"sno": "802",
+				"catname": "Buying Food/Groceries",
+				"refid": "215",
+				"searchid": "1xvegfru shopping",
+				"type": "1",
+				"sortid": "25",
+				"dispname": "Shopping & Retail >> Buying Food/Groceries"
+			},
+			{
+				"sno": "1283",
+				"catname": "Buying/Customers",
+				"refid": "215",
+				"searchid": "1xbuy people",
+				"type": "1",
+				"sortid": "26",
+				"dispname": "Shopping & Retail >> Buying/Customers"
+			},
+			{
+				"sno": "235",
+				"catname": "Credit Card",
+				"refid": "215",
+				"searchid": "Credit Card",
+				"type": "1",
+				"sortid": "28",
+				"dispname": "Shopping & Retail >> Credit Card"
+			},
+			{
+				"sno": "236",
+				"catname": "Giving Gifts",
+				"refid": "215",
+				"searchid": "Gifts",
+				"type": "1",
+				"sortid": "31",
+				"dispname": "Shopping & Retail >> Giving Gifts"
+			},
+			{
+				"sno": "556",
+				"catname": "Holding Carry Bags",
+				"refid": "215",
+				"searchid": "shopping holding carry bags",
+				"type": "1",
+				"sortid": "34",
+				"dispname": "Shopping and Retail >> Holding Carry Bags"
+			},
+			{
+				"sno": "1284",
+				"catname": "Housewife Shopping",
+				"refid": "215",
+				"searchid": "housewife shopping",
+				"type": "1",
+				"sortid": "35",
+				"dispname": "Shopping & Retail >> Housewife Shopping"
+			},
+			{
+				"sno": "1184",
+				"catname": "Market - Indoor",
+				"refid": "215",
+				"searchid": "1xmart Indoor",
+				"type": "1",
+				"sortid": "37",
+				"dispname": "Shopping & Retail >> Market - Indoor"
+			},
+			{
+				"sno": "1185",
+				"catname": "Market - Outdoor",
+				"refid": "215",
+				"searchid": "1xmart outdoors",
+				"type": "1",
+				"sortid": "40",
+				"dispname": "Shopping & Retail >> Market - Outdoor"
+			},
+			{
+				"sno": "553",
+				"catname": "Money/Cash",
+				"refid": "215",
+				"searchid": "Money lifestyle",
+				"type": "1",
+				"sortid": "43",
+				"dispname": "Shopping & Retail >> Money/Cash"
+			},
+			{
+				"sno": "1186",
+				"catname": "On Mobile/Phone",
+				"refid": "215",
+				"searchid": "shopping phone",
+				"type": "1",
+				"sortid": "46",
+				"dispname": "Shopping & Retail >> On Mobile/Phone"
+			},
+			{
+				"sno": "1187",
+				"catname": "On Laptop/Computer",
+				"refid": "215",
+				"searchid": "shopping computer",
+				"type": "1",
+				"sortid": "49",
+				"dispname": "Shopping & Retail >> On Laptop/Computer"
+			},
+			{
+				"sno": "1188",
+				"catname": "Retail Counter",
+				"refid": "215",
+				"searchid": "counter shopping",
+				"type": "1",
+				"sortid": "52",
+				"dispname": "Shopping & Retail >> Retail Counter"
+			},
+			{
+				"sno": "1189",
+				"catname": "Shop/Showroom",
+				"refid": "215",
+				"searchid": "1xshop",
+				"type": "1",
+				"sortid": "55",
+				"dispname": "Shopping & Retail >> Shop/Showroom"
+			},
+			{
+				"sno": "234",
+				"catname": "Shopkeeper/Vendor",
+				"refid": "215",
+				"searchid": "Vendor",
+				"type": "1",
+				"sortid": "58",
+				"dispname": "Shopping & Retail >> Shopkeeper/Vendor"
+			},
+			{
+				"sno": "232",
+				"catname": "Shopping Mall",
+				"refid": "215",
+				"searchid": "Mall",
+				"type": "1",
+				"sortid": "61",
+				"dispname": "Shopping & Retail >> Shopping Mall"
+			}
+		]
+	}
+}

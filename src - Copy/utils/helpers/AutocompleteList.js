@@ -1,5 +1,5 @@
 // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
-export const top100Films = [
+export const SearchItems = [
     
     { name: 'family' },
     { name: 'family (mother only)' },

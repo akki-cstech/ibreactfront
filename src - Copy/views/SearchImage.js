@@ -1,32 +1,31 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation } from "react-router-dom";
-import styles from '../CSS/SearchPage.module.css'
+import styles from '../CSS/SearchPage.module.css';
+import { Tooltip } from '@material-ui/core'
 import { getSearchRecord, getSearchRecordByPageNumber } from "../utils/apis/api";
-import LoadingBar from 'react-top-loading-bar'
-import Card from '../components/common/Card'
+// import LoadingBar from 'react-top-loading-bar'
+// import Card from '../components/common/Card'
 // import "../stylesheet/bootstrap.min.css";
 // import '../stylesheet/result_page.css'
 // import '../stylesheet/home.css'
 // import '../stylesheet/main.css'
 import '../stylesheet/Searchimage.css'
+import Header from '../components/navs/Header';
+import Footer from '../components/navs/Footer';
+import Filter from '../components/common/Filter';
+
 function useQuery() {
     const { search } = useLocation();
     return React.useMemo(() => new URLSearchParams(search), [search]);
 }
-
-
 // const SearchImage = (onLoader) => {
-const SearchImage = ({ onLoader }) => {
-    const ref = useRef(null)
+const SearchImage = ({ onLoader, setProgress }) => {
+    setProgress(100)
     const query = useQuery();
     const [Name, setName] = useState()
     var id = query.get("q")
     // console.log(id)
-    const inlinecs = {
-        cursor: 'pointer'
-    }
 
-    const [progress, setProgress] = useState(0)
 
 
 
@@ -38,7 +37,7 @@ const SearchImage = ({ onLoader }) => {
     const [totalLengthAndMsg, setTotalLengthAndMsg] = useState();
     const [pageNumber, setpageNumber] = useState(2);
     const fetchSearchOnLoad = async () => {
-        setpageNumber(2)
+        setpageNumber(1)
         const res = await getSearchRecord(id);
         console.log(res.res);
         setSearchRecord(res.res.data.data)
@@ -48,12 +47,23 @@ const SearchImage = ({ onLoader }) => {
         // onLoader();
 
     }
-
+    // window.onscroll = async (e) => {
+    //     if (window.scrollY > 20) {
+    //         document.getElementById("topheader").className = "searchGrid sticky";
+    //         } else {
+    //              document.getElementById("topheader").className = "searchGrid";
+    //         }
+    //     }
     window.onscroll = async (e) => {
         var offsetHeight = window.document.body.offsetHeight;
         var pageYOffset = window.pageYOffset;
+        if (window.scrollY > 20) {
+            document.getElementById("topheader").className = "searchGrid sticky";
+        } else {
+            document.getElementById("topheader").className = "searchGrid";
+        }
         //  console.log(offsetHeight - 1136 + '------' + (pageYOffset + pageYOffset));
-        if (offsetHeight - 1136 <= (pageYOffset + pageYOffset)) {
+        if (offsetHeight - 1500 <= (pageYOffset + pageYOffset)) {
             // console.log(IsPreviourEnvent);
             if (IsPreviourEnvent === true) {
                 setIsPreviourEnvent(false);
@@ -81,11 +91,8 @@ const SearchImage = ({ onLoader }) => {
         const apiCall = async () => {
             setName(query.get("q"))
             fetchSearchOnLoad();
-
-
         };
         apiCall();
-
     }, [id]);
 
 
@@ -95,37 +102,96 @@ const SearchImage = ({ onLoader }) => {
 
     return (
         <>
-
+            <Header />
             <div className={styles.filterDiv}>
-                <div className={styles.iconDiv}>
+                {/* <div className={styles.iconDiv}>
                     <i className={`${styles.filIcon} fas fa-sliders-h`} ></i>
-                    Filters
+                    FILTERS
                 </div>
                 <p>
                     <b>
                         {totalLengthAndMsg} "{Name}"
                     </b>
-                </p>
-                <br />
+                </p> */}
+
+                <div className="filter_div">
+
+
+                    <Filter totalLengthAndMsg={totalLengthAndMsg} name={Name} />
+                </div>
+
             </div>
             {totalLength > 0 ?
                 <div className="SearchPage_imgDiv__1vhMv " id="">
                     {SearchRecord.map((item, index) => (
                         //   <Card image='/Images/img1.jpg' />
-                        <div className={item.f_Orientation}>
+                        <div className={item.f_Orientation} key={"image" + index}>
+                            <span className="zoom">
+                                <a className="card-img-top galleryItem action-tooltip" id="zimg0">
+                                    <i className="fa fa-search-plus" id="zimg0" aria-hidden="true"></i>
+                                    <div className="action-tooltip__container"><span>Preview</span></div>
+                                </a>
+                            </span>
                             <img className="card-img-top" id={`img${index}`}
                                 alt={`imgalt${index}`} src={`https://d3nn873nee648n.cloudfront.net/900x600/${item.f_group}/${item.f_rank}-${item.f_imgid}.jpg`} />
+                            <div className="productMinDetails">
+                                <div className="rightEntry">
+                                    <a className="action-tooltip">
+                                        <i className="fa fa-shopping-cart"></i>
+                                    </a>
+                                    <a className="action-tooltip">
+                                        <i className="fa fa-heart" data-toggle="modal" data-target="#myModalAddtoCart"></i>
+                                    </a>
+                                    <a className="card-img-top  action-tooltip">
+                                        <i className="fa fa-info" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div className="lastEntry">
+                                    <a className="action-tooltip" href="#0">
+                                        <i className="fa fa-camera"></i>
+                                    </a>
+                                    <a className="action-tooltip" href="#0">
+                                        <i className="fa fa-th-large"></i>
+                                    </a>
+                                    <a className="action-tooltip downloadcls">
+                                        <Tooltip title="Download">
+                                            <i className="fa fa-download" aria-hidden="true"> </i>
+                                        </Tooltip>
+                                    </a>
+                                </div>
+                                <div className="Middle_Entry">
+                                    <a className="view">SM958833</a>
+                                </div>
+                            </div>
                         </div>
                     ))}
-
+                    {parseInt(totalLength) <= SearchRecord.length ? ""
+                        :
+                        <img style={{ margin: "0px auto", width: "255px", height: "30px", }} alt="loader_img"
+                            id="imgloader_dwld" src="/images/loader2.gif" />
+                    }
                 </div>
-                : <div style={{ backgroundColor: "white", textAlign: "center" }}> <h1>No Record Found</h1></div>}
-            {parseInt(totalLength) <= SearchRecord.length ? ""
+                : ""}
+
+            {SearchRecord.length === 0 && isActive === false ?
+                <div style={{ backgroundColor: "white", textAlign: "center", color: "black" }}>
+                    <br />
+                    <h1>Images Not Founds on <i> "{id}"</i> </h1>
+                    <br />
+                </div>
+                : ""}
+
+            {SearchRecord.length >= parseInt(totalLength) ?
+                <Footer />
+                : ""
+            }
+
+
+            {/* {parseInt(totalLength) <= SearchRecord.length ? ""
                 :
                 <img style={{ marginLeft: "550px", marginTop: "0px", width: "255px", height: "30px", }} alt="loader_img"
                     id="imgloader_dwld" src="/images/loader2.gif" />
-            }
-
+            } */}
             {/* <section className="Autofit_Start">
                 <div className="container-fluid">
                     <div className="card-columns gallery grid" id="searchRecordBind">

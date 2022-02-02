@@ -2,27 +2,43 @@
     color: #fff;
     font-size: 21px;
     font-weight: 500;
-    margin-left: 2%;
-    margin-top: 3%;
+    margin-left: 16px;
+    padding: 30px 0px 29px 0px;
     display: flex;
     align-items: center;
-
 }
 
 .iconDiv {
     border: #fff solid 1px;
     border-radius: 2px;
     width: fit-content;
-    padding: 0.5%;
-    margin-right: 5px ;
+    padding: 9px 15px;
+}
+
+.filterDiv p {
+    display: inline-block;
+    padding: 7px 20px;
+    color: #fff;
+    font-size: 20px;
+    line-height: 1.5;
 }
 
 .filIcon {
-    margin-right: 25px;
+    margin-right: 10px;
 }
 
-.imgDiv {
-    /* display: grid;
+/* .imgDiv {
+     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    justify-items: center; */
+    justify-items: center;
+} */
+
+@media (max-width: 767px){
+    .filterDiv p {
+        font-size: 10px;
+    }
+    .filterDiv {
+        padding: 25px 0px 24px 0px;
+        width: 95%;
+    }
 }

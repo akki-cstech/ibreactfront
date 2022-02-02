@@ -1,0 +1,231 @@
+{
+	"NewDataSet": {
+		"Table": [
+			{
+				"sno": "661",
+				"catname": "View All",
+				"refid": "19",
+				"searchid": "Teenagers Only",
+				"type": "1",
+				"sortid": "0",
+				"dispname": "Lifestyle: Teenagers >> View All"
+			},
+			{
+				"sno": "1220",
+				"catname": "Indoors",
+				"refid": "19",
+				"searchid": "only Teenagers Indoors",
+				"type": "1",
+				"sortid": "1",
+				"dispname": "Lifestyle: Teenagers >> Indoors"
+			},
+			{
+				"sno": "1222",
+				"catname": "Outdoors",
+				"refid": "19",
+				"searchid": "Teenagers Outdoors",
+				"type": "1",
+				"sortid": "2",
+				"dispname": "Lifestyle: Teenagers >> Outdoors"
+			},
+			{
+				"sno": "1224",
+				"catname": "Studio Shot",
+				"refid": "19",
+				"searchid": "only Teenagers Studio",
+				"type": "1",
+				"sortid": "3",
+				"dispname": "Lifestyle: Teenagers >> Studio Shot"
+			},
+			{
+				"sno": "375",
+				"catname": "Boys Only",
+				"refid": "19",
+				"searchid": "boy123 teen boy",
+				"type": "1",
+				"sortid": "4",
+				"dispname": "Lifestyle: Teenagers >> Boys Only"
+			},
+			{
+				"sno": "135",
+				"catname": "Girls Only",
+				"refid": "19",
+				"searchid": "girl123 teen girl",
+				"type": "1",
+				"sortid": "7",
+				"dispname": "Lifestyle: Teenagers >> Girls Only"
+			},
+			{
+				"sno": "376",
+				"catname": "Couples",
+				"refid": "19",
+				"searchid": "couples teen",
+				"type": "1",
+				"sortid": "10",
+				"dispname": "Lifestyle: Teenagers >> Couples"
+			},
+			{
+				"sno": "1002",
+				"catname": "Fashion",
+				"refid": "19",
+				"searchid": "Fashion Teenagers",
+				"type": "1",
+				"sortid": "13",
+				"dispname": "Lifestyle: Teenagers >> Fashion"
+			},
+			{
+				"sno": "735",
+				"catname": "Freedom",
+				"refid": "19",
+				"searchid": "Freedom teen",
+				"type": "1",
+				"sortid": "16",
+				"dispname": "Lifestyle: Teenagers >> Freedom"
+			},
+			{
+				"sno": "870",
+				"catname": "Friends",
+				"refid": "19",
+				"searchid": "teen Friends",
+				"type": "1",
+				"sortid": "19",
+				"dispname": "Lifestyle: Teenagers >> Friends"
+			},
+			{
+				"sno": "378",
+				"catname": "Fun & Entertainment",
+				"refid": "19",
+				"searchid": "Fun teen only",
+				"type": "1",
+				"sortid": "22",
+				"dispname": "Lifestyle: Teenagers >> Fun & Entertainment"
+			},
+			{
+				"sno": "1003",
+				"catname": "Group or Crowd",
+				"refid": "19",
+				"searchid": "Group teen",
+				"type": "1",
+				"sortid": "25",
+				"dispname": "Lifestyle: Teenagers >> Group or Crowd"
+			},
+			{
+				"sno": "1225",
+				"catname": "Listening/Playing Music",
+				"refid": "19",
+				"searchid": "teen music",
+				"type": "1",
+				"sortid": "26",
+				"dispname": "Lifestyle: Teenagers >> Listening/Playing Music"
+			},
+			{
+				"sno": "1004",
+				"catname": "Party & Celebration",
+				"refid": "19",
+				"searchid": "teen Celebration",
+				"type": "1",
+				"sortid": "28",
+				"dispname": "Lifestyle: Teenagers >> Party & Celebration"
+			},
+			{
+				"sno": "1005",
+				"catname": "Portraits",
+				"refid": "19",
+				"searchid": "one teenager looking-at-camera",
+				"type": "1",
+				"sortid": "31",
+				"dispname": "Lifestyle: Teenagers >> Portraits"
+			},
+			{
+				"sno": "1226",
+				"catname": "Rural Teenagers",
+				"refid": "19",
+				"searchid": "teenager rural",
+				"type": "1",
+				"sortid": "32",
+				"dispname": "Lifestyle: Teenagers >> Rural Teenagers"
+			},
+			{
+				"sno": "1006",
+				"catname": "Shopping",
+				"refid": "19",
+				"searchid": "teenagers shopping",
+				"type": "1",
+				"sortid": "34",
+				"dispname": "Lifestyle: Teenagers >> Shopping"
+			},
+			{
+				"sno": "1007",
+				"catname": "Students: College Going",
+				"refid": "19",
+				"searchid": "teenagers college",
+				"type": "1",
+				"sortid": "37",
+				"dispname": "Lifestyle: Teenagers >> Students: College Going"
+			},
+			{
+				"sno": "1008",
+				"catname": "Students: School Going",
+				"refid": "19",
+				"searchid": "teenagers school",
+				"type": "1",
+				"sortid": "40",
+				"dispname": "Lifestyle: Teenagers >> Students: School Going"
+			},
+			{
+				"sno": "1009",
+				"catname": "Tech Savvy",
+				"refid": "19",
+				"searchid": "teenagers technology",
+				"type": "1",
+				"sortid": "43",
+				"dispname": "Lifestyle: Teenagers >> Tech Savvy"
+			},
+			{
+				"sno": "902",
+				"catname": "Vacations & Holidays",
+				"refid": "19",
+				"searchid": "teenagers vacation",
+				"type": "1",
+				"sortid": "46",
+				"dispname": "Lifestyle: Teenagers >> Vacations & Holidays"
+			},
+			{
+				"sno": "1010",
+				"catname": "With Laptop/Computer",
+				"refid": "19",
+				"searchid": "teen computer",
+				"type": "1",
+				"sortid": "49",
+				"dispname": "Lifestyle: Teenagers >> With Laptop/Computer"
+			},
+			{
+				"sno": "931",
+				"catname": "With Family",
+				"refid": "19",
+				"searchid": "teen family",
+				"type": "1",
+				"sortid": "52",
+				"dispname": "Lifestyle: Teenagers >> With Family"
+			},
+			{
+				"sno": "1011",
+				"catname": "With Mobile/Phone",
+				"refid": "19",
+				"searchid": "teen mobile",
+				"type": "1",
+				"sortid": "55",
+				"dispname": "Lifestyle: Teenagers >> With Mobile/Phone"
+			},
+			{
+				"sno": "1227",
+				"catname": "Youth Culture",
+				"refid": "19",
+				"searchid": "1xyc teenager",
+				"type": "1",
+				"sortid": "58",
+				"dispname": "Lifestyle: Teenagers >> Youth Culture"
+			}
+		]
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"Imagevideosubscription": {
+		"row": [
+			{
+				"f_planname": "Large Size Pack",
+				"f_desc": "12” X 18” at 300 dpi (TIFF)"
+			},
+			{
+				"f_planname": "Small Size Pack",
+				"f_desc": "2” X 3” at 300 dpi (JPEG)"
+			}
+		]
+	}
+}

@@ -10,6 +10,7 @@ import LoadingBar from 'react-top-loading-bar'
 
 
 const App = () => {
+  const [progress, setProgress] = useState(0)
 
   const [inputValue, setInputValue] = useState('');
   // const [progress, setProgress] = useState(0);
@@ -30,21 +31,28 @@ const App = () => {
 
   return (
     <>
-      <Box sx={{ width: '100%' }}>
-        {Loader ? <LoadingBar
+      {/* <Box sx={{ width: '100%' }}>
+        {Loader ? <LoadingBar ref={ref}
           color='#FFFFFF'
           progress={100}
         /> : null}
-      </Box>
+      </Box> */}
+      {/* <LoadingBar
+        color='#f11946'
+        progress={progress}
+        onLoaderFinished={() => setProgress(0)}
+      /> */}
+      {/* <button onClick={() => setProgress(progress + 10)}>Add 10%</button>
+      <button onClick={() => setProgress(progress + 20)}>Add 20%</button> */}
+      {/* <button onClick={() => setProgress(100)}>Complete</button> */}
 
-      <Header inputValue={inputValue} setInputValue={setInputValue} onLoader={onLoader} />
       <Switch>
         <Route exact path="/"
           children={
             () => <Home
-              inputValue={inputValue}
               Loader={Loader}
               progress={100}
+              setProgress={setProgress}
             />
           }
         />
@@ -52,7 +60,17 @@ const App = () => {
           children={
             () => <SearchImage
               Loader={Loader}
-              progress={100}
+              progress={progress}
+              setProgress={setProgress}
+            />
+          }
+        />
+        <Route path="/browserSearch/:filname" onLoader={onLoader}
+          children={
+            () => <SearchImage
+              Loader={Loader}
+              progress={progress}
+              setProgress={setProgress}
             />
           }
         />
@@ -64,7 +82,7 @@ const App = () => {
           }
         />
       </Switch>
-      <Footer />
+
     </>
   );
 }

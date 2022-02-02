@@ -1,0 +1,249 @@
+{
+	"NewDataSet": {
+		"Table": [
+			{
+				"sno": "662",
+				"catname": "View All",
+				"refid": "20",
+				"searchid": "lifestyle adults only",
+				"type": "1",
+				"sortid": "0",
+				"dispname": "Lifestyle: Adults >> View All"
+			},
+			{
+				"sno": "1228",
+				"catname": "Indoors",
+				"refid": "20",
+				"searchid": "only Adult Indoors",
+				"type": "1",
+				"sortid": "1",
+				"dispname": "Lifestyle: Adults >> Indoors"
+			},
+			{
+				"sno": "1230",
+				"catname": "Outdoors",
+				"refid": "20",
+				"searchid": "only Adult Outdoors",
+				"type": "1",
+				"sortid": "2",
+				"dispname": "Lifestyle: Adults >> Outdoors"
+			},
+			{
+				"sno": "1231",
+				"catname": "Studio Shot",
+				"refid": "20",
+				"searchid": "only Adult Studio",
+				"type": "1",
+				"sortid": "3",
+				"dispname": "Lifestyle: Adults >> Studio Shot"
+			},
+			{
+				"sno": "138",
+				"catname": "20-30 Year Men",
+				"refid": "20",
+				"searchid": "20-30 1xmeno man lifestyle",
+				"type": "1",
+				"sortid": "4",
+				"dispname": "Lifestyle: Adults >> 20-30 Year Men"
+			},
+			{
+				"sno": "137",
+				"catname": "20-30 Year Women",
+				"refid": "20",
+				"searchid": "20-30 1xwo woman lifestyle",
+				"type": "1",
+				"sortid": "7",
+				"dispname": "Lifestyle: Adults >> 20-30 Year Women"
+			},
+			{
+				"sno": "788",
+				"catname": "30+ Men",
+				"refid": "20",
+				"searchid": "30-50 1xmeno man lifestyle",
+				"type": "1",
+				"sortid": "10",
+				"dispname": "Lifestyle: Adults >> Above 30 Year Old Men"
+			},
+			{
+				"sno": "787",
+				"catname": "30+ Women",
+				"refid": "20",
+				"searchid": "30-50 1xwo woman",
+				"type": "1",
+				"sortid": "13",
+				"dispname": "Lifestyle: Adults >> Above 30 Year Old Women"
+			},
+			{
+				"sno": "1012",
+				"catname": "Old Men",
+				"refid": "20",
+				"searchid": "1xmeno senior man lifestyle",
+				"type": "1",
+				"sortid": "16",
+				"dispname": "Lifestyle: Adults >> Old Men"
+			},
+			{
+				"sno": "1013",
+				"catname": "Old Women",
+				"refid": "20",
+				"searchid": "1xwo senior woman lifestyle",
+				"type": "1",
+				"sortid": "19",
+				"dispname": "Lifestyle: Adults >> Old Women"
+			},
+			{
+				"sno": "1232",
+				"catname": "Couples",
+				"refid": "20",
+				"searchid": "Couples",
+				"type": "1",
+				"sortid": "20",
+				"dispname": "Lifestyle: Adults >> Couples"
+			},
+			{
+				"sno": "139",
+				"catname": "Fashion",
+				"refid": "20",
+				"searchid": "adult fashion",
+				"type": "1",
+				"sortid": "22",
+				"dispname": "Lifestyle: Adults >> Fashion"
+			},
+			{
+				"sno": "1014",
+				"catname": "Freedom",
+				"refid": "20",
+				"searchid": "adults freedom",
+				"type": "1",
+				"sortid": "25",
+				"dispname": "Lifestyle: Adults >> Freedom"
+			},
+			{
+				"sno": "414",
+				"catname": "Friends",
+				"refid": "20",
+				"searchid": "adult friends",
+				"type": "1",
+				"sortid": "28",
+				"dispname": "Lifestyle: Adults >> Friends"
+			},
+			{
+				"sno": "742",
+				"catname": "Group or Crowd",
+				"refid": "20",
+				"searchid": "Groups adults only",
+				"type": "1",
+				"sortid": "31",
+				"dispname": "Lifestyle: Adults >> Group or Crowd"
+			},
+			{
+				"sno": "1233",
+				"catname": "Hobby",
+				"refid": "20",
+				"searchid": "adult hobby",
+				"type": "1",
+				"sortid": "32",
+				"dispname": "Lifestyle: Adults >> Hobby"
+			},
+			{
+				"sno": "415",
+				"catname": "Housewife",
+				"refid": "20",
+				"searchid": "Housewife",
+				"type": "1",
+				"sortid": "34",
+				"dispname": "Lifestyle: Adults >> Housewife"
+			},
+			{
+				"sno": "1234",
+				"catname": "Love & Romance",
+				"refid": "20",
+				"searchid": "couple 1xdat",
+				"type": "1",
+				"sortid": "35",
+				"dispname": "Lifestyle: Adults >> Love & Romance"
+			},
+			{
+				"sno": "1235",
+				"catname": "Money & Finance",
+				"refid": "20",
+				"searchid": "adult finance lifestyle",
+				"type": "1",
+				"sortid": "36",
+				"dispname": "Lifestyle: Adults >> Money & Finance"
+			},
+			{
+				"sno": "1018",
+				"catname": "Party & Celebration",
+				"refid": "20",
+				"searchid": "adults celebration",
+				"type": "1",
+				"sortid": "37",
+				"dispname": "Lifestyle: Adults >> Party & Celebration"
+			},
+			{
+				"sno": "1015",
+				"catname": "Portraits",
+				"refid": "20",
+				"searchid": "one adult looking-at-camera",
+				"type": "1",
+				"sortid": "40",
+				"dispname": "Lifestyle: Adults >> Portraits"
+			},
+			{
+				"sno": "1237",
+				"catname": "Rural Adults",
+				"refid": "20",
+				"searchid": "villager adults",
+				"type": "1",
+				"sortid": "41",
+				"dispname": "Lifestyle: Adults >> Rural Adults"
+			},
+			{
+				"sno": "438",
+				"catname": "Shopping",
+				"refid": "20",
+				"searchid": "adult shopping",
+				"type": "1",
+				"sortid": "43",
+				"dispname": "Lifestyle: Adults >> Shopping"
+			},
+			{
+				"sno": "741",
+				"catname": "Tech Savvy",
+				"refid": "20",
+				"searchid": "adults only technology",
+				"type": "1",
+				"sortid": "46",
+				"dispname": "Lifestyle: Adults >> Tech Savvy"
+			},
+			{
+				"sno": "695",
+				"catname": "Vacations & Holidays",
+				"refid": "20",
+				"searchid": "adults vacation",
+				"type": "1",
+				"sortid": "49",
+				"dispname": "Lifestyle: Adults >> Vacations & Holidays"
+			},
+			{
+				"sno": "1016",
+				"catname": "With Laptop/Computer",
+				"refid": "20",
+				"searchid": "adult computer lifestyle",
+				"type": "1",
+				"sortid": "52",
+				"dispname": "Lifestyle: Adults >> With Laptop/Computer"
+			},
+			{
+				"sno": "1017",
+				"catname": "With Mobile/Phone",
+				"refid": "20",
+				"searchid": "adult phone lifestyle",
+				"type": "1",
+				"sortid": "55",
+				"dispname": "Lifestyle: Adults >> With Mobile/Phone"
+			}
+		]
+	}
+}

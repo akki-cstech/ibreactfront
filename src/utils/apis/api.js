@@ -4,8 +4,7 @@ axios.defaults.baseURL = BASE_URL;
 
 export const getSearchRecord = async (id) => {
     try {
-        const res = await axios.get(`/getSearchRecord/${id}/0/0/0/0/1`);
-        // console.log(res);
+        const res = await axios.get(`/getSearchRecord_NonArcheived/${id.id}/0/${id.person}/${id.location}/${id.age}/${id.orientation}`);
         return { res }
     } catch (error) {
         return { error };
@@ -14,8 +13,9 @@ export const getSearchRecord = async (id) => {
 
 
 export const getSearchRecordByPageNumber = async (id, page) => {
+    console.log("page : ",page)
     try {
-        const res = await axios.get(`/getSearchRecord/${id}/${id}/0/0/0/${parseInt(page)}`);
+        const res = await axios.get(`/getSearchRecord_NonArcheived/${id}/${id}/0/0/0/${parseInt(page)}`);
         // console.log(res);
         return { res }
     } catch (error) {

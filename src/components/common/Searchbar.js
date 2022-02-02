@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '../../CSS/Searchbar.module.css'
-import { Button, Grid } from '@material-ui/core'
+import { Button, Grid } from '@material-ui/core';
 
 const Searchbar = () => {
     return (

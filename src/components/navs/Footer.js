@@ -10,13 +10,13 @@ const Footer = () => {
                 <Grid container className={styles.parentGrid} >
 
                     <Grid className={styles.fooHead} item xs={12}>
-                        <h3 >World's largest collection of Creative Indian images & videos</h3>
+                        <h5 className={styles.fooHeadH} >World's largest collection of Creative Indian <b>images</b>  & <b>videos</b> </h5>
                     </Grid>
 
                     <Grid className={styles.bottomGrid} item xs={12}>
                         <Grid container>
-                            <Grid className={styles.leftpane} item xs={8}>
-                                <div>
+                            <Grid className={styles.leftpane} item lg={7} md={5} sm={6} xs={12}>
+                                <div className="footer_text">
                                     <h3 >All India Toll Free: 1800-11-6869</h3>
                                 </div>
 
@@ -29,11 +29,12 @@ const Footer = () => {
 
                             </Grid>
 
-                            <Grid item xs={4}>
+                            <Grid item lg={5} md={7} sm={6} xs={12}>
                                 <Grid container>
 
-                                    <Grid item xs={4}>
-                                        <h3>Company Info</h3>
+                                    <Grid item lg={4} md={4} sm={4} xs={4}>
+                                        <h3 className={styles.conHead} >Company Info</h3>
+
                                         <br />
                                         <Grid container>
                                             <Grid className={styles.fooItems} item xs={12}>
@@ -56,8 +57,8 @@ const Footer = () => {
 
                                     </Grid>
 
-                                    <Grid item xs={4}>
-                                        <h3>Learn More</h3>
+                                    <Grid item lg={4} md={4} sm={4} xs={4}>
+                                        <h3 className={styles.conHead}>Learn More</h3>
                                         <br />
                                         <Grid container>
                                             <Grid className={styles.fooItems} item xs={12}>
@@ -80,8 +81,8 @@ const Footer = () => {
 
                                     </Grid>
 
-                                    <Grid item xs={4}>
-                                        <h3>Need Help</h3>
+                                    <Grid item lg={4} md={4} sm={4} xs={4}>
+                                        <h3 className={styles.conHead}>Need Help</h3>
                                         <br />
                                         <Grid container>
                                             <Grid className={styles.fooItems} item xs={12}>
