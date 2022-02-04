@@ -94,9 +94,9 @@ const SearchImage = ({ onLoader, progress, setProgress }) => {
         setpageNumber(1)
         const res = await getSearchRecord(inputValue);
 
-        console.log(inputValue);
+        // console.log(inputValue);
         console.log(res.res.data.data);
-        setSearchRecord(res.res.data.data)
+        setSearchRecord(res.res)
         setTotalLength(res.res.data.Recordlength)
         setTotalLengthAndMsg(res.res.data.NewRecordlength)
         setIsActive(false)
@@ -310,7 +310,7 @@ const SearchImage = ({ onLoader, progress, setProgress }) => {
                 //         <div class="css-1igcf9y"><div class="chakra-spinner css-4o917u"><span class="css-f8n5zr">Loading...</span></div></div>
                 //     }
                 // </div>
-                : ""}
+                :    ""}
 
             {SearchRecord.length === 0 && isActive === false ?
 
@@ -321,7 +321,7 @@ const SearchImage = ({ onLoader, progress, setProgress }) => {
 
             {SearchRecord.length >= parseInt(totalLength) ?
                 <Footer />
-                : ""
+                : <div class="css-1igcf9y"><div class="chakra-spinner css-4o917u"><span class="css-f8n5zr">Loading...</span></div></div>
             }
 
             <button className="scroll-to-top" onClick={scrollToTop} style={{ display: visible ? 'inline' : 'none' }}>
