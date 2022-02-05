@@ -42,7 +42,7 @@ const Header = () => {
     let history = useHistory();
     const query = useQuery();
 
-    const id = query.get("q")||'';
+    const id = query.get("q") || '';
     const person = query.get('person')
     const location = query.get('location')
     const age = query.get('age')
@@ -61,10 +61,17 @@ const Header = () => {
     const [user, setUser] = useState({
         search: id
     });
+    const [loggedUser, setLoggedUser] = useState(null)
     const [AutoCompleteData, setAutoCompleteData] = useState([]);
     const { search } = user;
 
     useEffect(() => {
+        const loggedUserJSON = window.localStorage.getItem('loggedUser')
+        if (loggedUserJSON) {
+            const user = JSON.parse(loggedUserJSON)
+            // console.log('check user', user)
+            setLoggedUser(user)
+        }
         setUser({
             search: id
         })
@@ -260,6 +267,24 @@ const Header = () => {
         }
     }
 
+    const logoutFun = () => {
+        window.localStorage.removeItem('loggedUser')
+        history.push('/')
+    }
+
+    const loggedDropDown = () => {
+        return (
+            <Dropdown>
+                <Dropdown.Toggle variant="dark" className="text-light">
+                    {loggedUser.f_fullname}
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                    <Dropdown.Item onClick={logoutFun}>Logout</Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>
+        )
+    }
 
 
     return (
@@ -330,7 +355,8 @@ const Header = () => {
                             <div>
                                 <ul>
                                     <li>
-                                        <Link className={styles.pricing} to='ibregistration'>Sign in</Link>
+                                        {!loggedUser && <Link className={styles.pricing} to='ibregistration'>Sign in</Link>}
+                                        {loggedUser && loggedDropDown()}
                                         {/* <ul className={styles.navItems}>
                                             <li></li>
                                             <li></li>

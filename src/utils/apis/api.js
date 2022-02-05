@@ -24,10 +24,10 @@ export const getSearchRecordByPageNumber = async (id, page) => {
 };
 
 export const loginUser = async credentials => {
-    console.log('check credentials', credentials);
+    // console.log('check credentials', credentials);
     try{
         const res = await axios.post('/loginUser', credentials)
-        return res
+        return res.data
     }catch(error){
         return error
     }

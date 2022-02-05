@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import Footer from '../../components/RegFooter';
 import { loginUser } from '../../utils/apis/api';
+import { useHistory } from 'react-router-dom'
 
 const IBRegistration = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [errMsg, setErrMsg] = useState(null)
+    const history = useHistory()
 
     const loginHandler = async event => {
         event.preventDefault()
-        console.log('check email and password', email, password)
+        // console.log('check email and password', email, password)
         if (!(email && password)) {
             setErrMsg({ email: "Email must be a valid email address", pwd: "Password is required" })
             setEmail('')
@@ -20,10 +22,13 @@ const IBRegistration = () => {
             return false
         }
 
-        const res = await loginUser({ email, password })
-        alert(`welcome ${res.data.f_fullname}`)
+        const user = await loginUser({ email, password })
+        window.localStorage.setItem(
+            'loggedUser', JSON.stringify(user)
+        )
         setEmail('')
         setPassword('')
+        history.push('/myaccounts')
     }
 
     return (
