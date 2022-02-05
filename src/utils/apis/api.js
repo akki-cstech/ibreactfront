@@ -22,3 +22,13 @@ export const getSearchRecordByPageNumber = async (id, page) => {
         return { error };
     }
 };
+
+export const loginUser = async credentials => {
+    console.log('check credentials', credentials);
+    try{
+        const res = await axios.post('/loginUser', credentials)
+        return res
+    }catch(error){
+        return error
+    }
+}

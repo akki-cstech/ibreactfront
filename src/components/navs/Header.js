@@ -330,8 +330,8 @@ const Header = () => {
                             <div>
                                 <ul>
                                     <li>
-                                        <Link className={styles.pricing} to=''>Sign in</Link>
-                                        <ul className={styles.navItems}>
+                                        <Link className={styles.pricing} to='ibregistration'>Sign in</Link>
+                                        {/* <ul className={styles.navItems}>
                                             <li></li>
                                             <li></li>
                                             <li></li>
@@ -340,7 +340,7 @@ const Header = () => {
                                             <li></li>
                                             <li></li>
                                             <li></li>
-                                        </ul>
+                                        </ul> */}
 
                                     </li>
                                 </ul>
