@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Footer from '../../components/RegFooter';
 import { loginUser } from '../../utils/apis/api';
-import { useHistory } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
+import Alert from '@mui/material/Alert';
 
 const IBRegistration = () => {
     const [email, setEmail] = useState('')
@@ -23,12 +24,19 @@ const IBRegistration = () => {
         }
 
         const user = await loginUser({ email, password })
-        window.localStorage.setItem(
-            'loggedUser', JSON.stringify(user)
-        )
-        setEmail('')
-        setPassword('')
-        history.push('/myaccounts')
+        if (!user.error) {
+            window.localStorage.setItem(
+                'loggedUser', JSON.stringify(user)
+            )
+            setEmail('')
+            setPassword('')
+            history.push('/myaccounts')
+        }
+
+        setErrMsg(user.error) 
+        setTimeout(() => {
+            setErrMsg(null)
+        }, 5000)
     }
 
     return (
@@ -51,6 +59,7 @@ const IBRegistration = () => {
                     </div>
                     <div className='row' style={{ padding: "15px 55px 15px 37px" }}>
                         <div className='col-lg-12'>
+                            {errMsg && <Alert severity="error" className='mb-2 font-weight-bold' > {errMsg} </Alert>}
                             <form onSubmit={loginHandler}>
                                 <div className='mb-3'>
                                     <div className="input-group">
@@ -85,7 +94,7 @@ const IBRegistration = () => {
                             <div className="text-center">
                                 <div>Not Registered Yet? </div>
                                 <div className="Register_Now">
-                                    <a style={{ textDecoration: "none", cursor: "pointer", color: "#00FFFF", fontSize: "35px" }} href="/register"> Register Now</a>
+                                    <Link style={{ textDecoration: "none", cursor: "pointer", color: "#00FFFF", fontSize: "35px" }} to="/register" >Register Now</Link>
                                 </div>
                             </div>
                         </div>
