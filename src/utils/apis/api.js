@@ -13,7 +13,7 @@ export const getSearchRecord = async (id) => {
 
 
 export const getSearchRecordByPageNumber = async (id, page) => {
-    console.log("page : ",page)
+    console.log("page : ", page)
     try {
         const res = await axios.get(`/getSearchRecord_NonArcheived/${id}/${id}/0/0/0/${parseInt(page)}`);
         // console.log(res);
@@ -25,10 +25,22 @@ export const getSearchRecordByPageNumber = async (id, page) => {
 
 export const loginUser = async credentials => {
     // console.log('check credentials', credentials);
-    try{
+    try {
         const res = await axios.post('/loginUser', credentials)
         return res.data
-    }catch(error){
+    } catch (error) {
+        // console.log('check error', error.response.data)
+        return error.response.data
+    }
+}
+
+export const userRegistration = async formData => {
+    // console.log('check formData', formData);
+    try {
+        const res = await axios.post('/userRegistration', formData)
+        // console.log('check res of registered user', res)
+        return res.data
+    } catch (error) {
         // console.log('check error', error.response.data)
         return error.response.data
     }

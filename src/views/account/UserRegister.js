@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Footer from '../../components/RegFooter';
-import { loginUser } from '../../utils/apis/api';
+import { userRegistration } from '../../utils/apis/api';
+import Alert from '@mui/material/Alert';
 import { useHistory, Link } from 'react-router-dom'
 
 const Register = () => {
@@ -27,42 +28,43 @@ const Register = () => {
     const [cityErr, setCityErr] = useState(null)
     const [captchaErr, setCaptchaErr] = useState(null)
     const [checkErr, setCheckErr] = useState(null)
+    const [errMsg, setErrMsg] = useState(null)
     const history = useHistory()
 
     const captchaGenerator = () => {
         setCaptcha(Math.floor(Math.random() * (10000 - 1000)) + 1000)
     }
 
-    const registerHandler = event => {
-        event.preventDefault()
-
+    const registerHandler = async event => {
+        var valObj = {}
+        event.preventDefault();
+        let pass = true;
         const iChars = "!@#$%^&*()+=-[]\\';,./{}|\":<>?1234567890";
-
 
         if (firstName !== '') {
             for (var i = 0; i < firstName.split("").length; i++) {
                 if (iChars.indexOf(firstName.charAt(i)) !== -1) {
                     setFNameErr("Your firstName has special characters or numbers. \nThese are not allowed.\n Please remove them and try again.");
-                    // setTimeout(() => setNameErr(''), 5000)
-                    // return false;
+                    pass = false;
                 }
             }
         } else {
             // console.log('check 1st')
+            valObj.firstName = "First Name is required!"
             setFNameErr("First Name is required!")
+            pass = false;
         }
 
         if (lastName !== '') {
             for (var i = 0; i < lastName.split("").length; i++) {
                 if (iChars.indexOf(lastName.charAt(i)) !== -1) {
                     setLNameErr("Your firstName has special characters or numbers. \nThese are not allowed.\n Please remove them and try again.");
-                    // setTimeout(() => setNameErr(''), 5000)
-                    // return false;
+                    pass = false;
                 }
             }
         } else {
-            // console.log('2nd')
             setLNameErr("Last Name is required!")
+            pass = false;
         }
 
         if (regEmail.length > 0) {
@@ -79,45 +81,110 @@ const Register = () => {
                 )
             ) {
                 setEmailErr("Email must be a valid email address")
+                pass = false;
             }
         }
         else {
             setEmailErr("Email address is required..")
+            pass = false;
         }
 
         if (pwd.length === 0) {
             setPwdErr("Password is required")
+            pass = false;
         }
         else if (pwd.length < 4) {
             setPwdErr("Password length should be 4 character")
+            pass = false;
         }
 
-        company.length === 0 && setCompanyErr("Company Name is required")
-        jobDes === '' && setJobErr("Job Description must be Selected")
+        if (company.length === 0) {
+            setCompanyErr("Company Name is required")
+            pass = false
+        }
+
+        if (jobDes === '') {
+            setJobErr("Job Description must be Selected")
+            pass = false
+        }
 
         if (mobile.length === 0) {
             setPhnErr("Mobile Number is required")
+            pass = false
         }
         else {
             const alp = "!@#$%^&*()+=-[]\\';,./{}|\":<>?abcdefghijklomnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
             for (let i = 0; i < mobile.split("").length; i++) {
                 if (alp.indexOf(mobile.charAt(i)) !== -1) {
                     setPhnErr("Mobile Number must be in number!");
+                    pass = false
                 }
             }
         }
 
-        country === '' && setCountryErr("Country must be Selected")
-        city.length === 0 && setCityErr("City is required")
+        if (country === '') {
+            setCountryErr("Country must be Selected")
+            pass = false
+        }
+        if (city.length === 0) {
+            setCityErr("City is required")
+            pass = false
+        }
 
         if (code.length === 0) {
             setCaptchaErr("Code is required")
+            pass = false
         }
-        else {
-            captcha != code && setCaptchaErr("Captcha code should be correct")
+        else if (captcha != code) {
+            setCaptchaErr("Captcha code should be correct")
+            pass = false
         }
 
-        checked === false && setCheckErr("must be Checked")
+        if (checked === false) {
+            setCheckErr("must be Checked")
+            pass = false
+        }
+
+        if (!pass) {
+            return false
+        }
+
+        // console.log('right way')
+        const savedUser = await userRegistration({
+            firstName,
+            lastName,
+            f_email: regEmail,
+            CS_password: pwd,
+            f_businessType: jobDes,
+            f_mobileno: mobile,
+            f_country: country,
+            f_state: city,
+            f_companyname: company
+        })
+
+        if (!savedUser.error) {
+            window.localStorage.setItem(
+                'loggedUser', JSON.stringify(savedUser)
+            )
+            setRegEmail('')
+            setCaptcha(Math.floor(Math.random() * (10000 - 1000)) + 1000)
+            setCity('')
+            setCode('')
+            setFirstName('')
+            setLastName('')
+            setCountry('')
+            setMobile('')
+            setJobDes('')
+            setCompany('')
+            setPwd('')
+            history.push('/myaccounts')
+        }
+
+        setErrMsg(savedUser.error)
+        setTimeout(() => {
+            setErrMsg(null)
+            captchaGenerator()
+        }, 5000)
     }
 
     // const typingNumberOnly = event => {
@@ -161,7 +228,7 @@ const Register = () => {
                         <div style={{ padding: '6px 10px 20px 37px' }}>
                             <div className="row">
                                 <div className="col-lg-12">
-                                    {/* <div className="alert alert-danger text-center container" id="MailerrorMsg" style={{display:"none"}}><b className="text-black">This Username Already Exists!</b></div> */}
+                                    {errMsg && <Alert severity="error" className='mb-2 font-weight-bold' > {errMsg} </Alert>}
                                     <form method="post" autocomplete="off" onSubmit={registerHandler}>
                                         <div className='mb-3'>
                                             <div className="input-group">
@@ -794,7 +861,83 @@ const Register = () => {
                                                 <div className="input-group-prepend">
                                                     <span className="input-group-text"><i className="fa fa-user"></i></span>
                                                 </div>
-                                                <input type="text" placeholder=" Enter your State/City" className="form-control" value={city} onChange={({ target }) => setCity(target.value)} />
+                                                <select className='form-control' value={city} onChange={({ target }) => setCity(target.value)}>
+                                                    <option value="" selected="selected">Select your State</option>
+                                                    <option value="Andaman and Nicobar Islands">
+                                                        Andaman and Nicobar Islands</option>
+                                                    <option value="Andhra Pradesh">
+                                                        Andhra Pradesh</option>
+                                                    <option value="Andhra Pradesh (New)">
+                                                        Andhra Pradesh (New)</option>
+                                                    <option value="Arunachal Pradesh">
+                                                        Arunachal Pradesh</option>
+                                                    <option value="Assam">
+                                                        Assam</option>
+                                                    <option value="Bihar">
+                                                        Bihar</option>
+                                                    <option value="Chandigarh">
+                                                        Chandigarh</option>
+                                                    <option value="Chhattisgarh">
+                                                        Chhattisgarh</option>
+                                                    <option value="Dadra and Nagar Haveli">
+                                                        Dadra and Nagar Haveli</option>
+                                                    <option value="Daman and Diu">
+                                                        Daman and Diu</option>
+                                                    <option value="Delhi">
+                                                        Delhi</option>
+                                                    <option value="Goa">
+                                                        Goa</option>
+                                                    <option value="Gujarat">
+                                                        Gujarat</option>
+                                                    <option value="Haryana">
+                                                        Haryana</option>
+                                                    <option value="Himachal Pradesh">
+                                                        Himachal Pradesh</option>
+                                                    <option value="Jammu and Kashmir">
+                                                        Jammu and Kashmir</option>
+                                                    <option value="Jharkhand">
+                                                        Jharkhand</option>
+                                                    <option value="Karnataka">
+                                                        Karnataka</option>
+                                                    <option value="Kerala">
+                                                        Kerala</option>
+                                                    <option value="Lakshadweep">
+                                                        Lakshadweep</option>
+                                                    <option value="Madhya Pradesh">
+                                                        Madhya Pradesh</option>
+                                                    <option value="Maharashtra">
+                                                        Maharashtra</option>
+                                                    <option value="Manipur">
+                                                        Manipur</option>
+                                                    <option value="Meghalaya">
+                                                        Meghalaya</option>
+                                                    <option value="Mizoram">
+                                                        Mizoram</option>
+                                                    <option value="Nagaland">
+                                                        Nagaland</option>
+                                                    <option value="Odisha">
+                                                        Odisha</option>
+                                                    <option value="Puducherry">
+                                                        Puducherry</option>
+                                                    <option value="Punjab">
+                                                        Punjab</option>
+                                                    <option value="Rajasthan">
+                                                        Rajasthan</option>
+                                                    <option value="Sikkim">
+                                                        Sikkim</option>
+                                                    <option value="Tamil Nadu">
+                                                        Tamil Nadu</option>
+                                                    <option value="Telangana">
+                                                        Telangana</option>
+                                                    <option value="Tripura">
+                                                        Tripura</option>
+                                                    <option value="Uttar Pradesh">
+                                                        Uttar Pradesh</option>
+                                                    <option value="Uttarakhand">
+                                                        Uttarakhand</option>
+                                                    <option value="West Bengal">
+                                                        West Bengal</option>
+                                                </select>
                                             </div>
                                             {cityErr && <div className="text-danger d-block mb-3">
                                                 <span> {cityErr} </span>
@@ -824,13 +967,13 @@ const Register = () => {
                                                 <span> {captchaErr} </span>
                                             </div>}
                                         </div>
-                                      
+
                                         <div className="form-group">
                                             &nbsp;
                                             <label for="remember"><input type="checkbox" id="remember" defaultChecked={checked} onChange={() => setChecked(!checked)} tabIndex="3" /> I agree to ImagesBazaar's <a href="https://www.imagesbazaar.com/termsofuse" style={{ textDecoration: "none", color: "#00FFFF" }}><b>Terms and Conditions.</b></a></label>
                                             {checkErr && <div className="text-danger d-block mb-3">
                                                 <span> {checkErr} </span>
-                                            </div>}    
+                                            </div>}
                                         </div>
 
 
