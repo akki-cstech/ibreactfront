@@ -45,3 +45,15 @@ export const userRegistration = async formData => {
         return error.response.data
     }
 }
+
+
+export const forgotPwd = async email => {
+    try {
+        const res = await axios.post('/forgotPassword', email)
+        console.log('check res', res)
+        return res.data
+    } catch (error) {
+        // console.log('check error', error.response.data)
+        return error.response.data
+    }
+}

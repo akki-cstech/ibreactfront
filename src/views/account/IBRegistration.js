@@ -33,7 +33,7 @@ const IBRegistration = () => {
             history.push('/myaccounts')
         }
 
-        setErrMsg(user.error) 
+        setErrMsg(user.error)
         setTimeout(() => {
             setErrMsg(null)
         }, 5000)
@@ -86,8 +86,8 @@ const IBRegistration = () => {
                         </div>
                         <div className='col-lg-12 mt-3'>
                             <div className="text-center" style={{ marginBottom: "10px" }}>
-                                <a href="/forgetPassword" tabIndex="5" style={{ fontSize: "17px", textDecoration: "none", color: "#00FFFF" }}><b>Forgot
-                                    Password?</b></a>
+                                <Link to="/forgetPassword" className="font-weight-bold" style={{ fontSize: "17px", textDecoration: "none", color: "#00FFFF" }}>Forgot
+                                    Password?</Link>
                             </div>
                         </div>
                         <div className="col-lg-12">

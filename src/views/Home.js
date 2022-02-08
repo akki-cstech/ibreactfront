@@ -21,12 +21,12 @@ const Home = ({ Loader, progress, setProgress }) => {
     //     }
     // }
     window.onscroll = async (e) => {
-        if (window.scrollY > 20) {
-            document.getElementById("topheader").className = "searchGrid sticky";
-        } 
-        else {
-            document.getElementById("topheader").className = "searchGrid sticky1";
-        }
+        // if (window.scrollY > 20) {
+        //     document.getElementById("topheader").className = "searchGrid sticky";
+        // } 
+        // else {
+        //     document.getElementById("topheader").className = "searchGrid sticky1";
+        // }
     }
 
     return (
