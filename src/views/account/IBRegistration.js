@@ -8,17 +8,19 @@ const IBRegistration = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [errMsg, setErrMsg] = useState(null)
+    const [errObj, setErrObj] = useState(null)
     const history = useHistory()
 
     const loginHandler = async event => {
         event.preventDefault()
         // console.log('check email and password', email, password)
-        if (!(email && password)) {
-            setErrMsg({ email: "Email must be a valid email address", pwd: "Password is required" })
+        if (email === '' || password === '') {
+            setErrObj({ email: "Email must be a valid email address", pwd: "Password is required" })
+            console.log('check hello')
             setEmail('')
             setPassword('')
             setTimeout(() => {
-                setErrMsg(null)
+                setErrObj(null)
             }, 5000)
             return false
         }
@@ -68,7 +70,7 @@ const IBRegistration = () => {
                                         </div>
                                         <input type="email" className="form-control" name="loginEmail" value={email} onChange={({ target }) => setEmail(target.value)} maxLength="200" placeholder="Enter Email" />
                                     </div>
-                                    {errMsg && <span style={{ color: "red" }}> {errMsg.email} </span>}
+                                    {errObj && <span style={{ color: "red" }}> {errObj.email} </span>}
                                 </div>
                                 <div className='mb-3'>
                                     <div className="input-group">
@@ -77,7 +79,7 @@ const IBRegistration = () => {
                                         </div>
                                         <input type="password" className="form-control" name="loginPassword" value={password} onChange={({ target }) => setPassword(target.value)} maxLength="200" placeholder="Enter Password" />
                                     </div>
-                                    {errMsg && <span style={{ color: "red" }}> {errMsg.pwd} </span>}
+                                    {errObj && <span style={{ color: "red" }}> {errObj.pwd} </span>}
                                 </div>
                                 <div className='d-flex justify-content-center'>
                                     <input type="submit" className="btn mt-2 btn-dark text-light" value="Sign In" />

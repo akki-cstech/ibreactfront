@@ -435,7 +435,7 @@ const Header = () => {
                     <Grid className="searchGrid" id="topheader">
                         <Grid className="searchGrid1">
                             <Grid container className="searchDiv">
-                                <Grid item className="inputDiv">
+                                <Grid item className="inputDiv" style={{lineHeight: "0px"}}>
                                     <span>
                                         <i className={`${sStyle.searchIcon} fas fa-search`}></i>
                                     </span>
@@ -461,7 +461,7 @@ const Header = () => {
                                     <div className="dropdown1">
                                         <div className="dropdown2">
                                             <div className="dropdown">
-                                                <ul id="drpdwnTxt">
+                                                <ul id="drpdwnTxt" style={{padding: '0px 24px'}}>
                                                     <li>
                                                         <Dropdown>
                                                             <Dropdown.Toggle id="dropdown-custom-components">Images</Dropdown.Toggle>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Footer from '../../components/RegFooter';
 import { userRegistration } from '../../utils/apis/api';
 import Alert from '@mui/material/Alert';
@@ -13,7 +13,7 @@ const Register = () => {
     const [jobDes, setJobDes] = useState('')
     const [mobile, setMobile] = useState('')
     const [city, setCity] = useState('')
-    const [country, setCountry] = useState('')
+    const [country, setCountry] = useState('India')
     const [captcha, setCaptcha] = useState(Math.floor(Math.random() * (10000 - 1000)) + 1000)
     const [code, setCode] = useState('')
     const [checked, setChecked] = useState(true);
@@ -29,6 +29,7 @@ const Register = () => {
     const [captchaErr, setCaptchaErr] = useState(null)
     const [checkErr, setCheckErr] = useState(null)
     const [errMsg, setErrMsg] = useState(null)
+    const [submited, setSubmited] = useState(false)
     const history = useHistory()
 
     const captchaGenerator = () => {
@@ -50,7 +51,6 @@ const Register = () => {
             }
         } else {
             // console.log('check 1st')
-            valObj.firstName = "First Name is required!"
             setFNameErr("First Name is required!")
             pass = false;
         }
@@ -63,7 +63,7 @@ const Register = () => {
                 }
             }
         } else {
-            setLNameErr("Last Name is required!")
+            setLNameErr("Last Name is required!");
             pass = false;
         }
 
@@ -146,6 +146,7 @@ const Register = () => {
         }
 
         if (!pass) {
+            setSubmited(true)
             return false
         }
 
@@ -187,14 +188,122 @@ const Register = () => {
         }, 5000)
     }
 
-    // const typingNumberOnly = event => {
-    //     event.preventDefault()
-    //     console.log('check ch', event.target.value)
-    //     const val = event.target.value
-    //     if(isNaN(parseInt(val))){
-    //         setMobile(val)
-    //     }
-    // }
+    const afterSubmit = () => {
+        if (submited) {
+            const iChars = "!@#$%^&*()+=-[]\\';,./{}|\":<>?1234567890";
+
+            if (firstName !== '') {
+                setFNameErr(null)
+                for (var i = 0; i < firstName.split("").length; i++) {
+                    if (iChars.indexOf(firstName.charAt(i)) !== -1) {
+                        setFNameErr("Your firstName has special characters or numbers. \nThese are not allowed.\n Please remove them and try again.");
+                    }
+                }
+            } else {
+                setFNameErr("First Name is required!")
+            }
+
+            if (lastName !== '') {
+                setLNameErr(null)
+                for (var i = 0; i < lastName.split("").length; i++) {
+                    if (iChars.indexOf(lastName.charAt(i)) !== -1) {
+                        setLNameErr("Your firstName has special characters or numbers. \nThese are not allowed.\n Please remove them and try again.");
+                    }
+                }
+            } else {
+                setLNameErr("Last Name is required!");
+            }
+    
+            if (regEmail.length > 0) {
+                let lastAtPos = regEmail.lastIndexOf("@");
+                let lastDotPos = regEmail.lastIndexOf(".");
+    
+                if (
+                    !(
+                        lastAtPos < lastDotPos &&
+                        lastAtPos > 0 &&
+                        regEmail.indexOf("@@") === -1 &&
+                        lastDotPos > 2 &&
+                        regEmail.length - lastDotPos > 2
+                    )
+                ) {
+                    setEmailErr("Email must be a valid email address")
+                }
+                else{
+                    setEmailErr(null)
+                }
+            }
+            else {
+                setEmailErr("Email address is required..")
+            }
+    
+            if (pwd.length === 0) {
+                setPwdErr("Password is required")
+            }
+            else if (pwd.length < 4) {
+                setPwdErr("Password length should be 4 character")
+            }
+            else{
+                setPwdErr(null) 
+            }
+    
+            if (company.length === 0) {
+                setCompanyErr("Company Name is required")
+            }else{
+                setCompanyErr(null)
+            }
+    
+            if (jobDes === '') {
+                setJobErr("Job Description must be Selected")
+            }else{
+                setJobErr(null)
+            }
+    
+            if (mobile.length === 0) {
+                setPhnErr("Mobile Number is required")
+            }
+            else {
+                setPhnErr(null)
+                const alp = "!@#$%^&*()+=-[]\\';,./{}|\":<>?abcdefghijklomnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                for (let i = 0; i < mobile.split("").length; i++) {
+                    if (alp.indexOf(mobile.charAt(i)) !== -1) {
+                        setPhnErr("Mobile Number must be in number!");
+                    }
+                }
+            }
+    
+            if (country === '') {
+                setCountryErr("Country must be Selected")
+            }else{
+                setCountryErr(null)
+            }
+            if (city.length === 0) {
+                setCityErr("City is required")
+            }else{
+                setCityErr(null)
+            }
+    
+            if (code.length === 0) {
+                setCaptchaErr("Code is required")
+            }
+            else if (captcha != code) {
+                setCaptchaErr("Captcha code should be correct")
+            }
+            else{
+                setCaptchaErr(null)
+            }
+    
+            if (checked === false) {
+                setCheckErr("must be Checked")
+            }else{
+                setCheckErr(null)
+            }
+        }
+    }
+
+    useEffect(() => {
+        afterSubmit()
+    }, [regEmail, pwd, firstName, lastName,company,jobDes,mobile,city, country,code,checked])
 
     return (
         <div className='container-fluid p-3'>
@@ -233,7 +342,7 @@ const Register = () => {
                                         <div className='mb-3'>
                                             <div className="input-group">
                                                 <div className="input-group-prepend"> <span className="input-group-text"><i className="fa fa-user"></i></span> </div>
-                                                <input type="text" className="form-control" placeholder="First Name" value={firstName} onChange={({ target }) => setFirstName(target.value)} maxlength="15" />
+                                                <input type="text" className="form-control" placeholder="First Name" name="firstName" value={firstName} onKeyDown={afterSubmit} onChange={({ target }) => setFirstName(target.value)} maxlength="15" />
                                             </div>
                                             {fNameErr && <div className="text-danger d-block mb-3">
                                                 <span> {fNameErr} </span>
@@ -244,7 +353,7 @@ const Register = () => {
                                                 <div className="input-group-prepend">
                                                     <span className="input-group-text"><i className="fa fa-user"></i></span>
                                                 </div>
-                                                <input type="text" className="form-control" value={lastName} onChange={({ target }) => setLastName(target.value)} placeholder="Last Name" maxlength="15" />
+                                                <input type="text" className="form-control" value={lastName} name="lastName" onKeyDown={afterSubmit} onChange={({ target }) => setLastName(target.value)} placeholder="Last Name" maxlength="15" />
                                             </div>
                                             {lNameErr && <div className="text-danger d-block mb-3">
                                                 <span> {lNameErr} </span>
@@ -255,7 +364,7 @@ const Register = () => {
                                                 <div className="input-group-prepend">
                                                     <span className="input-group-text"><i className="fa fa-envelope"></i></span>
                                                 </div>
-                                                <input type="text" className="form-control" value={regEmail} onChange={({ target }) => setRegEmail(target.value)} placeholder="Email Address" maxlength="50" />
+                                                <input type="text" className="form-control" name="regEmail" value={regEmail} onKeyDown={afterSubmit} onChange={({ target }) => setRegEmail(target.value)} placeholder="Email Address" maxlength="50" />
                                             </div>
                                             {emailErr && <div className="text-danger d-block mb-3">
                                                 <span> {emailErr} </span>
@@ -266,7 +375,7 @@ const Register = () => {
                                                 <div className="input-group-prepend">
                                                     <span className="input-group-text"><i className="fa fa-lock"></i></span>
                                                 </div>
-                                                <input type="password" className="form-control" value={pwd} onChange={({ target }) => setPwd(target.value)} placeholder="Password" maxlength="15" />
+                                                <input type="password" className="form-control" name="pwd" value={pwd} onKeyDown={afterSubmit} onChange={({ target }) => setPwd(target.value)} placeholder="Password" maxlength="15" />
                                             </div>
                                             {pwdErr && <div className="text-danger d-block mb-3">
                                                 <span> {pwdErr} </span>
@@ -277,7 +386,7 @@ const Register = () => {
                                                 <div className="input-group-prepend">
                                                     <span className="input-group-text"><i className="fa fa-user"></i></span>
                                                 </div>
-                                                <input type="text" className="form-control" value={company} onChange={({ target }) => setCompany(target.value)} placeholder="Company Name" maxlength="550" />
+                                                <input type="text" className="form-control" name="company" value={company} onKeyDown={afterSubmit} onChange={({ target }) => setCompany(target.value)} placeholder="Company Name" maxlength="550" />
                                             </div>
                                             {companyErr && <div className="text-danger d-block mb-3">
                                                 <span> {companyErr} </span>
@@ -288,7 +397,7 @@ const Register = () => {
                                                 <div className="input-group-prepend">
                                                     <span className="input-group-text"><i className="fa fa-user"></i></span>
                                                 </div>
-                                                <select className="select form-control" size="1" value={jobDes} onChange={({ target }) => setJobDes(target.value)}>
+                                                <select className="select form-control" size="1" name="jobDes" onKeyDown={afterSubmit} value={jobDes} onChange={({ target }) => setJobDes(target.value)}>
                                                     <option value="" selected="selected">Select Job Description</option>
 
                                                     <option value="Freelance Designer">Freelance Designer</option>
@@ -332,11 +441,6 @@ const Register = () => {
                                                     <option value="Other">Other</option>
 
                                                 </select>
-
-                                                {/* <div className="text-danger validationMsg" style={{display: "none"}}>
-                                                <span ng-show="(loginform.business.$dirty || loginform.$submitted) &amp;&amp; loginform.business.$invalid" className="ng-hide">Job
-                                                    Description must be Selected</span>
-                                            </div> */}
                                             </div>
                                             {jobErr && <div className="text-danger d-block mb-3">
                                                 <span> {jobErr} </span>
@@ -347,7 +451,7 @@ const Register = () => {
                                                 <div className="input-group-prepend">
                                                     <span className="input-group-text"><i className="fa fa-mobile"></i></span>
                                                 </div>
-                                                <input type="text" className="form-control" placeholder="Mobile Number" value={mobile} onChange={({ target }) => setMobile(target.value)} maxlength="12" />
+                                                <input type="text" className="form-control" name="mobile" placeholder="Mobile Number" value={mobile} onKeyDown={afterSubmit} onChange={({ target }) => !(isNaN(Number(target.value))) && setMobile(target.value)} maxlength="12" />
                                             </div>
                                             {phnErr && <div className="text-danger d-block mb-3">
                                                 <span> {phnErr} </span>
@@ -358,7 +462,7 @@ const Register = () => {
                                                 <div className="input-group-prepend">
                                                     <span className="input-group-text"><i className="fa fa-user"></i></span>
                                                 </div>
-                                                <select className="form-control" value={country} onChange={({ target }) => setCountry(target.value)}>
+                                                <select className="form-control" onKeyDown={afterSubmit} value={country} name="country" onChange={({ target }) => setCountry(target.value)}>
                                                     <option value=""> Select your Country </option>
 
                                                     <option value="Afghanistan">
@@ -861,7 +965,7 @@ const Register = () => {
                                                 <div className="input-group-prepend">
                                                     <span className="input-group-text"><i className="fa fa-user"></i></span>
                                                 </div>
-                                                <select className='form-control' value={city} onChange={({ target }) => setCity(target.value)}>
+                                                {country === 'India' && <select className='form-control' name="city" onKeyDown={afterSubmit} value={city} onChange={({ target }) => setCity(target.value)}>
                                                     <option value="" selected="selected">Select your State</option>
                                                     <option value="Andaman and Nicobar Islands">
                                                         Andaman and Nicobar Islands</option>
@@ -937,7 +1041,8 @@ const Register = () => {
                                                         Uttarakhand</option>
                                                     <option value="West Bengal">
                                                         West Bengal</option>
-                                                </select>
+                                                </select>}
+                                                {country !== 'India' && <input type="text" className="form-control" name="city" placeholder="Enter Your City/State" value={city} onKeyDown={afterSubmit} onChange={({ target }) => setCity(target.value)} />}
                                             </div>
                                             {cityErr && <div className="text-danger d-block mb-3">
                                                 <span> {cityErr} </span>
@@ -961,7 +1066,7 @@ const Register = () => {
                                         </div>
                                         <div className="mb-3">
                                             <div className="input-group" style={{ marginLeft: "23px", width: '47%', float: 'left' }}>
-                                                <input type="text" className="form-control" placeholder="Enter Code" maxlength="4" tabIndex="1" value={code} onChange={({ target }) => setCode(target.value)} />
+                                                <input type="text" className="form-control" placeholder="Enter Code" name="code" maxlength="4" tabIndex="1" onKeyDown={afterSubmit} value={code} onChange={({ target }) => setCode(target.value)} />
                                             </div>
                                             {captchaErr && <div className="text-danger d-block mb-3">
                                                 <span> {captchaErr} </span>
@@ -970,7 +1075,7 @@ const Register = () => {
 
                                         <div className="form-group">
                                             &nbsp;
-                                            <label for="remember"><input type="checkbox" id="remember" defaultChecked={checked} onChange={() => setChecked(!checked)} tabIndex="3" /> I agree to ImagesBazaar's <a href="https://www.imagesbazaar.com/termsofuse" style={{ textDecoration: "none", color: "#00FFFF" }}><b>Terms and Conditions.</b></a></label>
+                                            <label for="remember"><input type="checkbox" id="remember" name="checked" defaultChecked={checked} onMouseDown={afterSubmit} onChange={() => setChecked(!checked)} tabIndex="3" /> I agree to ImagesBazaar's <a href="https://www.imagesbazaar.com/termsofuse" style={{ textDecoration: "none", color: "#00FFFF" }}><b>Terms and Conditions.</b></a></label>
                                             {checkErr && <div className="text-danger d-block mb-3">
                                                 <span> {checkErr} </span>
                                             </div>}
