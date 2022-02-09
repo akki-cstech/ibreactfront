@@ -302,6 +302,7 @@ const Register = () => {
     }
 
     useEffect(() => {
+        document.title = "ImagesBazaar: Register"
         afterSubmit()
     }, [regEmail, pwd, firstName, lastName,company,jobDes,mobile,city, country,code,checked])
 

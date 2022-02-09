@@ -3,6 +3,7 @@ import { Container, Row, Col, Form, InputGroup, FormControl, Button } from 'reac
 import Alert from '@mui/material/Alert';
 import { Link } from 'react-router-dom'
 import { forgotPwd } from '../../utils/apis/api'
+import Footer from '../../components/RegFooter'
 
 const ForgetPassword = () => {
     const [forgotEmail, setForgotEmail] = useState('')
@@ -122,6 +123,7 @@ const ForgetPassword = () => {
                     </div>
                 </Col>
             </Row>
+            <Footer />
         </Container>
     )
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Footer from '../../components/RegFooter';
 import { loginUser } from '../../utils/apis/api';
 import { useHistory, Link } from 'react-router-dom'
@@ -9,6 +9,7 @@ const IBRegistration = () => {
     const [password, setPassword] = useState('')
     const [errMsg, setErrMsg] = useState(null)
     const [errObj, setErrObj] = useState(null)
+    const [submitted, setSubmitted] = useState(false)
     const history = useHistory()
 
     const loginHandler = async event => {
@@ -16,12 +17,9 @@ const IBRegistration = () => {
         // console.log('check email and password', email, password)
         if (email === '' || password === '') {
             setErrObj({ email: "Email must be a valid email address", pwd: "Password is required" })
-            console.log('check hello')
             setEmail('')
             setPassword('')
-            setTimeout(() => {
-                setErrObj(null)
-            }, 5000)
+            setSubmitted(true)
             return false
         }
 
@@ -40,6 +38,38 @@ const IBRegistration = () => {
             setErrMsg(null)
         }, 5000)
     }
+
+    const afterSubmit = () => {
+        if(submitted){
+            if (email !== '') {
+                let lastAtPos = email.lastIndexOf("@");
+                let lastDotPos = email.lastIndexOf(".");
+                if (
+                    !(
+                        lastAtPos < lastDotPos &&
+                        lastAtPos > 0 &&
+                        email.indexOf("@@") === -1 &&
+                        lastDotPos > 2 &&
+                        email.length - lastDotPos > 2
+                    )
+                ) {
+                    // console.log('hello2')
+                    setErrObj({ ...errObj, email: "Email must be a valid email address"})
+                }
+                else{
+                    // console.log('hello3')
+                    setErrObj({ ...errObj, email: '' })
+                }
+            }
+
+            password !== '' ? setErrObj({...errObj, pwd: ''}) : setErrObj({ ...errObj, pwd: "Password is required" })
+        }
+    }
+
+    useEffect(() => {
+        document.title = "ImagesBazaar: Sign In"
+        afterSubmit()
+    }, [email, password])
 
     return (
         <div className='container-fluid p-3'>

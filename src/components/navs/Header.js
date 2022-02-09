@@ -69,13 +69,12 @@ const Header = () => {
         const loggedUserJSON = window.localStorage.getItem('loggedUser')
         if (loggedUserJSON) {
             const user = JSON.parse(loggedUserJSON)
-            // console.log('check user', user)
             setLoggedUser(user)
         }
         setUser({
             search: id
         })
-    }, [id])
+    }, [id, loggedUser])
 
     const onInputChange = e => {
 
@@ -269,6 +268,7 @@ const Header = () => {
 
     const logoutFun = () => {
         window.localStorage.removeItem('loggedUser')
+        setLoggedUser(null)
         history.push('/')
     }
 
