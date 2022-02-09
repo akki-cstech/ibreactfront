@@ -57,3 +57,12 @@ export const forgotPwd = async email => {
         return error.response.data
     }
 }
+
+export const pendingOrder = async email => {
+    try{
+        const res = await axios.post("/pendingOrder", email)
+        return res.data
+    }catch(error){
+        return error.response.data
+    }
+}

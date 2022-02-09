@@ -74,7 +74,7 @@ const Header = () => {
         setUser({
             search: id
         })
-    }, [id, loggedUser])
+    }, [id])
 
     const onInputChange = e => {
 

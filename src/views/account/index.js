@@ -12,7 +12,7 @@ const AccountSection = () => {
         const loggedUser = window.localStorage.getItem("loggedUser")
         const usr = JSON.parse(loggedUser)
         setUser(usr)
-    })
+    }, [])
 
     return (
         <>
