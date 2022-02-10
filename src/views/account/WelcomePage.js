@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 import { Container, Nav, Row, Col, Navbar, DropdownButton, Dropdown, ButtonGroup } from 'react-bootstrap'
 import Header from '../../components/navs/Header'
 import Footer from '../../components/navs/Footer'
-import { pendingOrder, confirmOrder, subscriptionPlan, highResImage } from '../../utils/apis/api'
+import { pendingOrder, confirmOrder, subscriptionPlan, highResImage, subPlanOrder } from '../../utils/apis/api'
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -18,6 +18,7 @@ const Welcome = () => {
     const [pendingRows, setPendingRows] = useState([])
     const [confirmRows, setConfirmRows] = useState([])
     const [sPRows, setSPRows] = useState([])
+    const [subPlanRows, setSubPlanRows] = useState([])
     const [downloadImages, setDownloadImages] = useState([])
     const history = useHistory()
 
@@ -62,6 +63,12 @@ const Welcome = () => {
         // console.log('check high res', downloads)
         if (downloads.length > 0) {
             setDownloadImages(downloads)
+        }
+
+        const { spOrders } = await subPlanOrder({ email: user.f_email })
+        console.log('check spOrder', spOrders)
+        if (spOrders.length > 0) {
+            setSubPlanRows(spOrders)
         }
     }, [])
 
@@ -146,7 +153,7 @@ const Welcome = () => {
                                                 </StyledTableCell>
                                                 <StyledTableCell align="center" className="font-weight-bold">{moment(row.orderDate).format("DD-MM-YYYY")}</StyledTableCell>
                                                 <StyledTableCell align="center" className="font-weight-bold">{row.totalAmount}</StyledTableCell>
-                                                <StyledTableCell align="center" className="font-weight-bold"> <i class="fa fa-search" title="Order Details" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i> </StyledTableCell>
+                                                <StyledTableCell align="center" className="font-weight-bold"> <i className="fa fa-search" title="Order Details" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i> </StyledTableCell>
                                             </StyledTableRow>
                                         ))}
                                     </TableBody>
@@ -181,9 +188,49 @@ const Welcome = () => {
                                                 <StyledTableCell align="center" className="font-weight-bold">{Number(row.totalAmount).toFixed(0)}</StyledTableCell>
                                                 <StyledTableCell align="center" className="font-weight-bold">{row.paymentStat === 'Paid' ? 'Recieved' : 'Pending'}</StyledTableCell>
                                                 <StyledTableCell align="center" className="font-weight-bold">
-                                                    <i class="fa fa-search" title="Invoice Performa" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i> {' '}
-                                                    <i class="fa fa-download" title="Download" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i>{' '}
-                                                    <i class="fa fa-info-circle" title="Invoice Detail" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i>
+                                                    <i className="fa fa-search" title="Invoice Performa" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i> {' '}
+                                                    <i className="fa fa-download" title="Download" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i>{' '}
+                                                    <i className="fa fa-info-circle" title="Invoice Detail" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i>
+                                                </StyledTableCell>
+                                            </StyledTableRow>
+                                        ))}
+                                    </TableBody>
+                                </Table>
+                            </TableContainer>
+                        </div>
+                    </Col>}
+
+                    {subPlanRows.length > 0 && <Col md="10" sm={12} xs={12} >
+                        <div style={{ color: "black", padding: "17px", background: "#f7f7f7", border: "1px solid #eee", marginTop: "0px", marginBottom: "20px" }}>
+                            <h4>SUBSCRIPTION PLAN ORDERS</h4>
+                            <TableContainer component={Paper} className="table-responsive">
+                                <Table sx={{ minWidth: 700 }} aria-label="customized table">
+                                    <TableHead >
+                                        <TableRow >
+                                            <StyledTableCell align="center" className="bg-dark font-weight-bold" >Invoice ID</StyledTableCell>
+                                            <StyledTableCell align="center" className="bg-dark font-weight-bold" >Order ID</StyledTableCell>
+                                            <StyledTableCell align="center" className="bg-dark font-weight-bold">Order Date</StyledTableCell>
+                                            <StyledTableCell align="center" className="bg-dark font-weight-bold">Total Amount</StyledTableCell>
+                                            <StyledTableCell align="center" className="bg-dark font-weight-bold">Order Details</StyledTableCell>
+                                            <StyledTableCell align="center" className="bg-dark font-weight-bold">Payment Status</StyledTableCell>
+                                            <StyledTableCell align="center" className="bg-dark font-weight-bold">Download</StyledTableCell>
+                                        </TableRow>
+                                    </TableHead>
+                                    <TableBody>
+                                        {subPlanRows.map((row) => (
+                                            <StyledTableRow key={row.orderId}>
+                                                <StyledTableCell align="center" className="font-weight-bold">{row.f_invoiceID}</StyledTableCell>
+                                                <StyledTableCell align="center" className="font-weight-bold">
+                                                    {row.T_orderid}
+                                                </StyledTableCell>
+                                                <StyledTableCell align="center" className="font-weight-bold">{moment(row.T_orderdate).format("DD-MM-YYYY")}</StyledTableCell>
+                                                <StyledTableCell align="center" className="font-weight-bold">{Number(row.f_orderAmt).toFixed(0)}</StyledTableCell>
+                                                <StyledTableCell align="center" className="font-weight-bold">
+                                                <i className="fa fa-search" title="Invoice Performa" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i> 
+                                                </StyledTableCell>
+                                                <StyledTableCell align="center" className="font-weight-bold">Confirm</StyledTableCell>
+                                                <StyledTableCell align="center" className="font-weight-bold">
+                                                    <i className="fa fa-download" title="Download" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i>{' '}
                                                 </StyledTableCell>
                                             </StyledTableRow>
                                         ))}
@@ -217,7 +264,7 @@ const Welcome = () => {
                                                 <StyledTableCell align="center" className="font-weight-bold">{moment(row.orderDate).format("DD-MM-YYYY")}</StyledTableCell>
                                                 <StyledTableCell align="center" className="font-weight-bold">{Number(row.totalAmount).toFixed(0)}</StyledTableCell>
                                                 <StyledTableCell align="center" className="font-weight-bold">
-                                                    <i class="fa fa-search" title="Invoice Details" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i>
+                                                    <i className="fa fa-search" title="Invoice Details" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i>
                                                 </StyledTableCell>
                                                 <StyledTableCell align="center" className="font-weight-bold"> Confirm </StyledTableCell>
                                                 <StyledTableCell align="center" className="font-weight-bold">
@@ -251,7 +298,7 @@ const Welcome = () => {
                                                 <StyledTableCell align="center" className="font-weight-bold">{moment(row.download_date).format("DD-MM-YYYY")}</StyledTableCell>
                                                 <StyledTableCell align="center" className="font-weight-bold">{row.Client_name}</StyledTableCell>
                                                 <StyledTableCell align="center" className="font-weight-bold">
-                                                    <i class="fa fa-download" title="Download" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i>{' '}
+                                                    <i className="fa fa-download" title="Download" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i>{' '}
                                                 </StyledTableCell>
                                             </StyledTableRow>
                                         ))}

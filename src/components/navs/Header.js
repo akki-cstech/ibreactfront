@@ -9,7 +9,7 @@ import { useHistory } from "react-router-dom"
 import styles from '../../CSS/Header.module.css'
 import { Link } from 'react-router-dom';
 import sStyle from '../../CSS/Searchbar.module.css'
-import { Grid, Button } from '@material-ui/core';
+import { Grid, Button, Badge } from '@material-ui/core';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -343,14 +343,14 @@ const Header = () => {
                     <Grid className={styles.leftPane} item sm={4} lg={4} md={4} xs={6}>
                         <div className={styles.navbar}>
                             <Link className={styles.pricing} to=''>Pricing</Link>
-                            {/* <span>
-                                <Badge badgeContent={104} className={styles.badge}>
+                            {loggedUser && <span className="mt-1">
+                                {/* <Badge badgeContent={104} className={styles.badge}> */}
                                     <i className={`${styles.pricing} fas fa-heart`}></i>
-                                </Badge>
-                                <Badge badgeContent={4} className={styles.badge}>
+                                {/* </Badge> */}
+                                {/* <Badge badgeContent={4} className={styles.badge}> */}
                                     <i className={`${styles.pricing} fas fa-shopping-cart`}></i>
-                                </Badge>
-                            </span> */}
+                                {/* </Badge> */}
+                            </span>}
 
                             <div>
                                 <ul>

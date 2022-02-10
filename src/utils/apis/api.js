@@ -93,3 +93,12 @@ export const highResImage = async email => {
         return error.response.data
     }
 }
+
+export const subPlanOrder = async email => {
+    try{
+        const res = await axios.post("/subPlanOrder", email)
+        return res.data
+    }catch(error){
+        return error.response.data
+    }
+}
