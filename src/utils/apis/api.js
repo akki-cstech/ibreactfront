@@ -66,3 +66,12 @@ export const pendingOrder = async email => {
         return error.response.data
     }
 }
+
+export const confirmOrder = async email => {
+    try{
+        const res = await axios.post("/confirmOrder", email)
+        return res.data
+    }catch(error){
+        return error.response.data
+    }
+}

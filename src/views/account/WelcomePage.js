@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 import { Container, Nav, Row, Col, Navbar, DropdownButton, Dropdown, ButtonGroup } from 'react-bootstrap'
 import Header from '../../components/navs/Header'
 import Footer from '../../components/navs/Footer'
-import { pendingOrder } from '../../utils/apis/api'
+import { pendingOrder, confirmOrder } from '../../utils/apis/api'
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -16,10 +16,15 @@ import moment from 'moment'
 
 const Welcome = () => {
     const [pendingRows, setPendingRows] = useState([])
+    const [confirmRows, setConfirmRows] = useState([])
     const history = useHistory()
 
     function createPendingOrderData(orderId, orderDate, totalAmount) {
         return { orderId, orderDate, totalAmount };
+    }
+
+    function createConfirmOrderData(invoiceId, orderId, orderDate, totalAmount, paymentStat) {
+        return { invoiceId, orderId, orderDate, totalAmount, paymentStat };
     }
 
     useEffect(async () => {
@@ -31,9 +36,14 @@ const Welcome = () => {
 
         const res = await pendingOrder({ email: user.f_email })
         const { orders, message } = res
-        console.log('check res', message, orders)
+        // console.log('check res', message, orders)
         if (orders.length > 0) {
             setPendingRows(orders.map(order => createPendingOrderData(order.T_orderid, order.T_orderdate, order.f_orderAmt)))
+        }
+
+        const res2 = await confirmOrder({ email: user.f_email })
+        if (res2.orders.length > 0) {
+            setConfirmRows(res2.orders.map(order => createConfirmOrderData(order.t_invoiceid, order.T_orderid, order.T_orderdate, order.f_orderAmt, order.t_paymentstatus)))
         }
     }, [])
 
@@ -43,17 +53,23 @@ const Welcome = () => {
         [`&.${tableCellClasses.head}`]: {
             backgroundColor: theme.palette.common.black,
             color: theme.palette.common.white,
+            lineHeight: "10px",
+            fontWeight: 500
         },
         [`&.${tableCellClasses.body}`]: {
             fontSize: 14,
+            color: theme.palette.common.black,
         },
     }));
 
     const StyledTableRow = styled(TableRow)(({ theme }) => ({
-        '&:nth-of-type(odd)': {
-            backgroundColor: theme.palette.action.hover,
-        },
+        // '&:nth-of-type(odd)': {
+        //     backgroundColor: theme.palette.action.hover,
+        // },
         // hide last border
+        'td': {
+            backgroundColor: "#f7f7f7"
+        },
         '&:last-child td, &:last-child th': {
             border: 0,
         },
@@ -98,23 +114,61 @@ const Welcome = () => {
                             <h4>PENDING ORDERS</h4>
                             <TableContainer component={Paper} className="table-responsive">
                                 <Table sx={{ minWidth: 700 }} aria-label="customized table">
-                                    <TableHead>
-                                        <TableRow>
-                                            <StyledTableCell align="center">Order ID</StyledTableCell>
-                                            <StyledTableCell align="center">Order Date</StyledTableCell>
-                                            <StyledTableCell align="center">Total Amount</StyledTableCell>
-                                            <StyledTableCell align="center">Order Details</StyledTableCell>
+                                    <TableHead >
+                                        <TableRow >
+                                            <StyledTableCell align="center" className="bg-dark font-weight-bold" >Order ID</StyledTableCell>
+                                            <StyledTableCell align="center" className="bg-dark font-weight-bold">Order Date</StyledTableCell>
+                                            <StyledTableCell align="center" className="bg-dark font-weight-bold">Total Amount</StyledTableCell>
+                                            <StyledTableCell align="center" className="bg-dark font-weight-bold">Order Details</StyledTableCell>
                                         </TableRow>
                                     </TableHead>
                                     <TableBody>
                                         {pendingRows.map((row) => (
                                             <StyledTableRow key={row.orderId}>
-                                                <StyledTableCell component="th" scope="row" align="center">
+                                                <StyledTableCell align="center" className="font-weight-bold">
                                                     {row.orderId}
                                                 </StyledTableCell>
-                                                <StyledTableCell align="center" >{moment(row.orderDate).format("DD-MM-YYYY")}</StyledTableCell>
-                                                <StyledTableCell align="center" >{row.totalAmount}</StyledTableCell>
-                                                <StyledTableCell align="center" > <i class="fa fa-search" title="Order Details" style={{cursor: "pointer"}} ></i> </StyledTableCell>
+                                                <StyledTableCell align="center" className="font-weight-bold">{moment(row.orderDate).format("DD-MM-YYYY")}</StyledTableCell>
+                                                <StyledTableCell align="center" className="font-weight-bold">{row.totalAmount}</StyledTableCell>
+                                                <StyledTableCell align="center" className="font-weight-bold"> <i class="fa fa-search" title="Order Details" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i> </StyledTableCell>
+                                            </StyledTableRow>
+                                        ))}
+                                    </TableBody>
+                                </Table>
+                            </TableContainer>
+                        </div>
+                    </Col>}
+
+                    {confirmRows.length > 0 && <Col md="10" sm={12} xs={12} >
+                        <div style={{ color: "black", padding: "17px", background: "#f7f7f7", border: "1px solid #eee", marginTop: "0px", marginBottom: "20px" }}>
+                            <h4>CONFIRM ORDERS</h4>
+                            <TableContainer component={Paper} className="table-responsive">
+                                <Table sx={{ minWidth: 700 }} aria-label="customized table">
+                                    <TableHead >
+                                        <TableRow >
+                                            <StyledTableCell align="center" className="bg-dark font-weight-bold" >Invoice ID</StyledTableCell>
+                                            <StyledTableCell align="center" className="bg-dark font-weight-bold" >Order ID</StyledTableCell>
+                                            <StyledTableCell align="center" className="bg-dark font-weight-bold">Order Date</StyledTableCell>
+                                            <StyledTableCell align="center" className="bg-dark font-weight-bold">Total Amount</StyledTableCell>
+                                            <StyledTableCell align="center" className="bg-dark font-weight-bold">Payment Status</StyledTableCell>
+                                            <StyledTableCell align="center" className="bg-dark font-weight-bold">Action</StyledTableCell>
+                                        </TableRow>
+                                    </TableHead>
+                                    <TableBody>
+                                        {confirmRows.map((row) => (
+                                            <StyledTableRow key={row.orderId}>
+                                                <StyledTableCell align="center" className="font-weight-bold">{row.invoiceId}</StyledTableCell>
+                                                <StyledTableCell align="center" className="font-weight-bold">
+                                                    {row.orderId}
+                                                </StyledTableCell>
+                                                <StyledTableCell align="center" className="font-weight-bold">{moment(row.orderDate).format("DD-MM-YYYY")}</StyledTableCell>
+                                                <StyledTableCell align="center" className="font-weight-bold">{Number(row.totalAmount).toFixed(0)}</StyledTableCell>
+                                                <StyledTableCell align="center" className="font-weight-bold">{row.paymentStat === 'Paid' ? 'Recieved' : 'Pending'}</StyledTableCell>
+                                                <StyledTableCell align="center" className="font-weight-bold"> 
+                                                <i class="fa fa-search" title="Invoice Performa" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i> {' '}
+                                                <i class="fa fa-download" title="Download" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i>{' '} 
+                                                <i class="fa fa-info-circle" title="Invoice Detail" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i> 
+                                                </StyledTableCell>
                                             </StyledTableRow>
                                         ))}
                                     </TableBody>
