@@ -75,3 +75,12 @@ export const confirmOrder = async email => {
         return error.response.data
     }
 }
+
+export const subscriptionPlan = async email => {
+    try{
+        const res = await axios.post("/subscriptionPlan", email)
+        return res.data
+    }catch(error){
+        return error.response.data
+    }
+}

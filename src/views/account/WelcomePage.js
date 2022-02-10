@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 import { Container, Nav, Row, Col, Navbar, DropdownButton, Dropdown, ButtonGroup } from 'react-bootstrap'
 import Header from '../../components/navs/Header'
 import Footer from '../../components/navs/Footer'
-import { pendingOrder, confirmOrder } from '../../utils/apis/api'
+import { pendingOrder, confirmOrder, subscriptionPlan } from '../../utils/apis/api'
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -17,6 +17,7 @@ import moment from 'moment'
 const Welcome = () => {
     const [pendingRows, setPendingRows] = useState([])
     const [confirmRows, setConfirmRows] = useState([])
+    const [sPRows, setSPRows] = useState([])
     const history = useHistory()
 
     function createPendingOrderData(orderId, orderDate, totalAmount) {
@@ -24,6 +25,10 @@ const Welcome = () => {
     }
 
     function createConfirmOrderData(invoiceId, orderId, orderDate, totalAmount, paymentStat) {
+        return { invoiceId, orderId, orderDate, totalAmount, paymentStat };
+    }
+
+    function createSubPlanOrderData(invoiceId, orderId, orderDate, totalAmount, paymentStat) {
         return { invoiceId, orderId, orderDate, totalAmount, paymentStat };
     }
 
@@ -44,6 +49,13 @@ const Welcome = () => {
         const res2 = await confirmOrder({ email: user.f_email })
         if (res2.orders.length > 0) {
             setConfirmRows(res2.orders.map(order => createConfirmOrderData(order.t_invoiceid, order.T_orderid, order.T_orderdate, order.f_orderAmt, order.t_paymentstatus)))
+        }
+
+        const res3 = await subscriptionPlan({ email: user.f_email })
+        const { subPlanOrders } = res3
+        console.log('check sub plain', subPlanOrders)
+        if (subPlanOrders.length > 0) {
+            setSPRows(subPlanOrders.map(order => createSubPlanOrderData(order.t_invoiceid, order.T_orderid, order.T_orderdate, order.f_orderAmt, order.t_paymentstatus)))
         }
     }, [])
 
@@ -164,10 +176,48 @@ const Welcome = () => {
                                                 <StyledTableCell align="center" className="font-weight-bold">{moment(row.orderDate).format("DD-MM-YYYY")}</StyledTableCell>
                                                 <StyledTableCell align="center" className="font-weight-bold">{Number(row.totalAmount).toFixed(0)}</StyledTableCell>
                                                 <StyledTableCell align="center" className="font-weight-bold">{row.paymentStat === 'Paid' ? 'Recieved' : 'Pending'}</StyledTableCell>
+                                                <StyledTableCell align="center" className="font-weight-bold">
+                                                    <i class="fa fa-search" title="Invoice Performa" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i> {' '}
+                                                    <i class="fa fa-download" title="Download" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i>{' '}
+                                                    <i class="fa fa-info-circle" title="Invoice Detail" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i>
+                                                </StyledTableCell>
+                                            </StyledTableRow>
+                                        ))}
+                                    </TableBody>
+                                </Table>
+                            </TableContainer>
+                        </div>
+                    </Col>}
+
+                    {sPRows.length > 0 && <Col md="10" sm={12} xs={12} >
+                        <div style={{ color: "black", padding: "17px", background: "#f7f7f7", border: "1px solid #eee", marginTop: "0px", marginBottom: "20px" }}>
+                            <h4>SUBSCRIPTION PLAN ORDERS</h4>
+                            <TableContainer component={Paper} className="table-responsive">
+                                <Table sx={{ minWidth: 700 }} aria-label="customized table">
+                                    <TableHead >
+                                        <TableRow >
+                                            <StyledTableCell align="center" className="bg-dark font-weight-bold" >Invoice ID</StyledTableCell>
+                                            <StyledTableCell align="center" className="bg-dark font-weight-bold" >Order ID</StyledTableCell>
+                                            <StyledTableCell align="center" className="bg-dark font-weight-bold">Order Date</StyledTableCell>
+                                            <StyledTableCell align="center" className="bg-dark font-weight-bold">Total Amount</StyledTableCell>
+                                            <StyledTableCell align="center" className="bg-dark font-weight-bold">Order Details</StyledTableCell>
+                                            <StyledTableCell align="center" className="bg-dark font-weight-bold">Payment Status</StyledTableCell>
+                                            <StyledTableCell align="center" className="bg-dark font-weight-bold">Download</StyledTableCell>
+                                        </TableRow>
+                                    </TableHead>
+                                    <TableBody>
+                                        {sPRows.map((row) => (
+                                            <StyledTableRow key={row.orderId}>
+                                                <StyledTableCell align="center" className="font-weight-bold">{row.invoiceId}</StyledTableCell>
+                                                <StyledTableCell align="center" className="font-weight-bold">{row.orderId}</StyledTableCell>
+                                                <StyledTableCell align="center" className="font-weight-bold">{moment(row.orderDate).format("DD-MM-YYYY")}</StyledTableCell>
+                                                <StyledTableCell align="center" className="font-weight-bold">{Number(row.totalAmount).toFixed(0)}</StyledTableCell>
                                                 <StyledTableCell align="center" className="font-weight-bold"> 
-                                                <i class="fa fa-search" title="Invoice Performa" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i> {' '}
-                                                <i class="fa fa-download" title="Download" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i>{' '} 
-                                                <i class="fa fa-info-circle" title="Invoice Detail" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i> 
+                                                <i class="fa fa-search" title="Invoice Details" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i> 
+                                                </StyledTableCell>
+                                                <StyledTableCell align="center" className="font-weight-bold"> Confirm </StyledTableCell>
+                                                <StyledTableCell align="center" className="font-weight-bold">
+                                                   <span className="text-info"> View Details </span>
                                                 </StyledTableCell>
                                             </StyledTableRow>
                                         ))}
