@@ -129,8 +129,8 @@ const Invoice = () => {
                 </Col>
                 <Col lg={12} md={12} sm={12} xs={12} className="border-top border-dark">
                     <Row>
-                        <Col>
-                            <div className="mt-2 ml-0">
+                        <Col className="border-right border-dark">
+                            <div className="mt-1 ml-0">
                                 <span> <strong>Party's Name:</strong>
                                     {OIDetails && OIDetails.invoices.Companyname}
                                 </span>
@@ -241,7 +241,7 @@ const Invoice = () => {
                         <Col>
                             <Row>
                                 <Col xs={8} lg={8} md={8} sm={8} > <span className="font-weight-bold" style={{ fontSize: "16px" }}> Total Amount Payable inclusive of GST (SGST / UGST / CGST / IGST) </span></Col>
-                                <Col className="text-center" lg={{ span: 2, offset: 2 }} md={{ span: 2, offset: 2 }} sm={{ span: 2, offset: 2 }} xs={{ span: 2, offset: 2 }}> {Math.round(tAmount + (tAmount / 9) * 2)} </Col>
+                                <Col className="text-center" lg={{ span: 2, offset: 2 }} md={{ span: 2, offset: 2 }} sm={{ span: 2, offset: 2 }} xs={{ span: 2, offset: 2 }}> {tAmount + (Math.round(tAmount / 9) * 2)} </Col>
                             </Row>
                         </Col>
                     </Row>
@@ -253,7 +253,7 @@ const Invoice = () => {
                 </Col>
                 <Col lg={12} md={12} sm={12} xs={12} className="border-top border-dark">
                     <Row>
-                        <Col lg={8} md={8} sm={8} xs={8}>
+                        <Col lg={8} md={8} sm={8} xs={8} className="border-right border-dark">
                             <div style={{ fontSize: "12px" }}>
                                 <h6 style={{ position: "relative", left: "-10px" }}>Terms &amp; Conditions:</h6>
                                 <ol className='pl-2'>
