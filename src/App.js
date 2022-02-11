@@ -8,7 +8,7 @@ import Footer from "./components/navs/Footer"
 import { Box } from '@mui/material';
 import LoadingBar from 'react-top-loading-bar'
 import AccountSection from './views/account/index'
-
+import OrderProcess from './views/orderProcess/index';
 
 const App = () => {
   const [progress, setProgress] = useState(0)
@@ -47,6 +47,7 @@ const App = () => {
       <button onClick={() => setProgress(progress + 20)}>Add 20%</button> */}
       {/* <button onClick={() => setProgress(100)}>Complete</button> */}
       <AccountSection />
+      <OrderProcess />
 
       <Switch>
         <Route exact path="/"

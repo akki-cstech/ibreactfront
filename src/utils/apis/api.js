@@ -102,3 +102,21 @@ export const subPlanOrder = async email => {
         return error.response.data
     }
 }
+
+export const oIDetailsList = async oId => {
+    try{
+        const res = await axios.post("/oIDetailsList", oId)
+        return res.data
+    }catch(error){
+        return error.response.data
+    }
+}
+
+export const confirmListImage = async oId => {
+    try{
+        const res = await axios.post("/confirmListImage", oId)
+        return res.data
+    }catch(error){
+        return error.response.data
+    }
+}

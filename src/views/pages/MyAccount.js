@@ -10,8 +10,10 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import moment from 'moment'
+import { Link, useHistory } from 'react-router-dom'
 
 const MyAccount = ({ user }) => {
+    const history = useHistory()
     const [pendingRows, setPendingRows] = useState([])
     const [confirmRows, setConfirmRows] = useState([])
     const [sPRows, setSPRows] = useState([])
@@ -56,7 +58,7 @@ const MyAccount = ({ user }) => {
         }
 
         const { spOrders } = await subPlanOrder({ email: user.f_email })
-        console.log('check spOrder', spOrders)
+        // console.log('check spOrder', spOrders)
         if (spOrders.length > 0) {
             setSubPlanRows(spOrders)
         }
@@ -146,7 +148,7 @@ const MyAccount = ({ user }) => {
                                         <StyledTableCell align="center" className="font-weight-bold">{Number(row.totalAmount).toFixed(0)}</StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold">{row.paymentStat === 'Paid' ? 'Recieved' : 'Pending'}</StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold">
-                                            <i className="fa fa-search" title="Invoice Performa" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i> {' '}
+                                            <i className="fa fa-search" title="Invoice Performa" onClick={() => history.push(`/invoice/${btoa(row.orderId)}`)} style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i> {' '}
                                             <i className="fa fa-download" title="Download" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i>{' '}
                                             <i className="fa fa-info-circle" title="Invoice Detail" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i>
                                         </StyledTableCell>
