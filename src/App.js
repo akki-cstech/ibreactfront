@@ -9,6 +9,7 @@ import { Box } from '@mui/material';
 import LoadingBar from 'react-top-loading-bar'
 import AccountSection from './views/account/index'
 import OrderProcess from './views/orderProcess/index';
+import ManageProfile from './views/manageUser';
 
 const App = () => {
   const [progress, setProgress] = useState(0)
@@ -48,6 +49,7 @@ const App = () => {
       {/* <button onClick={() => setProgress(100)}>Complete</button> */}
       <AccountSection />
       <OrderProcess />
+      <ManageProfile />
 
       <Switch>
         <Route exact path="/"
