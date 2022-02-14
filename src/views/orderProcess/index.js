@@ -27,6 +27,9 @@ const OrderProcess = () => {
                 <Route path="/ivsuborderinvoice/:id" >
                     <Invoice type="ivsubscriptionplan" />
                 </Route>
+                <Route path="/invoicedetail/:id" >
+                    <Invoice type="invoice" />
+                </Route>
             </Switch>
         </>
     )

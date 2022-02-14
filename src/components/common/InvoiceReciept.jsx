@@ -17,7 +17,7 @@ const Invoice = ({ type }) => {
     useEffect(() => {
         const callApi = async () => {
             const { ivDetails } = await oIDetailsList({ oId: orderID })
-            console.log('check invoice details', ivDetails)
+            // console.log('check invoice details', ivDetails)
             ivDetails && setOIDetails(...ivDetails)
 
             if (type === "confirm") {
@@ -90,16 +90,16 @@ const Invoice = ({ type }) => {
                         </Col>
                         <Col>
                             <Row className="border-bottom border-dark">
-                                <Col xs={7} md={7} lg={7} sm={7} className="p-1 border-right border-dark">
+                                <Col xs={7} md={7} lg={7} sm={7} className="p-1">
                                     <span> <strong> Date:</strong> &nbsp;
                                         {OIDetails && moment(OIDetails.T_orderdate).format('LLL')}
                                     </span>
                                 </Col>
-                                <Col xs={5} md={5} lg={5} sm={5} className="p-1">
+                                {type === "invoice" && <Col xs={5} md={5} lg={5} sm={5} className="p-1 border-left border-dark">
                                     <span> <strong>Invoice No.:</strong>
                                         {OIDetails && OIDetails.invoices.length > 0 && OIDetails.invoices[0].invoice_id}
                                     </span>
-                                </Col>
+                                </Col>}
                             </Row>
                             <Row className="border-bottom border-dark">
                                 <Col xs={7} md={7} lg={7} sm={7} className="p-1 border-right border-dark">

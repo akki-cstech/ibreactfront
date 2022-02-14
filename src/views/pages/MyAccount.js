@@ -28,8 +28,8 @@ const MyAccount = ({ user }) => {
         return { invoiceId, orderId, orderDate, totalAmount, paymentStat };
     }
 
-    function createSubPlanOrderData(invoiceId, orderId, orderDate, totalAmount, paymentStat) {
-        return { invoiceId, orderId, orderDate, totalAmount, paymentStat };
+    function createSubPlanOrderData(invoiceId, orderId, orderDate, totalAmount, paymentStat, stat, remainingImg) {
+        return { invoiceId, orderId, orderDate, totalAmount, paymentStat, stat, remainingImg };
     }
 
     useEffect(async () => {
@@ -48,7 +48,7 @@ const MyAccount = ({ user }) => {
         const res3 = await subscriptionPlan({ email: user.f_email })
         const { subPlanOrders } = res3
         if (subPlanOrders.length > 0) {
-            setSPRows(subPlanOrders.map(order => createSubPlanOrderData(order.invoices.length !== 0 && order.invoices[0].invoice_id, order.T_orderid, order.T_orderdate, order.f_orderAmt, order.t_paymentstatus)))
+            setSPRows(subPlanOrders.map(order => createSubPlanOrderData(order.invoices.length !== 0 && order.invoices[0].invoice_id, order.T_orderid, order.T_orderdate, order.f_orderAmt, order.t_paymentstatus, order.T_status, order.imgDetail.length !== 0 && order.imgDetail[0].f_RemainingImage)))
         }
 
         const { downloads } = await highResImage({ email: user.f_email })
@@ -113,7 +113,9 @@ const MyAccount = ({ user }) => {
                                         </StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold">{moment(row.orderDate).format("DD-MM-YYYY")}</StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold">{row.totalAmount}</StyledTableCell>
-                                        <StyledTableCell align="center" className="font-weight-bold"> <i className="fa fa-search" title="Order Details" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i> </StyledTableCell>
+                                        <StyledTableCell align="center" className="font-weight-bold"> 
+                                        <a href={`${window.location.origin}/invoice/${btoa(row.orderId)}`} target="_blank"><i className="fa fa-search" title="Order Details" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i> </a>
+                                        </StyledTableCell>
                                     </StyledTableRow>
                                 ))}
                             </TableBody>
@@ -148,9 +150,9 @@ const MyAccount = ({ user }) => {
                                         <StyledTableCell align="center" className="font-weight-bold">{Number(row.totalAmount).toFixed(0)}</StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold">{row.paymentStat === 'Paid' ? 'Recieved' : 'Pending'}</StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold">
-                                            <i className="fa fa-search" title="Invoice Performa" onClick={() => history.push(`/invoice/${btoa(row.orderId)}`)} style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i> {' '}
+                                            <a href={`${window.location.origin}/invoice/${btoa(row.orderId)}`} target="_blank"><i className="fa fa-search" title="Invoice Performa" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i></a> {' '}
                                             <i className="fa fa-download" title="Download" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i>{' '}
-                                            <i className="fa fa-info-circle" title="Invoice Detail" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i>
+                                            <a href={`${window.location.origin}/invoicedetail/${btoa(row.orderId)}`} target="_blank"><i className="fa fa-info-circle" title="Invoice Detail" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i></a>
                                         </StyledTableCell>
                                     </StyledTableRow>
                                 ))}
@@ -186,7 +188,7 @@ const MyAccount = ({ user }) => {
                                         <StyledTableCell align="center" className="font-weight-bold">{moment(row.T_orderdate).format("DD-MM-YYYY")}</StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold">{Number(row.f_orderAmt).toFixed(0)}</StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold">
-                                            <i className="fa fa-search" title="Invoice Performa" onClick={() => history.push(`/suborderinvoice/${btoa(row.T_orderid)}`)} style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i>
+                                            <a href={`${window.location.origin}/suborderinvoice/${btoa(row.T_orderid)}`} target="_blank"><i className="fa fa-search" title="Invoice Performa" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i></a>
                                         </StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold">Confirm</StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold">
@@ -214,9 +216,11 @@ const MyAccount = ({ user }) => {
                                     <StyledTableCell align="center" className="bg-dark font-weight-bold">Order Details</StyledTableCell>
                                     <StyledTableCell align="center" className="bg-dark font-weight-bold">Payment Status</StyledTableCell>
                                     <StyledTableCell align="center" className="bg-dark font-weight-bold">Download</StyledTableCell>
+                                    <StyledTableCell align="center" className="bg-dark font-weight-bold">Remaining Images/Videos</StyledTableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
+                                {console.log('check roed', sPRows)}
                                 {sPRows.map((row) => (
                                     <StyledTableRow key={row.orderId}>
                                         <StyledTableCell align="center" className="font-weight-bold">{row.invoiceId}</StyledTableCell>
@@ -224,11 +228,16 @@ const MyAccount = ({ user }) => {
                                         <StyledTableCell align="center" className="font-weight-bold">{moment(row.orderDate).format("DD-MM-YYYY")}</StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold">{Number(row.totalAmount).toFixed(0)}</StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold">
-                                            <i className="fa fa-search" title="Invoice Details" onClick={() => history.push(`/ivsuborderinvoice/${btoa(row.orderId)}`)} style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i>
+                                            <a href={`${window.location.origin}/ivsuborderinvoice/${btoa(row.orderId)}`} target="_blank"><i className="fa fa-search" title="Invoice Details" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i></a>
                                         </StyledTableCell>
-                                        <StyledTableCell align="center" className="font-weight-bold"> Confirm </StyledTableCell>
+                                        <StyledTableCell align="center" className="font-weight-bold">
+                                            {row.stat === "C" && row.paymentStat === "Paid" ? "Recieved" : "Pending"}
+                                        </StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold">
                                             <span className="text-info"> View Details </span>
+                                        </StyledTableCell>
+                                        <StyledTableCell align="center">
+                                            {row.remainingImg}
                                         </StyledTableCell>
                                     </StyledTableRow>
                                 ))}
