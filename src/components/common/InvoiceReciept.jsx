@@ -20,7 +20,7 @@ const Invoice = ({ type }) => {
             // console.log('check invoice details', ivDetails)
             ivDetails && setOIDetails(...ivDetails)
 
-            if (type === "confirm") {
+            if (type === "confirm" || type === "invoice") {
                 const { iList } = await confirmListImage({ oId: orderID })
                 // console.log('check img list', iList)
                 if (iList) {
@@ -172,7 +172,7 @@ const Invoice = ({ type }) => {
                     </Row>
                 </Col>
                 <Col className="border-top border-dark p-2">
-                    {type === "confirm" && <Confirm iData={iData} />}
+                    {type === "confirm" || type === "invoice" && <Confirm iData={iData} />}
                     {type === "subscriptionplan" && <SubPlan iData={iData} amount={tAmount} />}
                     {type === "ivsubscriptionplan" && iData.length > 0 && <IVSubPlan iData={iData} amount={tAmount} />}
                 </Col>
