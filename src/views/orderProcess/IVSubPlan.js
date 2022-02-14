@@ -1,10 +1,19 @@
 import React from 'react'
 import { Table } from 'react-bootstrap'
 
-const SubPlan = ({ iData, amount }) => {
+const IVSubPlan = ({ iData, amount }) => {
+    // console.log('check sub idata', iData)
     const planOrder = { ...iData[0] }
+    const imgPath = () => {
+        if(planOrder.f_plantypenew.startsWith("Large")){
+            return '/Images/SubPlanName/CheckoutLARGE.png'
+        }
+
+        return '/Images/SubPlanName/CheckoutSMALL.png'
+    }
+
     return (
-        <Table striped bordered hover responsive>
+        <Table striped bordered responsive>
             <thead>
                 <tr>
                     <th className="text-center">#</th>
@@ -17,7 +26,7 @@ const SubPlan = ({ iData, amount }) => {
             <tbody>
                 <tr>
                     <td className="text-center">
-                        <img src={`/Images/SubPlanName/${planOrder.f_Plantype}.png`} alt={planOrder.f_orderid} style={{ width: "80px", height: "50px" }} />
+                        <img src={imgPath()} alt={planOrder.f_orderid} style={{ width: "100px", height: "70px" }} />
                     </td>
                     <td className="text-center"> {planOrder.f_size} </td>
                     <td className="text-center">{planOrder.f_totimg}</td>
@@ -29,4 +38,4 @@ const SubPlan = ({ iData, amount }) => {
     )
 }
 
-export default SubPlan
+export default IVSubPlan

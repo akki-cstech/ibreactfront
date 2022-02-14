@@ -129,3 +129,12 @@ export const subPlanInfo = async oId => {
         return error.response.data
     }
 }
+
+export const ivSubPlanInfo = async oId => {
+    try{
+        const res = await axios.post("/ivSubPlanInfo", oId)
+        return res.data
+    }catch(error){
+        return error.response.data
+    }
+}

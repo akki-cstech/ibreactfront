@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Container, Row, Col, Table } from 'react-bootstrap'
-import { oIDetailsList, confirmListImage, subPlanInfo } from '../../utils/apis/api'
+import { oIDetailsList, confirmListImage, subPlanInfo, ivSubPlanInfo } from '../../utils/apis/api'
 import moment, { relativeTimeRounding } from 'moment'
 import { fontSize } from '@mui/system'
 import Confirm from '../../views/orderProcess/ConfirmList'
 import SubPlan from '../../views/orderProcess/SubOrderList'
+import IVSubPlan from '../../views/orderProcess/IVSubPlan'
 
 const Invoice = ({ type }) => {
     const orderID = atob(useParams().id)
@@ -16,6 +17,7 @@ const Invoice = ({ type }) => {
     useEffect(() => {
         const callApi = async () => {
             const { ivDetails } = await oIDetailsList({ oId: orderID })
+            console.log('check invoice details', ivDetails)
             ivDetails && setOIDetails(...ivDetails)
 
             if (type === "confirm") {
@@ -34,7 +36,13 @@ const Invoice = ({ type }) => {
             else if (type === "subscriptionplan") {
                 const { iList } = await subPlanInfo({ oId: orderID })
                 if (iList) {
-                    // console.log('i chek', iList)
+                    setTAmount(ivDetails[0].f_orderAmt)
+                    setIData(iList)
+                }
+            }
+            else if (type === "ivsubscriptionplan") {
+                const { iList } = await ivSubPlanInfo({ oId: orderID })
+                if (iList) {
                     setTAmount(ivDetails[0].f_orderAmt)
                     setIData(iList)
                 }
@@ -89,15 +97,13 @@ const Invoice = ({ type }) => {
                                 </Col>
                                 <Col xs={5} md={5} lg={5} sm={5} className="p-1">
                                     <span> <strong>Invoice No.:</strong>
-                                        {OIDetails && OIDetails.invoices.length > 0 && OIDetails.invoices.invoice_id}
+                                        {OIDetails && OIDetails.invoices.length > 0 && OIDetails.invoices[0].invoice_id}
                                     </span>
                                 </Col>
                             </Row>
                             <Row className="border-bottom border-dark">
                                 <Col xs={7} md={7} lg={7} sm={7} className="p-1 border-right border-dark">
-                                    <span> <strong>Order Confirmation No.:</strong>
-                                        {orderID}
-                                    </span>
+                                    <span> <strong>Order Confirmation No.: {orderID}</strong></span>
                                 </Col>
                                 <Col xs={5} md={5} lg={5} sm={5} className="p-1">
                                     <span> <strong>HSN/SAC:</strong> 998439 </span>
@@ -106,7 +112,7 @@ const Invoice = ({ type }) => {
                             <Row className="border-bottom border-dark">
                                 <Col xs={7} md={7} lg={7} sm={7} className="p-1 border-right border-dark">
                                     <span> <strong>Mode of Payment: </strong>
-                                        {OIDetails && OIDetails.invoices.length > 0 && OIDetails.invoices.f_paymode}
+                                        {OIDetails && OIDetails.T_paymode}
                                     </span>
                                 </Col>
                                 <Col xs={5} md={5} lg={5} sm={5} className="p-1">
@@ -115,8 +121,8 @@ const Invoice = ({ type }) => {
                             </Row>
                             <Row className="border-bottom border-dark">
                                 <Col xs={7} md={7} lg={7} sm={7} className="p-1 border-right border-dark">
-                                    <span> <strong>Payment Status:</strong>
-                                        {OIDetails && OIDetails.invoices.length > 0 && OIDetails.invoices.t_paymentstatus}
+                                    <span> <strong>Payment Status:</strong>{' '}
+                                        {OIDetails && OIDetails.t_paymentstatus}
                                     </span>
                                 </Col>
                                 <Col xs={5} md={5} lg={5} sm={5} className="p-1">
@@ -144,12 +150,12 @@ const Invoice = ({ type }) => {
                     <Row>
                         <Col className="border-right border-dark">
                             <div className="mt-1 ml-0">
-                                <span> <strong>Party's Name:</strong>
-                                    {OIDetails && OIDetails.invoices.Companyname}
+                                <span> <strong>Party's Name:</strong>{' '}
+                                    {OIDetails && OIDetails.invoices.length > 0 && OIDetails.invoices[0].Companyname}
                                 </span>
-                                <p>{OIDetails && OIDetails.invoices.address}</p>
-                                <span> <strong>State:</strong>
-                                    {OIDetails && OIDetails.invoices.f_statecrm}
+                                <p>{OIDetails && OIDetails.invoices.length > 0 && OIDetails.invoices[0].address}</p>
+                                <span> <strong>State:</strong>{' '}
+                                    {OIDetails && OIDetails.invoices.length > 0 && OIDetails.invoices[0].f_statecrm}
                                 </span> &nbsp;
                                 <span> <strong>State Code:</strong> </span>
                             </div>
@@ -157,10 +163,10 @@ const Invoice = ({ type }) => {
                         <Col>
                             <div className="m-1">
                                 <strong>Client Name:</strong> &nbsp;
-                                {OIDetails && OIDetails.t_client}
+                                {OIDetails && OIDetails.invoices.length > 0 && OIDetails.invoices[0].f_client}
                                 <br />
                                 <strong>Order By:</strong> &nbsp;
-                                {OIDetails && OIDetails.t_orderedby}
+                                {OIDetails && OIDetails.invoices.length > 0 && OIDetails.invoices[0].orderby}
                             </div>
                         </Col>
                     </Row>
@@ -168,6 +174,7 @@ const Invoice = ({ type }) => {
                 <Col className="border-top border-dark p-2">
                     {type === "confirm" && <Confirm iData={iData} />}
                     {type === "subscriptionplan" && <SubPlan iData={iData} amount={tAmount} />}
+                    {type === "ivsubscriptionplan" && iData.length > 0 && <IVSubPlan iData={iData} amount={tAmount} />}
                 </Col>
                 <Col lg={12} md={12} sm={12} xs={12} className="border-top border-dark">
                     <Row >

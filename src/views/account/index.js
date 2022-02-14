@@ -11,6 +11,7 @@ const AccountSection = () => {
     useEffect(() => {
         const loggedUser = window.localStorage.getItem("loggedUser")
         const usr = JSON.parse(loggedUser)
+        console.log('user logged in', usr)
         setUser(usr)
     }, [])
 
