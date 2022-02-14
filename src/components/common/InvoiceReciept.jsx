@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Container, Row, Col, Table } from 'react-bootstrap'
-import { oIDetailsList, confirmListImage } from '../../utils/apis/api'
+import { oIDetailsList, confirmListImage, subPlanInfo } from '../../utils/apis/api'
 import moment, { relativeTimeRounding } from 'moment'
 import { fontSize } from '@mui/system'
+import Confirm from '../../views/orderProcess/ConfirmList'
+import SubPlan from '../../views/orderProcess/SubOrderList'
 
-const Invoice = () => {
+const Invoice = ({ type }) => {
     const orderID = atob(useParams().id)
     const [OIDetails, setOIDetails] = useState(null)
     const [iData, setIData] = useState([])
@@ -14,18 +16,29 @@ const Invoice = () => {
     useEffect(() => {
         const callApi = async () => {
             const { ivDetails } = await oIDetailsList({ oId: orderID })
-            // console.log('check detail', ivDetails)
-            setOIDetails(...ivDetails)
+            ivDetails && setOIDetails(...ivDetails)
 
-            const { iList } = await confirmListImage({ oId: orderID })
-            // console.log('check img list', iList)
-            let sum = 0
-            for (let x in iList) {
-                sum += iList[x].t_price
+            if (type === "confirm") {
+                const { iList } = await confirmListImage({ oId: orderID })
+                // console.log('check img list', iList)
+                if (iList) {
+                    let sum = 0
+                    for (let x in iList) {
+                        sum += iList[x].t_price
+                    }
+                    // console.log('check sum', sum)
+                    setTAmount(sum)
+                    setIData(iList)
+                }
             }
-            // console.log('check sum', sum)
-            setTAmount(sum)
-            setIData(iList)
+            else if (type === "subscriptionplan") {
+                const { iList } = await subPlanInfo({ oId: orderID })
+                if (iList) {
+                    // console.log('i chek', iList)
+                    setTAmount(ivDetails[0].f_orderAmt)
+                    setIData(iList)
+                }
+            }
         }
         callApi()
     }, [])
@@ -153,30 +166,8 @@ const Invoice = () => {
                     </Row>
                 </Col>
                 <Col className="border-top border-dark p-2">
-                    <Table striped bordered hover responsive>
-                        <thead>
-                            <tr>
-                                <th>Image</th>
-                                <th>Item ID</th>
-                                <th>Image Type</th>
-                                <th>Rights</th>
-                                <th>Dimensions (Pixels)</th>
-                                <th>Amount (Rs.)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                iData.map((image) => <tr>
-                                    <td className="text-center"> <img src={`https://ibcdn.imagesbazaar.com/img280/${image.f_groupid}/${image.f_rank}-${image.t_imageid}.jpg`} alt={image.t_imageid} style={{ width: "120px", height: "80px" }} /> </td>
-                                    <td> {image.t_imageid} </td>
-                                    <td>{image.t_quality}</td>
-                                    <td>Non-Exclusive</td>
-                                    <td> {image.f_mydimension} </td>
-                                    <td> {image.t_price} </td>
-                                </tr>
-                                )}
-                        </tbody>
-                    </Table>
+                    {type === "confirm" && <Confirm iData={iData} />}
+                    {type === "subscriptionplan" && <SubPlan iData={iData} amount={tAmount} />}
                 </Col>
                 <Col lg={12} md={12} sm={12} xs={12} className="border-top border-dark">
                     <Row >
@@ -185,7 +176,7 @@ const Invoice = () => {
                                 <Col lg={{ span: 5, offset: 5 }} md={{ span: 5, offset: 5 }} sm={{ span: 5, offset: 5 }} xs={{ span: 5, offset: 5 }} className="text-right border-right border-dark">
                                     <span> <strong>Total Value (INR)</strong> </span>
                                 </Col>
-                                <Col lg={2} sm={2} md={2} xs={2} className="text-center"> <span> {tAmount} </span></Col>
+                                <Col lg={2} sm={2} md={2} xs={2} className="text-center"> <span> {Number(tAmount).toFixed(0)} </span></Col>
                             </Row>
                         </Col>
                     </Row>
@@ -211,27 +202,12 @@ const Invoice = () => {
                         </Col>
                     </Row>
                 </Col>
-                {/* <Col className="border-top border-dark">
-                    <Row>
-                        <Col>ImagesBazaar is a unit of Mash Audio Visuals Pvt. Ltd</Col>
-                        <Col>
-                            <Row>
-                                <Col lg={{ span: 5, offset: 4 }} className="text-right border-right border-dark">
-                                    <span> <strong>CGST Value @9% (INR)</strong> </span>
-                                </Col>
-                                <Col lg={3} className="text-center" >
-                                    <span> {Math.round(tAmount / 9)} </span>
-                                </Col>
-                            </Row>
-                        </Col>
-                    </Row>
-                </Col> */}
                 <Col lg={12} md={12} sm={12} xs={12} className="border-top border-dark">
                     <Row>
                         <Col>
                             <Row>
                                 <Col xs={6} lg={6} md={6} sm={6} > <span className="font-weight-bold" style={{ fontSize: "16px" }}> Total Amount before GST (SGST / UGST / CGST / IGST) </span></Col>
-                                <Col className="text-center" lg={{ span: 2, offset: 4 }} md={{ span: 2, offset: 4 }} sm={{ span: 2, offset: 4 }} xs={{ span: 2, offset: 4 }}> {tAmount} </Col>
+                                <Col className="text-center" lg={{ span: 2, offset: 4 }} md={{ span: 2, offset: 4 }} sm={{ span: 2, offset: 4 }} xs={{ span: 2, offset: 4 }}> {Number(tAmount).toFixed(0)} </Col>
                             </Row>
                         </Col>
                     </Row>
@@ -241,7 +217,7 @@ const Invoice = () => {
                         <Col>
                             <Row>
                                 <Col xs={8} lg={8} md={8} sm={8} > <span className="font-weight-bold" style={{ fontSize: "16px" }}> Total Amount Payable inclusive of GST (SGST / UGST / CGST / IGST) </span></Col>
-                                <Col className="text-center" lg={{ span: 2, offset: 2 }} md={{ span: 2, offset: 2 }} sm={{ span: 2, offset: 2 }} xs={{ span: 2, offset: 2 }}> {tAmount + (Math.round(tAmount / 9) * 2)} </Col>
+                                <Col className="text-center" lg={{ span: 2, offset: 2 }} md={{ span: 2, offset: 2 }} sm={{ span: 2, offset: 2 }} xs={{ span: 2, offset: 2 }}> {Number(tAmount) + (Math.round(Number(tAmount) / 9) * 2)} </Col>
                             </Row>
                         </Col>
                     </Row>

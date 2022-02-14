@@ -186,7 +186,7 @@ const MyAccount = ({ user }) => {
                                         <StyledTableCell align="center" className="font-weight-bold">{moment(row.T_orderdate).format("DD-MM-YYYY")}</StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold">{Number(row.f_orderAmt).toFixed(0)}</StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold">
-                                            <i className="fa fa-search" title="Invoice Performa" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i>
+                                            <i className="fa fa-search" title="Invoice Performa" onClick={() => history.push(`/suborderinvoice/${btoa(row.T_orderid)}`)} style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i>
                                         </StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold">Confirm</StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold">

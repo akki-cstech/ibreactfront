@@ -120,3 +120,12 @@ export const confirmListImage = async oId => {
         return error.response.data
     }
 }
+
+export const subPlanInfo = async oId => {
+    try{
+        const res = await axios.post("/subPlanInfo", oId)
+        return res.data
+    }catch(error){
+        return error.response.data
+    }
+}

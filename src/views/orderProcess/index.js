@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Route } from "react-router-dom";
-import Invoice from './InvoiceReciept'
+import { Route, Switch } from "react-router-dom";
+import Invoice from '../../components/common/InvoiceReciept'
 
 const OrderProcess = () => {
     const [user, setUser] = useState(null)
@@ -11,12 +11,20 @@ const OrderProcess = () => {
         setUser(usr)
     }, [])
 
+    // if (!user) {
+    //     return
+    // }
+
     return (
         <>
-            {
-                user &&
-                <Route path="/invoice/:id" component={Invoice} />
-            }
+            <Switch>
+                <Route path="/invoice/:id" >
+                    <Invoice type="confirm" />
+                </Route>
+                <Route path="/suborderinvoice/:id" >
+                    <Invoice type="subscriptionplan" />
+                </Route>
+            </Switch>
         </>
     )
 }
