@@ -9,7 +9,7 @@ const myAccountNav = ({ brand }) => {
                     <Col lg={{ span: 1, offset: 1 }} xs={12}>
                         <Navbar.Brand style={{ fontSize: "24px" }} className="p-4" href="#"> {brand ? brand : "My account"}</Navbar.Brand>
                     </Col>
-                    <Col lg={{ span: 8, offset: 2 }} xs={12}>
+                    <Col lg={{ span: 9, offset: 1 }} xs={12}>
                         <Nav className="me-auto pt-3" style={{ color: "black" }}>
                             <Nav.Link href="#" style={{ width: "200px", color: "black" }}>Wishlist Manager</Nav.Link>
                             <Nav.Link href="#" style={{ width: "200px", color: "black" }}>Proposal</Nav.Link>
@@ -20,7 +20,7 @@ const myAccountNav = ({ brand }) => {
                                 id="dropdown-variants-dark"
                                 title="Manage"
                                 variant="primary"
-                                className="ml-4"
+                                className="ml-4 manage_button"
                                 size="sm"
                                 style={{ padding: "0px", width: "180px" }}
                             >

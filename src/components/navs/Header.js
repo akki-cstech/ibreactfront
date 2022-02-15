@@ -274,12 +274,12 @@ const Header = () => {
 
     const loggedDropDown = () => {
         return (
-            <Dropdown>
-                <Dropdown.Toggle variant="dark" className="text-light">
+            <Dropdown >
+                <Dropdown.Toggle variant="dark" className="text-light loggedUser">
                     {loggedUser.f_fullname}
                 </Dropdown.Toggle>
 
-                <Dropdown.Menu>
+                <Dropdown.Menu className='dropdown_topmenu'>
                     <Dropdown.Item onClick={logoutFun}>Logout</Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>
@@ -345,10 +345,10 @@ const Header = () => {
                             <Link className={styles.pricing} to=''>Pricing</Link>
                             {loggedUser && <span className="mt-1">
                                 {/* <Badge badgeContent={104} className={styles.badge}> */}
-                                    <i className={`${styles.pricing} fas fa-heart`}></i>
+                                <i className={`${styles.pricing} fas fa-heart`}></i>
                                 {/* </Badge> */}
                                 {/* <Badge badgeContent={4} className={styles.badge}> */}
-                                    <i className={`${styles.pricing} fas fa-shopping-cart`}></i>
+                                <i className={`${styles.pricing} fas fa-shopping-cart`}></i>
                                 {/* </Badge> */}
                             </span>}
 
@@ -435,7 +435,7 @@ const Header = () => {
                     <Grid className="searchGrid" id="topheader">
                         <Grid className="searchGrid1">
                             <Grid container className="searchDiv">
-                                <Grid item className="inputDiv" style={{lineHeight: "0px"}}>
+                                <Grid item className="inputDiv" style={{ lineHeight: "0px" }}>
                                     <span>
                                         <i className={`${sStyle.searchIcon} fas fa-search`}></i>
                                     </span>
@@ -461,7 +461,7 @@ const Header = () => {
                                     <div className="dropdown1">
                                         <div className="dropdown2">
                                             <div className="dropdown">
-                                                <ul id="drpdwnTxt" style={{padding: '0px 24px'}}>
+                                                <ul id="drpdwnTxt" style={{ padding: '0px 24px' }}>
                                                     <li>
                                                         <Dropdown>
                                                             <Dropdown.Toggle id="dropdown-custom-components">Images</Dropdown.Toggle>

@@ -598,10 +598,6 @@ html:not(.no-transition) body, .zeynep:not(.no-transition), .zeynep .submenu:not
   box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
 }
 
-.dropdown2>.dropdown {
-  /* padding: 10px 0px; */
-}
-
 #drpdwnTxt {
   padding: 4px 24px;
   border-left: 1px solid #ccc;
@@ -796,7 +792,38 @@ html:not(.no-transition) body, .zeynep:not(.no-transition), .zeynep .submenu:not
 .submenu-header{
   border-bottom: solid 1px #efefef;
 }
-
+.loggedUser {
+  white-space: nowrap;
+  color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 18ch;
+  background: transparent;
+    border: 0px;
+    font-size: 17px !important;
+    padding: 8px 10px;
+}
+.loggedUser:hover, .loggedUser:focus{
+  background: transparent;
+  border: 0px;
+}
+.manage_button > button{
+  padding: 6px 22px;
+  background: #333 !important;
+  color: #fff;
+  font-size: 18px;
+  border: 0px !important;
+}
+.dropdown_topmenu{
+  min-width: 100%;
+    background: #f2f2f2;
+    z-index: 999;
+    right: 0;
+    top: 0px;
+    border: 1px solid #ddd;
+    width: 130px;
+    border-radius: 0px;
+}
 
 
 @media (max-width: 1680px) {
