@@ -53,13 +53,13 @@ const MyAccount = ({ user }) => {
 
         const { downloads } = await highResImage({ email: user.f_email })
         // console.log('check high res', downloads)
-        if (downloads.length > 0) {
+        if (downloads) {
             setDownloadImages(downloads)
         }
 
         const { spOrders } = await subPlanOrder({ email: user.f_email })
         // console.log('check spOrder', spOrders)
-        if (spOrders.length > 0) {
+        if (spOrders) {
             setSubPlanRows(spOrders)
         }
     }, [])
@@ -114,7 +114,7 @@ const MyAccount = ({ user }) => {
                                         <StyledTableCell align="center" className="font-weight-bold">{moment(row.orderDate).format("DD-MM-YYYY")}</StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold">{row.totalAmount}</StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold"> 
-                                        <a href={`${window.location.origin}/invoice/${btoa(row.orderId)}`} target="_blank"><i className="fa fa-search" title="Order Details" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i> </a>
+                                        <a href={`${window.location.origin}/invoice/${window.btoa(row.orderId)}`} target="_blank"><i className="fa fa-search" title="Order Details" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i> </a>
                                         </StyledTableCell>
                                     </StyledTableRow>
                                 ))}
@@ -220,7 +220,7 @@ const MyAccount = ({ user }) => {
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {console.log('check roed', sPRows)}
+                                {/* {console.log('check roed', sPRows)} */}
                                 {sPRows.map((row) => (
                                     <StyledTableRow key={row.orderId}>
                                         <StyledTableCell align="center" className="font-weight-bold">{row.invoiceId}</StyledTableCell>

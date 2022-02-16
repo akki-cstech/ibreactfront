@@ -13,6 +13,7 @@ import ManageProfile from './views/manageUser';
 
 const App = () => {
   const [progress, setProgress] = useState(0)
+  const [user, setUser] = useState(null)
 
   const [inputValue, setInputValue] = useState('');
   // const [progress, setProgress] = useState(0);
@@ -20,6 +21,9 @@ const App = () => {
   const ref = useRef(null)
 
   useEffect(() => {
+    const loggedUser = window.localStorage.getItem("loggedUser")
+    const usr = JSON.parse(loggedUser)
+    setUser(usr)
     return () => {
       clearTimeout(ref.current);
     };
@@ -47,20 +51,11 @@ const App = () => {
       {/* <button onClick={() => setProgress(progress + 10)}>Add 10%</button>
       <button onClick={() => setProgress(progress + 20)}>Add 20%</button> */}
       {/* <button onClick={() => setProgress(100)}>Complete</button> */}
-      <AccountSection />
-      <OrderProcess />
-      <ManageProfile />
+      <OrderProcess user={user} />
+      {user && <ManageProfile user={user} setUser={setUser} />}
+      <AccountSection user={user} />
 
       <Switch>
-        <Route exact path="/"
-          children={
-            () => <Home
-              Loader={Loader}
-              progress={100}
-              setProgress={setProgress}
-            />
-          }
-        />
         <Route path="/search" onLoader={onLoader}
           children={
             () => <SearchImage
@@ -84,6 +79,17 @@ const App = () => {
             () =>
               <Sections
               />
+          }
+        />
+        <Route exact path="/"
+          children={
+            () => <Home
+              Loader={Loader}
+              progress={100}
+              setProgress={setProgress}
+              user={user}
+              setUser={setUser}
+            />
           }
         />
       </Switch>

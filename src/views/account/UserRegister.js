@@ -339,11 +339,11 @@ const Register = () => {
                             <div className="row">
                                 <div className="col-lg-12">
                                     {errMsg && <Alert severity="error" className='mb-2 font-weight-bold' > {errMsg} </Alert>}
-                                    <form method="post" autocomplete="off" onSubmit={registerHandler}>
+                                    <form method="post" autoComplete="off" onSubmit={registerHandler}>
                                         <div className='mb-3'>
                                             <div className="input-group">
                                                 <div className="input-group-prepend"> <span className="input-group-text"><i className="fa fa-user"></i></span> </div>
-                                                <input type="text" className="form-control" placeholder="First Name" name="firstName" value={firstName} onKeyDown={afterSubmit} onChange={({ target }) => setFirstName(target.value)} maxlength="15" />
+                                                <input type="text" className="form-control" placeholder="First Name" name="firstName" value={firstName} onKeyDown={afterSubmit} onChange={({ target }) => setFirstName(target.value)} maxLength="15" />
                                             </div>
                                             {fNameErr && <div className="text-danger d-block mb-3">
                                                 <span> {fNameErr} </span>
@@ -354,7 +354,7 @@ const Register = () => {
                                                 <div className="input-group-prepend">
                                                     <span className="input-group-text"><i className="fa fa-user"></i></span>
                                                 </div>
-                                                <input type="text" className="form-control" value={lastName} name="lastName" onKeyDown={afterSubmit} onChange={({ target }) => setLastName(target.value)} placeholder="Last Name" maxlength="15" />
+                                                <input type="text" className="form-control" value={lastName} name="lastName" onKeyDown={afterSubmit} onChange={({ target }) => setLastName(target.value)} placeholder="Last Name" maxLength="15" />
                                             </div>
                                             {lNameErr && <div className="text-danger d-block mb-3">
                                                 <span> {lNameErr} </span>
@@ -365,7 +365,7 @@ const Register = () => {
                                                 <div className="input-group-prepend">
                                                     <span className="input-group-text"><i className="fa fa-envelope"></i></span>
                                                 </div>
-                                                <input type="text" className="form-control" name="regEmail" value={regEmail} onKeyDown={afterSubmit} onChange={({ target }) => setRegEmail(target.value)} placeholder="Email Address" maxlength="50" />
+                                                <input type="text" className="form-control" name="regEmail" value={regEmail} onKeyDown={afterSubmit} onChange={({ target }) => setRegEmail(target.value)} placeholder="Email Address" maxLength="50" />
                                             </div>
                                             {emailErr && <div className="text-danger d-block mb-3">
                                                 <span> {emailErr} </span>
@@ -376,7 +376,7 @@ const Register = () => {
                                                 <div className="input-group-prepend">
                                                     <span className="input-group-text"><i className="fa fa-lock"></i></span>
                                                 </div>
-                                                <input type="password" className="form-control" name="pwd" value={pwd} onKeyDown={afterSubmit} onChange={({ target }) => setPwd(target.value)} placeholder="Password" maxlength="15" />
+                                                <input type="password" className="form-control" name="pwd" value={pwd} onKeyDown={afterSubmit} onChange={({ target }) => setPwd(target.value)} placeholder="Password" maxLength="15" />
                                             </div>
                                             {pwdErr && <div className="text-danger d-block mb-3">
                                                 <span> {pwdErr} </span>
@@ -387,7 +387,7 @@ const Register = () => {
                                                 <div className="input-group-prepend">
                                                     <span className="input-group-text"><i className="fa fa-user"></i></span>
                                                 </div>
-                                                <input type="text" className="form-control" name="company" value={company} onKeyDown={afterSubmit} onChange={({ target }) => setCompany(target.value)} placeholder="Company Name" maxlength="550" />
+                                                <input type="text" className="form-control" name="company" value={company} onKeyDown={afterSubmit} onChange={({ target }) => setCompany(target.value)} placeholder="Company Name" maxLength="550" />
                                             </div>
                                             {companyErr && <div className="text-danger d-block mb-3">
                                                 <span> {companyErr} </span>
@@ -398,8 +398,8 @@ const Register = () => {
                                                 <div className="input-group-prepend">
                                                     <span className="input-group-text"><i className="fa fa-user"></i></span>
                                                 </div>
-                                                <select className="select form-control" size="1" name="jobDes" onKeyDown={afterSubmit} value={jobDes} onChange={({ target }) => setJobDes(target.value)}>
-                                                    <option value="" selected="selected">Select Job Description</option>
+                                                <select className="select form-control" size="1" defaultValue="" name="jobDes" onKeyDown={afterSubmit} value={jobDes} onChange={({ target }) => setJobDes(target.value)}>
+                                                    <option value="">Select Job Description</option>
 
                                                     <option value="Freelance Designer">Freelance Designer</option>
 
@@ -452,7 +452,7 @@ const Register = () => {
                                                 <div className="input-group-prepend">
                                                     <span className="input-group-text"><i className="fa fa-mobile"></i></span>
                                                 </div>
-                                                <input type="text" className="form-control" name="mobile" placeholder="Mobile Number" value={mobile} onKeyDown={afterSubmit} onChange={({ target }) => !(isNaN(Number(target.value))) && setMobile(target.value)} maxlength="12" />
+                                                <input type="text" className="form-control" name="mobile" placeholder="Mobile Number" value={mobile} onKeyDown={afterSubmit} onChange={({ target }) => !(isNaN(Number(target.value))) && setMobile(target.value)} maxLength="12" />
                                             </div>
                                             {phnErr && <div className="text-danger d-block mb-3">
                                                 <span> {phnErr} </span>
@@ -463,7 +463,7 @@ const Register = () => {
                                                 <div className="input-group-prepend">
                                                     <span className="input-group-text"><i className="fa fa-user"></i></span>
                                                 </div>
-                                                <select className="form-control" onKeyDown={afterSubmit} value={country} name="country" onChange={({ target }) => setCountry(target.value)}>
+                                                <select className="form-control" defaultValue="India" onKeyDown={afterSubmit} value={country} name="country" onChange={({ target }) => setCountry(target.value)}>
                                                     <option value=""> Select your Country </option>
 
                                                     <option value="Afghanistan">
@@ -666,7 +666,7 @@ const Register = () => {
                                                         Hungary</option>
                                                     <option value="Iceland">
                                                         Iceland</option>
-                                                    <option value="India" selected="selected">
+                                                    <option value="India">
                                                         India</option>
                                                     <option value="Indonesia">
                                                         Indonesia</option>
@@ -966,8 +966,8 @@ const Register = () => {
                                                 <div className="input-group-prepend">
                                                     <span className="input-group-text"><i className="fa fa-user"></i></span>
                                                 </div>
-                                                {country === 'India' && <select className='form-control' name="city" onKeyDown={afterSubmit} value={city} onChange={({ target }) => setCity(target.value)}>
-                                                    <option value="" selected="selected">Select your State</option>
+                                                {country === 'India' && <select className='form-control' defaultValue="" name="city" onKeyDown={afterSubmit} value={city} onChange={({ target }) => setCity(target.value)}>
+                                                    <option value="">Select your State</option>
                                                     <option value="Andaman and Nicobar Islands">
                                                         Andaman and Nicobar Islands</option>
                                                     <option value="Andhra Pradesh">
@@ -1067,7 +1067,7 @@ const Register = () => {
                                         </div>
                                         <div className="mb-3">
                                             <div className="input-group" style={{ marginLeft: "23px", width: '47%', float: 'left' }}>
-                                                <input type="text" className="form-control" placeholder="Enter Code" name="code" maxlength="4" tabIndex="1" onKeyDown={afterSubmit} value={code} onChange={({ target }) => setCode(target.value)} />
+                                                <input type="text" className="form-control" placeholder="Enter Code" name="code" maxLength="4" tabIndex="1" onKeyDown={afterSubmit} value={code} onChange={({ target }) => setCode(target.value)} />
                                             </div>
                                             {captchaErr && <div className="text-danger d-block mb-3">
                                                 <span> {captchaErr} </span>
@@ -1076,7 +1076,7 @@ const Register = () => {
 
                                         <div className="form-group">
                                             &nbsp;
-                                            <label for="remember"><input type="checkbox" id="remember" name="checked" defaultChecked={checked} onMouseDown={afterSubmit} onChange={() => setChecked(!checked)} tabIndex="3" /> I agree to ImagesBazaar's <a href="https://www.imagesbazaar.com/termsofuse" style={{ textDecoration: "none", color: "#00FFFF" }}><b>Terms and Conditions.</b></a></label>
+                                            <label htmlFor="remember"><input type="checkbox" id="remember" name="checked" defaultChecked={checked} onMouseDown={afterSubmit} onChange={() => setChecked(!checked)} tabIndex="3" /> I agree to ImagesBazaar's <a href="https://www.imagesbazaar.com/termsofuse" style={{ textDecoration: "none", color: "#00FFFF" }}><b>Terms and Conditions.</b></a></label>
                                             {checkErr && <div className="text-danger d-block mb-3">
                                                 <span> {checkErr} </span>
                                             </div>}

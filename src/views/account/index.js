@@ -5,15 +5,15 @@ import Welcome from "./WelcomePage"
 import Register from './UserRegister';
 import ForgetPassword from './ForgetPassword'
 
-const AccountSection = () => {
-    const [user, setUser] = useState(null)
+const AccountSection = ({user}) => {
+    // const [user, setUser] = useState(null)
 
-    useEffect(() => {
-        const loggedUser = window.localStorage.getItem("loggedUser")
-        const usr = JSON.parse(loggedUser)
-        console.log('user logged in', usr)
-        setUser(usr)
-    }, [])
+    // useEffect(() => {
+    //     const loggedUser = window.localStorage.getItem("loggedUser")
+    //     const usr = JSON.parse(loggedUser)
+    //     console.log('user logged in', usr)
+    //     setUser(usr)
+    // }, [])
 
     return (
         <>
@@ -22,6 +22,7 @@ const AccountSection = () => {
                     {!user ? <IBRegistration /> : <Redirect to="/" />}
                 </Route>
                 <Route path="/myaccounts" component={Welcome} />
+                <Route path="/myaccounts/:aid" component={Welcome} />
                 <Route path="/register" component={Register} />
                 <Route path="/forgetPassword" component={ForgetPassword} />
             </Switch>

@@ -7,7 +7,7 @@ import Container from '@material-ui/core/Container';
 import Header from '../components/navs/Header';
 import Footer from '../components/navs/Footer';
 
-const Home = ({ Loader, progress, setProgress }) => {
+const Home = ({ Loader, progress, setProgress, user, setUser }) => {
     setProgress(100)
     // if (header) {
     //     console.log("Header  : ", header)
@@ -31,7 +31,7 @@ const Home = ({ Loader, progress, setProgress }) => {
 
     return (
         <>
-            <Header />
+            <Header loggedInUser={user} setLoggedInUser={setUser} />
             
             <section className={styles.imgSec}>
                 <img src="https://www.imagesbazaar.com/BannerImages/Freebanner.jpg" alt="" width="100%" height="100%" />

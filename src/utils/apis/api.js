@@ -138,3 +138,21 @@ export const ivSubPlanInfo = async oId => {
         return error.response.data
     }
 }
+
+export const getUser = async email => {
+    try {
+        const res = await axios.post('/getUser', email)
+        return res.data
+    } catch (error) {
+        return error.response.data
+    }
+}
+
+export const editUserForm = async formData => {
+    try {
+        const res = await axios.post('/editUserForm', formData)
+        return res.data
+    } catch (error) {
+        return error.response.data
+    }
+}
