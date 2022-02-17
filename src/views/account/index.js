@@ -22,7 +22,7 @@ const AccountSection = ({user}) => {
                     {!user ? <IBRegistration /> : <Redirect to="/" />}
                 </Route>
                 <Route path="/myaccounts" component={Welcome} />
-                <Route path="/myaccounts/:aid" component={Welcome} />
+                {/* <Route path="/myaccounts/:aid" component={Welcome} /> */}
                 <Route path="/register" component={Register} />
                 <Route path="/forgetPassword" component={ForgetPassword} />
             </Switch>

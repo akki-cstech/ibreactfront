@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { useHistory, useParams } from 'react-router-dom'
-import { Container, Nav, Row, Col, Navbar, DropdownButton, Dropdown, ButtonGroup } from 'react-bootstrap'
+import { useHistory } from 'react-router-dom'
+import { Container } from 'react-bootstrap'
 import Header from '../../components/navs/Header'
 import Footer from '../../components/navs/Footer'
 import MyAccount from '../pages/MyAccount'
@@ -8,10 +8,10 @@ import MyAccountNav from '../../components/common/MyAccountNav'
 
 const Welcome = (props) => {
     const [loggedInUser, setLoggedInUser] = useState(null)
+    const [alertMsg, setAlertMsg] = useState(null)
     const history = useHistory()
-    const msg = btoa(useParams().aid)
 
-    useEffect(async () => {
+    useEffect(() => {
         const winUser = window.localStorage.getItem("loggedUser")
         const user = JSON.parse(winUser)
         if (!user) {
@@ -19,19 +19,20 @@ const Welcome = (props) => {
         } else {
             setLoggedInUser(user)
         }
-        // window.location.reload()
+
+        const msg = window.localStorage.getItem("updatedUser")
+        msg && setAlertMsg(JSON.parse(msg))
+        window.localStorage.removeItem("updatedUser")
     }, [])
-    console.log(msg)
+
     return (
         <div>
             <Header/>
             <Container fluid className="bg-light mt-4 pb-4">
                 <MyAccountNav brand={props.brand} />
-                {loggedInUser && !props.children && <MyAccount user={loggedInUser} />}
+                {alertMsg && loggedInUser && !props.children && <h2 className='text-success text-center'> {alertMsg.message} </h2>}
+                {loggedInUser && !props.children && !alertMsg && <MyAccount user={loggedInUser} />}
                 {props.children}
-                {msg === 1 && <h1 className="text-sucess">
-                    {msg}
-                </h1>}
             </Container>
             <Footer />
         </div>
