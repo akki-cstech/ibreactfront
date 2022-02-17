@@ -149,6 +149,7 @@ export const getUser = async email => {
 }
 
 export const editUserForm = async formData => {
+    // console.log('check FormData', formData)
     try {
         const res = await axios.post('/editUserForm', formData)
         return res.data

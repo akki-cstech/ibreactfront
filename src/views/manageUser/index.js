@@ -14,7 +14,7 @@ const ManageProfile = ({ user, setUser }) => {
     }
     useEffect(() => {
         callApi()
-    }, [])
+    }, [user])
     return (
         <>
             <Switch>
