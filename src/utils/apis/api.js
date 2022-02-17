@@ -157,3 +157,12 @@ export const editUserForm = async formData => {
         return error.response.data
     }
 }
+
+export const changePassword = async formData => {
+    try {
+        const res = await axios.post('/changePassword', formData)
+        return res.data
+    } catch (error) {
+        return error.response.data
+    }
+}

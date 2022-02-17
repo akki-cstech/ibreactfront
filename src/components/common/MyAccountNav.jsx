@@ -1,7 +1,9 @@
 import React from 'react'
 import { Nav, Row, Col, Navbar, DropdownButton, Dropdown, ButtonGroup } from 'react-bootstrap'
+import { useHistory } from 'react-router-dom'
 
-const myAccountNav = ({ brand }) => {
+const MyAccountNav = ({ brand }) => {
+    const history = useHistory()
     return (
         <Row lg="12">
             <Navbar expand="lg" bg="light" style={{ height: "auto" }}>
@@ -24,8 +26,10 @@ const myAccountNav = ({ brand }) => {
                                 size="sm"
                                 style={{ padding: "0px", width: "180px" }}
                             >
-                                <Dropdown.Item eventKey="1" className="text-dark" href={`${window.location.origin}/editUser`}>Edit Profile</Dropdown.Item>
-                                <Dropdown.Item eventKey="2" className="text-dark" >Change Password</Dropdown.Item>
+                                <Dropdown.Item eventKey="1" className="text-dark" onClick={() => history.push('editUser')} >
+                                    Edit Profile
+                                </Dropdown.Item>
+                                <Dropdown.Item eventKey="2" className="text-dark" onClick={() => history.push('changepassword')} >Change Password</Dropdown.Item>
                             </DropdownButton>
                         </Nav>
                     </Col>
@@ -35,4 +39,4 @@ const myAccountNav = ({ brand }) => {
     )
 }
 
-export default myAccountNav
+export default MyAccountNav

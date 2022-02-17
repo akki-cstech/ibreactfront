@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Update from './Update'
 import Welcome from '../account/WelcomePage';
 import { getUser } from '../../utils/apis/api'
+import ChangePassword from './ChangePassword'
 
 const ManageProfile = ({ user, setUser }) => {
     const [editInfo, setEditInfo] = useState(null)
@@ -21,6 +22,11 @@ const ManageProfile = ({ user, setUser }) => {
                 <Route path="/editUser" >
                     <Welcome brand="Update" setUser={setUser} >
                         {editInfo && <Update myDtl={editInfo} setUser={setUser} />}
+                    </Welcome>
+                </Route>
+                <Route path="/changepassword" >
+                    <Welcome brand="Change Password" setUser={setUser} >
+                        {editInfo && <ChangePassword user={editInfo} />}
                     </Welcome>
                 </Route>
             </Switch>
