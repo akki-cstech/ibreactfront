@@ -27,7 +27,7 @@ const Welcome = (props) => {
 
     return (
         <div>
-            <Header/>
+            <Header setForLogOut={props.setUser} />
             <Container fluid className="bg-light mt-4 pb-4">
                 <MyAccountNav brand={props.brand} />
                 {alertMsg && loggedInUser && !props.children && <h2 className='text-success text-center'> {alertMsg.message} </h2>}

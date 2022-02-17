@@ -19,7 +19,7 @@ const ManageProfile = ({ user, setUser }) => {
         <>
             <Switch>
                 <Route path="/editUser" >
-                    <Welcome brand="Update" >
+                    <Welcome brand="Update" setUser={setUser} >
                         {editInfo && <Update myDtl={editInfo} setUser={setUser} />}
                     </Welcome>
                 </Route>

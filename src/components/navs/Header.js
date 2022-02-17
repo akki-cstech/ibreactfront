@@ -23,7 +23,7 @@ function useQuery() {
     const { search } = useLocation();
     return React.useMemo(() => new URLSearchParams(search), [search]);
 }
-const Header = () => {
+const Header = ({ setForLogOut }) => {
 
     const [sideBar, setSideBar] = useState("sideInActive");
     const [zeynepO, setZeynepO] = useState("zClosed");
@@ -268,6 +268,7 @@ const Header = () => {
 
     const logoutFun = () => {
         window.localStorage.removeItem('loggedUser')
+        setForLogOut(null)
         setLoggedUser(null)
         history.push('/')
     }

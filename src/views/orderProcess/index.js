@@ -2,19 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Route, Switch } from "react-router-dom";
 import Invoice from '../../components/common/InvoiceReciept'
 
-const OrderProcess = ({user}) => {
-    // const [user, setUser] = useState(null)
-
-    // useEffect(() => {
-    //     const loggedUser = window.localStorage.getItem("loggedUser")
-    //     const usr = JSON.parse(loggedUser)
-    //     setUser(usr)
-    // }, [])
-
-    // if (!user) {
-    //     return
-    // }
-
+const OrderProcess = () => {
     return (
         <>
             <Switch>

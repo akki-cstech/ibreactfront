@@ -5,7 +5,7 @@ import Welcome from "./WelcomePage"
 import Register from './UserRegister';
 import ForgetPassword from './ForgetPassword'
 
-const AccountSection = ({user}) => {
+const AccountSection = ({user, setUser}) => {
     // const [user, setUser] = useState(null)
 
     // useEffect(() => {
@@ -21,7 +21,9 @@ const AccountSection = ({user}) => {
                 <Route path="/ibregistration" >
                     {!user ? <IBRegistration /> : <Redirect to="/" />}
                 </Route>
-                <Route path="/myaccounts" component={Welcome} />
+                <Route path="/myaccounts" >
+                    <Welcome setUser={setUser} />
+                </Route>
                 {/* <Route path="/myaccounts/:aid" component={Welcome} /> */}
                 <Route path="/register" component={Register} />
                 <Route path="/forgetPassword" component={ForgetPassword} />

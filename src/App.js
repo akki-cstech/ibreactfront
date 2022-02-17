@@ -54,7 +54,7 @@ const App = () => {
       {/* <button onClick={() => setProgress(100)}>Complete</button> */}
       <OrderProcess user={user} />
       {user && <ManageProfile user={user} setUser={setUser} />}
-      <AccountSection user={user} />
+      <AccountSection user={user} setUser={setUser} />
 
       <Switch>
         <Route path="/search" onLoader={onLoader}
