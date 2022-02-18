@@ -9,7 +9,9 @@ const ManageProfile = ({ user, setUser }) => {
     const [editInfo, setEditInfo] = useState(null)
 
     const callApi = async () => {
-        const Detail = await getUser({ email: user.f_email });
+        const loggedUser = window.localStorage.getItem("loggedUser")
+        const usr = JSON.parse(loggedUser)
+        const Detail = await getUser({ email: usr.f_email });
         const myDtl = { ...Detail.myDetails[0] }
         setEditInfo({ ...Detail.myDetails[0] })
     }

@@ -1,4 +1,4 @@
-.App {
+/* .App {
     font-family: sans-serif;
     text-align: center;
   }
@@ -35,5 +35,11 @@
     text-align: right;
     color: crimson;
     margin: 10px 0;
-  }
+  } */
+
+  input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
   

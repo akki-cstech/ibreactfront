@@ -73,7 +73,7 @@ const ChangePassword = ({ user }) => {
     return (
         <Container>
             <Row className="justify-content-md-center">
-                <Col md={10} lg={10} className="border rounded" style={{ boxShadow: "3px 2px 2px grey" }}>
+                <Col md={6} lg={6} className="border rounded" style={{ boxShadow: "3px 2px 2px grey" }}>
                     <h4 className="text-dark text-center mt-3">Change Password</h4><hr />
                     <Form onSubmit={submit}>
                         <Row>
@@ -86,6 +86,7 @@ const ChangePassword = ({ user }) => {
                                         }}
                                         customStyleInput={{
                                             paddingTop: "0",
+                                            width: "100%",
                                             paddingBottom: "0",
                                             height: "38px",
                                             borderRadius: "5px",
@@ -124,6 +125,7 @@ const ChangePassword = ({ user }) => {
                                         customStyleInput={{
                                             paddingTop: "0",
                                             paddingBottom: "0",
+                                            width: "100%",
                                             height: "38px",
                                             borderRadius: "5px",
                                             paddingLeft: "10px",
@@ -161,6 +163,7 @@ const ChangePassword = ({ user }) => {
                                         customStyleInput={{
                                             paddingTop: "0",
                                             paddingBottom: "0",
+                                            width: "100%",
                                             height: "38px",
                                             borderRadius: "5px",
                                             paddingLeft: "10px",
