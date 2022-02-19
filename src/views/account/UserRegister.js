@@ -4,7 +4,7 @@ import { userRegistration } from '../../utils/apis/api';
 import Alert from '@mui/material/Alert';
 import { useHistory, Link } from 'react-router-dom'
 
-const Register = () => {
+const Register = ({ setUser }) => {
     const [regEmail, setRegEmail] = useState('')
     const [pwd, setPwd] = useState('')
     const [firstName, setFirstName] = useState('')
@@ -167,6 +167,7 @@ const Register = () => {
             window.localStorage.setItem(
                 'loggedUser', JSON.stringify(savedUser)
             )
+            setUser(savedUser)
             setRegEmail('')
             setCaptcha(Math.floor(Math.random() * (10000 - 1000)) + 1000)
             setCity('')
@@ -178,9 +179,9 @@ const Register = () => {
             setJobDes('')
             setCompany('')
             setPwd('')
-            history.push('/myaccounts')
+            history.push(`/myaccounts?regId=${btoa(savedUser.f_email)}`)
         }
-
+        console.log('check sasved user', savedUser, savedUser.error)
         setErrMsg(savedUser.error)
         setTimeout(() => {
             setErrMsg(null)
@@ -398,7 +399,7 @@ const Register = () => {
                                                 <div className="input-group-prepend">
                                                     <span className="input-group-text"><i className="fa fa-user"></i></span>
                                                 </div>
-                                                <select className="select form-control" size="1" defaultValue="" name="jobDes" onKeyDown={afterSubmit} value={jobDes} onChange={({ target }) => setJobDes(target.value)}>
+                                                <select className="form-control" size="1" defaultValue="" name="jobDes" onKeyDown={afterSubmit} value={jobDes} onChange={({ target }) => setJobDes(target.value)}>
                                                     <option value="">Select Job Description</option>
 
                                                     <option value="Freelance Designer">Freelance Designer</option>
@@ -463,7 +464,7 @@ const Register = () => {
                                                 <div className="input-group-prepend">
                                                     <span className="input-group-text"><i className="fa fa-user"></i></span>
                                                 </div>
-                                                <select className="form-control" defaultValue="India" onKeyDown={afterSubmit} value={country} name="country" onChange={({ target }) => setCountry(target.value)}>
+                                                <select className="form-control" defaultValue="" onKeyDown={afterSubmit} value={country} name="country" onChange={({ target }) => setCountry(target.value)}>
                                                     <option value=""> Select your Country </option>
 
                                                     <option value="Afghanistan">

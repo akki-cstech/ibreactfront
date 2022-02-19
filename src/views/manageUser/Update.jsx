@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 import { COUNTRY_OPTIONS_LIST, JOB_OPTIONS_LIST, STATE_OPTIONS_LIST } from "./consts.js";
-import { editUserForm, loginUser } from '../../utils/apis/api'
+import { editUserForm, loginUser, getUser } from '../../utils/apis/api'
 import { useHistory } from 'react-router-dom'
 import './styles.css'
 
-const Update = ({ myDtl, setUser }) => {
+const Update = ({ myDtl, setUser, user }) => {
     // console.log('check info', myDtl)
     const history = useHistory()
+
     const [GSTIN, setGSTIN] = useState(myDtl.f_GSTIN)
     const [regEmail, setRegEmail] = useState(myDtl.f_email)
     const [fName, setFName] = useState(myDtl.fName)

@@ -4,7 +4,7 @@ import { loginUser } from '../../utils/apis/api';
 import { useHistory, Link } from 'react-router-dom'
 import Alert from '@mui/material/Alert';
 
-const IBRegistration = () => {
+const IBRegistration = ({ setUser }) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [errMsg, setErrMsg] = useState(null)
@@ -30,6 +30,7 @@ const IBRegistration = () => {
             )
             setEmail('')
             setPassword('')
+            setUser(user)
             history.push('/myaccounts')
         }
 

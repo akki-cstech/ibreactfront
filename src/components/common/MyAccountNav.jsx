@@ -1,9 +1,10 @@
 import React from 'react'
 import { Nav, Row, Col, Navbar, DropdownButton, Dropdown, ButtonGroup } from 'react-bootstrap'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useRouteMatch } from 'react-router-dom'
 
 const MyAccountNav = ({ brand }) => {
     const history = useHistory()
+    let { url } = useRouteMatch();
     return (
         <Row lg="12">
             <Navbar expand="lg" bg="light" style={{ height: "auto" }}>
@@ -26,10 +27,10 @@ const MyAccountNav = ({ brand }) => {
                                 size="sm"
                                 style={{ padding: "0px", width: "180px" }}
                             >
-                                <Dropdown.Item eventKey="1" className="text-dark" onClick={() => history.push('editUser')} >
+                                <Dropdown.Item eventKey="1" className="text-dark" onClick={() => history.push(`${url}/editUser`)} >
                                     Edit Profile
                                 </Dropdown.Item>
-                                <Dropdown.Item eventKey="2" className="text-dark" onClick={() => history.push('changepassword')} >Change Password</Dropdown.Item>
+                                <Dropdown.Item eventKey="2" className="text-dark" onClick={() => history.push(`${url}/changepassword`)} >Change Password</Dropdown.Item>
                             </DropdownButton>
                         </Nav>
                     </Col>

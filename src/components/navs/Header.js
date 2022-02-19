@@ -23,7 +23,7 @@ function useQuery() {
     const { search } = useLocation();
     return React.useMemo(() => new URLSearchParams(search), [search]);
 }
-const Header = ({ setForLogOut }) => {
+const Header = ({ loggedInUser, setLoggedInUser }) => {
 
     const [sideBar, setSideBar] = useState("sideInActive");
     const [zeynepO, setZeynepO] = useState("zClosed");
@@ -61,16 +61,10 @@ const Header = ({ setForLogOut }) => {
     const [user, setUser] = useState({
         search: id
     });
-    const [loggedUser, setLoggedUser] = useState(null)
     const [AutoCompleteData, setAutoCompleteData] = useState([]);
     const { search } = user;
 
     useEffect(() => {
-        const loggedUserJSON = window.localStorage.getItem('loggedUser')
-        if (loggedUserJSON) {
-            const user = JSON.parse(loggedUserJSON)
-            setLoggedUser(user)
-        }
         setUser({
             search: id
         })
@@ -268,8 +262,7 @@ const Header = ({ setForLogOut }) => {
 
     const logoutFun = () => {
         window.localStorage.removeItem('loggedUser')
-        setForLogOut(null)
-        setLoggedUser(null)
+        setLoggedInUser(null)
         history.push('/')
     }
 
@@ -277,7 +270,7 @@ const Header = ({ setForLogOut }) => {
         return (
             <Dropdown >
                 <Dropdown.Toggle variant="dark" className="text-light loggedUser">
-                    {loggedUser.f_fullname}
+                    {loggedInUser.f_fullname}
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu className='dropdown_topmenu'>
@@ -344,7 +337,7 @@ const Header = ({ setForLogOut }) => {
                     <Grid className={styles.leftPane} item sm={4} lg={4} md={4} xs={6}>
                         <div className={styles.navbar}>
                             <Link className={styles.pricing} to=''>Pricing</Link>
-                            {loggedUser && <span className="mt-1">
+                            {loggedInUser && <span className="mt-1">
                                 {/* <Badge badgeContent={104} className={styles.badge}> */}
                                 <i className={`${styles.pricing} fas fa-heart`}></i>
                                 {/* </Badge> */}
@@ -356,8 +349,8 @@ const Header = ({ setForLogOut }) => {
                             <div>
                                 <ul>
                                     <li>
-                                        {!loggedUser && <Link className={styles.pricing} to='ibregistration'>Sign in</Link>}
-                                        {loggedUser && loggedDropDown()}
+                                        {!loggedInUser && <Link className={styles.pricing} to='ibregistration'>Sign in</Link>}
+                                        {loggedInUser && loggedDropDown()}
                                         {/* <ul className={styles.navItems}>
                                             <li></li>
                                             <li></li>

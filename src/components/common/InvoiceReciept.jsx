@@ -22,7 +22,6 @@ const Invoice = ({ type }) => {
 
             if (type === "confirm" || type === "invoice") {
                 const { iList } = await confirmListImage({ oId: orderID })
-                // console.log('check img list', iList)
                 if (iList) {
                     let sum = 0
                     for (let x in iList) {
@@ -172,7 +171,7 @@ const Invoice = ({ type }) => {
                     </Row>
                 </Col>
                 <Col className="border-top border-dark p-2">
-                    {type === "confirm" || type === "invoice" && <Confirm iData={iData} />}
+                    {(type === "confirm" || type === "invoice") && <Confirm iData={iData} />}
                     {type === "subscriptionplan" && <SubPlan iData={iData} amount={tAmount} />}
                     {type === "ivsubscriptionplan" && iData.length > 0 && <IVSubPlan iData={iData} amount={tAmount} />}
                 </Col>
