@@ -12,7 +12,7 @@ import Paper from '@mui/material/Paper';
 import moment from 'moment'
 import { useLocation } from 'react-router-dom'
 
-const Order = ({ user }) => {
+const Order = () => {
     const { search } = useLocation()
     const searchParams = new URLSearchParams(search)
     const regId = searchParams.get('regId')
@@ -22,6 +22,7 @@ const Order = ({ user }) => {
     const [subPlanRows, setSubPlanRows] = useState([])
     const [downloadImages, setDownloadImages] = useState([])
     const [alertMsg, setAlertMsg] = useState(null)
+    const [user, setUser] = useState(null)
 
     function createPendingOrderData(orderId, orderDate, totalAmount) {
         return { orderId, orderDate, totalAmount };
@@ -36,13 +37,13 @@ const Order = ({ user }) => {
     }
 
     useEffect(async () => {
-        if(!user){
-            return
-        }
-
         const msg = window.localStorage.getItem("updatedUser")
         msg && setAlertMsg(JSON.parse(msg))
         window.localStorage.removeItem("updatedUser")
+
+        const loggedUser = window.localStorage.getItem("loggedUser")
+        const user = JSON.parse(loggedUser)
+        setUser(user)
 
         const res = await pendingOrder({ email: user.f_email })
         const { orders, message } = res
@@ -101,13 +102,13 @@ const Order = ({ user }) => {
         },
     }));
 
-    if(alertMsg){
+    if (alertMsg) {
         return <h2 className='text-success text-center'> {alertMsg.message} </h2>
     }
 
     return (
         <Row className="justify-content-md-center bg-light">
-            {atob(regId) === user.f_email && <h2 className="text-success text-center" style={{marginTop: "60px", marginBottom: "60px"}}>Congratulations! Your registration has been completed successfully.</h2>}
+            {user && atob(regId) === user.f_email && <h2 className="text-success text-center" style={{ marginTop: "60px", marginBottom: "60px" }}>Congratulations! Your registration has been completed successfully.</h2>}
             {pendingRows.length > 0 && <Col md="10" sm={12} xs={12} >
                 <div style={{ color: "black", padding: "17px", background: "#f7f7f7", border: "1px solid #eee", marginTop: "0px", marginBottom: "20px" }}>
                     <h4>PENDING ORDERS</h4>
@@ -129,8 +130,8 @@ const Order = ({ user }) => {
                                         </StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold">{moment(row.orderDate).format("DD-MM-YYYY")}</StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold">{row.totalAmount}</StyledTableCell>
-                                        <StyledTableCell align="center" className="font-weight-bold"> 
-                                        <a href={`${window.location.origin}/invoice/${window.btoa(row.orderId)}`} target="_blank"><i className="fa fa-search" title="Order Details" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i> </a>
+                                        <StyledTableCell align="center" className="font-weight-bold">
+                                            <a href={`${window.location.origin}/invoice/${window.btoa(row.orderId)}`} target="_blank"><i className="fa fa-search" title="Order Details" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i> </a>
                                         </StyledTableCell>
                                     </StyledTableRow>
                                 ))}

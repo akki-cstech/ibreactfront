@@ -2,14 +2,16 @@ import React, { useState } from 'react'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 import { Textbox } from "react-inputs-validation";
 import { changePassword } from '../../utils/apis/api'
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation, Redirect } from 'react-router-dom';
 
 const ChangePassword = ({ user }) => {
     const [oldPass, setOldPass] = useState({ value: '', hasError: true, errMsg: '' })
     const [newPass, setNewPass] = useState({ value: '', hasError: true, errMsg: '' })
     const [cPass, setCPass] = useState({ value: '', hasError: true, errMsg: '' })
     const [validate, setValidate] = useState(false)
+    const [err, setErr] = useState(null)
     const history = useHistory()
+    // const { pathname } = useLocation()
     // console.log('user', user)
     const handleOldPassChange = (value, e) => {
         let hasError = true;
@@ -64,10 +66,16 @@ const ChangePassword = ({ user }) => {
             return
         }
 
-        const rtnUser = await changePassword({email: user.f_email, oldPassword: oldPass.value, newPassword: newPass.value})
-        // console.log('user return', rtnUser)
-        // alert("submitted")
-        history.push('myaccounts')
+        const rtnUser = await changePassword({ email: user.f_email, oldPassword: oldPass.value, newPassword: newPass.value })
+        console.log('user return', rtnUser)
+        
+        if(rtnUser.error){
+            setErr(rtnUser.error)
+            setTimeout(() => setErr(null), 5000)
+            return
+        }
+
+        window.location.href = `${window.location.origin}/myaccounts`
     }
 
     return (
@@ -78,6 +86,7 @@ const ChangePassword = ({ user }) => {
                     <Form onSubmit={submit}>
                         <Row>
                             <Col lg={12} md={12} sm={12} xs={12} className="mb-3 mt-4">
+                                {err && <h4 className="text-danger" > {err} </h4>}
                                 <Form.Group className="mb-3" controlId="formGridOldPass">
                                     <Form.Label className="font-weight-bold text-dark">Old Password</Form.Label>
                                     <Textbox

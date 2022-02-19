@@ -18,6 +18,7 @@ import Select from '@mui/material/Select';
 import LoadingBar from 'react-top-loading-bar'
 import Category from '../../utils/helpers/JSON/Category.json'
 import SecondDiv from '../common/Sidebar/SecondDiv'
+import { Redirect, history } from 'react-router-dom/cjs/react-router-dom.min';
 
 function useQuery() {
     const { search } = useLocation();
@@ -274,6 +275,7 @@ const Header = ({ loggedInUser, setLoggedInUser }) => {
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu className='dropdown_topmenu'>
+                    <Dropdown.Item onClick={() => window.location.href = `${window.location.origin}/myaccounts`}>MyAccount</Dropdown.Item>
                     <Dropdown.Item onClick={logoutFun}>Logout</Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>

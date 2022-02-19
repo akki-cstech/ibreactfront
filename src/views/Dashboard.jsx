@@ -5,12 +5,12 @@ import Footer from '../components/navs/Footer'
 import MyAccountNav from '../components/common/MyAccountNav'
 
 const DashBoard = ({ user, setUser, children, brand }) => {
-    const history = useHistory()
-    useEffect(() => {
-        if(!user){
-            history.push('/')
-        }
-    }, [])
+    // const history = useHistory()
+    // useEffect(() => {
+    //     if(!user){
+    //         history.push('/')
+    //     }
+    // }, [])
 
     return (
         <div>

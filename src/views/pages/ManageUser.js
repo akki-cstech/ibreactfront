@@ -9,9 +9,11 @@ const ManageUser = ({user, setUser}) => {
     const [myDtl, setMyDtl] = useState(null)
 
     const callApi = async () => {
+        if(user){
         const Detail = await getUser({ email: user.f_email });
         // const myDtl = { ...Detail.myDetails[0] }
         setMyDtl({ ...Detail.myDetails[0] })
+    }
     }
 
     useEffect(() => {

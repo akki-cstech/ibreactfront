@@ -2,7 +2,6 @@ import React from 'react'
 import { useRouteMatch, Switch, Route } from 'react-router-dom'
 import Order from './Order'
 import ManageUser from './ManageUser'
-import Invoice from '../../components/common/InvoiceReciept'
 
 const MyAccount = ({ user, setUser }) => {
     let { path } = useRouteMatch();
@@ -10,7 +9,7 @@ const MyAccount = ({ user, setUser }) => {
     return (
         <Switch>
             <Route exact path={path}>
-                {user && <Order user={user} />}
+                <Order />
             </Route>
             <Route path={`${path}/:manageUser`}>
                 <ManageUser setUser={setUser} user={user} />

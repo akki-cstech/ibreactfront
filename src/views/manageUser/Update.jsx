@@ -31,7 +31,6 @@ const Update = ({ myDtl, setUser, user }) => {
         let err = {};
 
         if (fName !== '') {
-            setErrMsg({ ...errMsg, fName: "" })
             for (var i = 0; i < fName.split("").length; i++) {
                 if (iChars.indexOf(fName.charAt(i)) !== -1) {
                     err.fName = "Your firstName has special characters or numbers. \nThese are not allowed.\n Please remove them and try again.";
@@ -44,7 +43,6 @@ const Update = ({ myDtl, setUser, user }) => {
         }
 
         if (lName !== '') {
-            setErrMsg({ ...errMsg, lName: "" })
             for (var i = 0; i < lName.split("").length; i++) {
                 if (iChars.indexOf(lName.charAt(i)) !== -1) {
                     submitMe = false
@@ -56,11 +54,11 @@ const Update = ({ myDtl, setUser, user }) => {
             err.lName = "Last Name is required!"
         }
 
-        if (zip && zip.length === 0) {
+        if ((!zip) || zip.length === 0) {
             err.zip = "Pin Code is required!"
             submitMe = false
         }
-        else if (zip.length < 4 || zip.length > 8) {
+        else if (zip && (zip.length < 4 || zip.length > 8)) {
             err.zip = "Pin Code should be 4 to 8 character!"
             submitMe = false
         }
@@ -85,7 +83,7 @@ const Update = ({ myDtl, setUser, user }) => {
             submitMe = false
         }
 
-        if (pNo.length === 0) {
+        if ((!pNo) || pNo.length === 0) {
             err.pNo = "Phone Number is required!"
             submitMe = false
         }
@@ -95,7 +93,7 @@ const Update = ({ myDtl, setUser, user }) => {
             err.country = "Country must be Selected!"
         }
 
-        if (address.length === 0) {
+        if ((!address) || address.length === 0) {
             submitMe = false
             err.address = "Address is required!"
         }
@@ -104,8 +102,8 @@ const Update = ({ myDtl, setUser, user }) => {
             submitMe = false
             err.cityOrState = "City/State is required!"
         }
-       
-        if (GSTIN.length === 0) {
+
+        if ((!GSTIN) || GSTIN.length === 0) {
             submitMe = false
             err.GSTIN = "GSTIN is required!"
         }
@@ -173,7 +171,7 @@ const Update = ({ myDtl, setUser, user }) => {
 
                             <Form.Group as={Col} controlId="formGridGSTIN">
                                 <Form.Label className="font-weight-bold text-dark">GSTIN No.</Form.Label>
-                                {myDtl.f_GSTIN && myDtl.f_GSTIN.length === 0 && <Form.Control className="form-control"
+                                {!myDtl.f_GSTIN && <Form.Control className="form-control"
                                     type="text"
                                     placeholder="Enter the GSTIN"
                                     name="GSTIN"
@@ -278,10 +276,10 @@ const Update = ({ myDtl, setUser, user }) => {
                                     name="cityOrState"
                                     onChange={({ target }) => setCityOrState(target.value)}
                                 />}
-                                {country === 'India' && 
-                                <select name="cityOrState" className="form-control" value={cityOrState} defaultValue="" value={cityOrState} onChange={({ target }) => setCityOrState(target.value)}>
-                                {STATE_OPTIONS_LIST.map(state => <option value={state.id} > {state.name} </option>)}
-                                </select>}
+                                {country === 'India' &&
+                                    <select name="cityOrState" className="form-control" value={cityOrState} defaultValue="" value={cityOrState} onChange={({ target }) => setCityOrState(target.value)}>
+                                        {STATE_OPTIONS_LIST.map(state => <option value={state.id} > {state.name} </option>)}
+                                    </select>}
                                 {
                                     errMsg && <span className="text-danger"> {errMsg.cityOrState} </span>
                                 }
