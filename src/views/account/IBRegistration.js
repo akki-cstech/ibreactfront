@@ -69,6 +69,7 @@ const IBRegistration = ({ setUser }) => {
 
     useEffect(() => {
         document.title = "ImagesBazaar: Sign In"
+        document.body.style.background = "black"
         afterSubmit()
     }, [email, password])
 

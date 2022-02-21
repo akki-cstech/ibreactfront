@@ -21,7 +21,7 @@ const ManageUser = ({user, setUser}) => {
     }, [user])
 
     return (
-      <div>
+      <div style={{background: "white", padding: "20px 0", marginRight: "-20px"}}>
         {manageUser === "editUser" && myDtl && <Update myDtl={myDtl} user={user} setUser={setUser} />}
         {manageUser === "changepassword" && <ChangePassword user={user} />}
       </div>

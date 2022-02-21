@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from "react-router-dom";
+import { useLocation, useHistory, Link } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
 
 import { SearchItems } from "../../utils/helpers/AutocompleteList";
 // import { makeStyles } from "@mui/styles";
 import { getSearchRecord } from "../../utils/apis/api"
-import { useHistory } from "react-router-dom"
 import styles from '../../CSS/Header.module.css'
-import { Link } from 'react-router-dom';
 import sStyle from '../../CSS/Searchbar.module.css'
 import { Grid, Button, Badge } from '@material-ui/core';
 import Box from '@mui/material/Box';
@@ -18,14 +16,12 @@ import Select from '@mui/material/Select';
 import LoadingBar from 'react-top-loading-bar'
 import Category from '../../utils/helpers/JSON/Category.json'
 import SecondDiv from '../common/Sidebar/SecondDiv'
-import { Redirect, history } from 'react-router-dom/cjs/react-router-dom.min';
 
 function useQuery() {
     const { search } = useLocation();
     return React.useMemo(() => new URLSearchParams(search), [search]);
 }
 const Header = ({ loggedInUser, setLoggedInUser }) => {
-
     const [sideBar, setSideBar] = useState("sideInActive");
     const [zeynepO, setZeynepO] = useState("zClosed");
     const [overflow, setOverflow] = useState('')
@@ -66,6 +62,7 @@ const Header = ({ loggedInUser, setLoggedInUser }) => {
     const { search } = user;
 
     useEffect(() => {
+        document.body.style.background = "black"
         setUser({
             search: id
         })
@@ -264,7 +261,7 @@ const Header = ({ loggedInUser, setLoggedInUser }) => {
     const logoutFun = () => {
         window.localStorage.removeItem('loggedUser')
         setLoggedInUser(null)
-        history.push('/')
+        history.push('/logout')
     }
 
     const loggedDropDown = () => {
@@ -275,7 +272,7 @@ const Header = ({ loggedInUser, setLoggedInUser }) => {
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu className='dropdown_topmenu'>
-                    <Dropdown.Item onClick={() => window.location.href = `${window.location.origin}/myaccounts`}>MyAccount</Dropdown.Item>
+                    <Dropdown.Item onClick={() => history.push('/myaccounts')} >MyAccount</Dropdown.Item>
                     <Dropdown.Item onClick={logoutFun}>Logout</Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>

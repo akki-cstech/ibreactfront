@@ -18,6 +18,7 @@ import MyAccount from './views/pages/MyAccount';
 import ForgetPassword from './views/account/ForgetPassword';
 import Register from './views/account/UserRegister';
 import Invoice from './components/common/InvoiceReciept'
+import LogOut from './views/account/Logout';
 
 const App = () => {
   const [progress, setProgress] = useState(0)
@@ -40,7 +41,8 @@ const App = () => {
   const onLoader = () => {
     setLoader(true);
   }
-
+  
+  console.log('check user me', user)
 
   return (
     <>
@@ -61,8 +63,8 @@ const App = () => {
       {/* <OrderProcess user={user} />
       {user && <ManageProfile user={user} setUser={setUser} />}
       <AccountSection user={user} setUser={setUser} /> */}
-
       <Switch>
+        <Route path="/logout" component={LogOut} />
         <Route path="/invoice/:id" onLoader={onLoader} >
           <Invoice type="confirm" />
         </Route>

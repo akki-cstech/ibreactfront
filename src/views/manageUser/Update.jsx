@@ -230,8 +230,8 @@ const Update = ({ myDtl, setUser, user }) => {
 
                             <Form.Group className="mb-3" as={Col} controlId="formGridJobDes">
                                 <Form.Label className="font-weight-bold text-dark">Job Description</Form.Label> {' '} <span className="text-danger font-weight-bold">*</span>
-                                <select name="jobDes" className="form-control" value={jobDes} defaultValue="" value={jobDes} onChange={({ target }) => setJobDes(target.value)}>
-                                    {JOB_OPTIONS_LIST.map(job => <option value={job.id}> {job.name} </option>)}
+                                <select name="jobDes" className="form-control" value={jobDes} value={jobDes} onChange={({ target }) => setJobDes(target.value)}>
+                                    {JOB_OPTIONS_LIST.map(job => <option value={job.id} key={job.id}> {job.name} </option>)}
                                 </select>
                                 {
                                     errMsg && <span className="text-danger"> {errMsg.jobDes} </span>
@@ -256,8 +256,8 @@ const Update = ({ myDtl, setUser, user }) => {
 
                             <Form.Group className="mb-3" as={Col} controlId="formGridCountry">
                                 <Form.Label className="font-weight-bold text-dark">Country</Form.Label> {' '} <span className="text-danger font-weight-bold">*</span>
-                                <select name="country" className="form-control" value={country} defaultValue="" value={country} onChange={({ target }) => setCountry(target.value)}>
-                                    {COUNTRY_OPTIONS_LIST.map(country => <option value={country.id}> {country.name} </option>)}
+                                <select name="country" className="form-control" value={country} value={country} onChange={({ target }) => setCountry(target.value)}>
+                                    {COUNTRY_OPTIONS_LIST.map(country => <option value={country.id} key={country.id}> {country.name} </option>)}
 
                                 </select>
                                 {
@@ -277,8 +277,8 @@ const Update = ({ myDtl, setUser, user }) => {
                                     onChange={({ target }) => setCityOrState(target.value)}
                                 />}
                                 {country === 'India' &&
-                                    <select name="cityOrState" className="form-control" value={cityOrState} defaultValue="" value={cityOrState} onChange={({ target }) => setCityOrState(target.value)}>
-                                        {STATE_OPTIONS_LIST.map(state => <option value={state.id} > {state.name} </option>)}
+                                    <select name="cityOrState" className="form-control" value={cityOrState} value={cityOrState} onChange={({ target }) => setCityOrState(target.value)}>
+                                        {STATE_OPTIONS_LIST.map(state => <option value={state.id} key={state.id} > {state.name} </option>)}
                                     </select>}
                                 {
                                     errMsg && <span className="text-danger"> {errMsg.cityOrState} </span>

@@ -15,6 +15,7 @@ const Invoice = ({ type }) => {
     const [tAmount, setTAmount] = useState(0)
 
     useEffect(() => {
+        document.body.style.background = "white"
         const callApi = async () => {
             const { ivDetails } = await oIDetailsList({ oId: orderID })
             // console.log('check invoice details', ivDetails)
