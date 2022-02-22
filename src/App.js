@@ -3,15 +3,6 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import Home from './views/Home';
 import SearchImage from "./views/SearchImage";
 import Sections from "./views/pages";
-import Header from "./components/navs/Header";
-import Footer from "./components/navs/Footer"
-import { Box } from '@mui/material';
-import LoadingBar from 'react-top-loading-bar'
-import AccountSection from './views/account/index'
-import OrderProcess from './views/orderProcess/index';
-import ManageProfile from './views/manageUser';
-import { loginUser } from './utils/apis/api'
-import Account from './views/pages/routes/AccountRoute';
 import IBRegistration from './views/account/IBRegistration';
 import Dashboard from './views/Dashboard'
 import MyAccount from './views/pages/MyAccount';
@@ -19,6 +10,8 @@ import ForgetPassword from './views/account/ForgetPassword';
 import Register from './views/account/UserRegister';
 import Invoice from './components/common/InvoiceReciept'
 import LogOut from './views/account/Logout';
+import NoMatch from './NoMatch'
+import Contact from './views/Contact';
 
 const App = () => {
   const [progress, setProgress] = useState(0)
@@ -41,8 +34,6 @@ const App = () => {
   const onLoader = () => {
     setLoader(true);
   }
-  
-  console.log('check user me', user)
 
   return (
     <>
@@ -62,8 +53,9 @@ const App = () => {
       {/* <button onClick={() => setProgress(100)}>Complete</button> */}
       {/* <OrderProcess user={user} />
       {user && <ManageProfile user={user} setUser={setUser} />}
-      <AccountSection user={user} setUser={setUser} /> */}
+    <AccountSection user={user} setUser={setUser} /> */}
       <Switch>
+        <Route path="/static/contactus" component={Contact} /> 
         <Route path="/logout" component={LogOut} />
         <Route path="/invoice/:id" onLoader={onLoader} >
           <Invoice type="confirm" />
@@ -125,6 +117,9 @@ const App = () => {
             />
           }
         />
+        <Route path="*">
+          <NoMatch />
+        </Route>
       </Switch>
 
     </>

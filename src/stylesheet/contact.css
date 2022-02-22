@@ -1,0 +1,104 @@
+.section {
+    background-color: #fff;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-width: 100%;
+    padding-left: 0px;
+    color: black
+}
+
+.page_title {
+    width: 104%;
+    float: left;
+    text-align: left;
+}
+
+.My_AccountFields {
+    width: 100%;
+    padding: 25px;
+    background: #f7f7f7;
+}
+
+.text-justify {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 550;
+}
+
+.captcha1 {
+    text-align: left;
+    border: 1px solid #333;
+    background: #333;
+    width: 100%;
+    padding: 0px 15px;
+    height: 40px;
+}
+
+.captcha1 i {
+    position: relative;
+    font-size: 20px;
+    left: 25px;
+    border: 1px solid #cccccc;
+    padding: 3px 10px;
+    background: #333;
+    color: #fff;
+    position: relative;
+    top: -5px;
+}
+
+#btnsendmail {
+    background: #000;
+    color: #fff;
+    border: 1px solid #000;
+    padding: 10px 34px;
+    margin-top: 0px;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.contact_details{
+    margin-top: 20px;
+}
+
+.contact_details p{
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.contact_details p a{
+    color: #337ab7;
+}
+
+.topright {
+    box-shadow: inset 5rem 0 7rem -2rem #f4f4f4;
+    padding: 15px 0px 0px 19px;
+}
+
+.topright h4 {
+    font-size: 19px;
+    color: #000;
+    font-weight: 700;
+}
+
+.topright p {
+    font-size: 17px;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.captcha1 span{
+    font-family: 'Shizuru', cursive;
+    color:#f4f4f4;
+    font-size: 26px;
+    position: relative;
+    top: -5px;
+}

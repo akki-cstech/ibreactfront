@@ -86,7 +86,7 @@ const Footer = () => {
                                         <br />
                                         <Grid container>
                                             <Grid className={styles.fooItems} item xs={12}>
-                                                <h5> <Link to='/'> Contact Us </Link> </h5>
+                                                <h5> <Link to='/static/contactus'> Contact Us </Link> </h5>
                                             </Grid>
 
                                             <Grid className={styles.fooItems} item xs={12}>
