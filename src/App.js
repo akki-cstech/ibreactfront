@@ -55,7 +55,9 @@ const App = () => {
       {user && <ManageProfile user={user} setUser={setUser} />}
     <AccountSection user={user} setUser={setUser} /> */}
       <Switch>
-        <Route path="/static/contactus" component={Contact} /> 
+        <Route path="/static/contactus">
+          {user && <Contact user={user} setUser={setUser} />}
+        </Route>
         <Route path="/logout" component={LogOut} />
         <Route path="/invoice/:id" onLoader={onLoader} >
           <Invoice type="confirm" />

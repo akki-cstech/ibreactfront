@@ -166,3 +166,12 @@ export const changePassword = async formData => {
         return error.response.data
     }
 }
+
+export const sendMail = async formData => {
+    try {
+        const res = await axios.post('/sendMail', formData)
+        return res.data
+    } catch (error) {
+        return error.response.data
+    }
+}
