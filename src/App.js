@@ -14,6 +14,7 @@ import NoMatch from './NoMatch'
 import Contact from './views/pages/static/Contact';
 import Pricing from './views/pages/static/Pricing'
 import Static from './views/pages/static/Static';
+import AboutUs from './views/pages/static/AboutUs'
 
 const App = () => {
   const [progress, setProgress] = useState(0)
@@ -63,6 +64,11 @@ const App = () => {
         <Route path="/static/pricing">
           <Static user={user} setUser={setUser}>
             <Pricing />
+          </Static>
+        </Route>
+        <Route path="/static/aboutus">
+          <Static user={user} setUser={setUser}>
+            <AboutUs />
           </Static>
         </Route>
         <Route path="/logout" component={LogOut} />

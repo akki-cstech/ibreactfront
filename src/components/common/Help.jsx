@@ -7,11 +7,13 @@ const Help = () => {
         <div>
             <ListGroup className='My_AccountFields'>
                 <ListGroup.Item action >
-                   <h4> Help Topics </h4>
+                    <h4> Help Topics </h4>
                 </ListGroup.Item>
                 <ListGroup.Item action >
-                    <i className="fa fa-angle-double-right"></i>{' '}
-                    Pricing
+                    <Link to="/static/pricing">
+                        <i className="fa fa-angle-double-right"></i>{' '}
+                        Pricing
+                    </Link>
                 </ListGroup.Item>
                 <ListGroup.Item action >
                     <i className="fa fa-angle-double-right"></i>{' '}
@@ -42,8 +44,10 @@ const Help = () => {
                     Technical
                 </ListGroup.Item>
                 <ListGroup.Item action >
-                    <i className="fa fa-angle-double-right"></i>{' '}
-                    Contact Us
+                    <Link to="/static/contactus">
+                        <i className="fa fa-angle-double-right"></i>{' '}
+                        Contact Us
+                    </Link>
                 </ListGroup.Item> <ListGroup.Item action >
                     <i className="fa fa-angle-double-right"></i>{' '}
                     Glossary
