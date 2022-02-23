@@ -16,8 +16,10 @@ const Help = () => {
                     </Link>
                 </ListGroup.Item>
                 <ListGroup.Item action >
+                    <Link to="/static/searchtips">
                     <i className="fa fa-angle-double-right"></i>{' '}
                     Search Tips
+                    </Link>
                 </ListGroup.Item>
                 <ListGroup.Item action >
                     <i className="fa fa-angle-double-right"></i>{' '}
