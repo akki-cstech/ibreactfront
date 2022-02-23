@@ -28,8 +28,10 @@ const Help = () => {
                     Downloading
                 </ListGroup.Item>
                 <ListGroup.Item action >
+                    <Link to="/static/licensing">
                     <i className="fa fa-angle-double-right"></i>{' '}
                     Licensing
+                    </Link>
                 </ListGroup.Item>
                 <ListGroup.Item action >
                     <i className="fa fa-angle-double-right"></i>{' '}
