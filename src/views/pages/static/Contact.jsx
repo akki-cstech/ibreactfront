@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import Header from '../components/navs/Header'
-import Footer from '../components/navs/Footer'
+import Header from '../../../components/navs/Header'
+import Footer from '../../../components/navs/Footer'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 import Alert from '@mui/material/Alert'
 import { Link } from 'react-router-dom'
-import Help from '../components/common/Help'
-import '../stylesheet/contact.css'
+import Help from '../../../components/common/Help'
 import { type } from 'jquery'
-import { sendMail, getUser } from '../utils/apis/api'
+import { sendMail, getUser } from '../../../utils/apis/api'
+import '../../../stylesheet/contact.css'
 
 const Contact = ({ user, setUser }) => {
     const [myCaptcha, setMyCaptcha] = useState('')

@@ -348,7 +348,7 @@ const Header = ({ loggedInUser, setLoggedInUser }) => {
                             <div>
                                 <ul>
                                     <li>
-                                        {!loggedInUser && <Link className={styles.pricing} to='ibregistration'>Sign in</Link>}
+                                        {!loggedInUser && <Link className={styles.pricing} to='/ibregistration'>Sign in</Link>}
                                         {loggedInUser && loggedDropDown()}
                                         {/* <ul className={styles.navItems}>
                                             <li></li>

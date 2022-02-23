@@ -1,0 +1,141 @@
+.container {
+    background-color: white;
+    color:black;
+    padding: 0;
+    min-width: 100%;
+}
+
+.pageTitle {
+    font-size: 52px;
+    padding: 10px;
+    margin-top: 8px
+}
+
+.SizePack {
+    padding: 15px 80px;
+}
+
+#Large_SizePack {
+    background: #e5f2de;
+}
+
+#Small_SizePack {
+    background: #f4e1f5;
+}
+
+.SizePack > div:nth-child(1) > h2 {
+    font-size: 38px;
+}
+
+.Large_InnerBtn .btn {
+    background: #000;
+    color: #fff;
+    margin-right: 80px;
+    padding: 13px 45px;
+    border-radius: 0px;
+    border: 1px solid #000;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.Table_bottomText {
+    padding: 30px
+}
+
+.ForPack {
+    text-align: center;
+    margin-left: 25px;
+    margin-right: 20px;
+    width: 95%
+}
+
+#ForLargePack {
+    background: #f0ffea;
+}
+
+#ForSmallPack {
+    background: #fdeafe;
+}
+
+.table thead th, td {
+    vertical-align: bottom;
+    border-bottom: none;
+    border-top: none;
+    border-bottom: none;
+    font-size: 22px;
+}
+
+#ForLargePack > div:nth-child(2) > div > table > thead > tr th, td {
+    border-bottom: 1px solid #fff;
+    border-top: none;
+}
+
+#ForLargePack > div.text-center.col{
+    height: 80px
+}
+
+#ForLargePack > div.text-center.col p{
+    position: relative;
+    top: 16px;
+    font-size: 18px;
+}
+
+#ForSmallPack > div.text-center.col{
+    height: 80px
+}
+
+#ForSmallPack > div.text-center.col p{
+    position: relative;
+    top: 16px;
+    font-size: 18px;
+}
+
+#SingleImagePricing{
+    background: #ececec;
+}
+
+#SingleImagePricing > div.text-center.col-12 > h2{
+    padding: 20px;
+    margin-top: 10px;
+    font-Size: 38px
+}
+
+#SingleImagePricing > div:nth-child(2) > table{
+    width: 95%;
+    margin: auto
+}
+
+#SingleImagePricing > div:nth-child(2) > table th{
+    font-weight: normal;
+    font-size: 22px
+}
+
+#SingleImagePricing > div:nth-child(2) > table td{
+    font-weight: normal;
+    font-size: 18px
+}
+
+#SingleImagePricing > div.col{
+    padding: 36px 50px;
+    font-size: 18px
+}
+
+#root > div > div > div.Terms_CondiTions.col-12 > h4{
+    padding: 4px 22px;
+    margin-top: 31px;
+    margin-left: 48px;
+}
+
+ul {
+    text-decoration: none;
+    margin: 0 88px;
+    list-style: disc;
+}
+
+ul li{
+    padding: 2px 0
+}
+
+#root > div > div > div.Terms_CondiTions{
+    margin-bottom: 35px;
+}

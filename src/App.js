@@ -11,7 +11,8 @@ import Register from './views/account/UserRegister';
 import Invoice from './components/common/InvoiceReciept'
 import LogOut from './views/account/Logout';
 import NoMatch from './NoMatch'
-import Contact from './views/Contact';
+import Contact from './views/pages/static/Contact';
+import Pricing from './views/pages/static/Pricing'
 
 const App = () => {
   const [progress, setProgress] = useState(0)
@@ -56,7 +57,10 @@ const App = () => {
     <AccountSection user={user} setUser={setUser} /> */}
       <Switch>
         <Route path="/static/contactus">
-          {user && <Contact user={user} setUser={setUser} />}
+          <Contact user={user} setUser={setUser} />
+        </Route>
+        <Route path="/static/pricing">
+          <Pricing user={user} setUser={setUser} />
         </Route>
         <Route path="/logout" component={LogOut} />
         <Route path="/invoice/:id" onLoader={onLoader} >
