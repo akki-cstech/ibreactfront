@@ -126,13 +126,13 @@
     margin-left: 48px;
 }
 
-ul {
+#Term_Cnd {
     text-decoration: none;
     margin: 0 88px;
     list-style: disc;
 }
 
-ul li{
+#Term_Cnd li{
     padding: 2px 0
 }
 
