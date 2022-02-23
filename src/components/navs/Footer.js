@@ -46,7 +46,7 @@ const Footer = () => {
                                             </Grid>
 
                                             <Grid className={styles.fooItems} item xs={12}>
-                                                <h5> <Link to='/'> Testimonials </Link> </h5>
+                                                <h5> <Link to='/static/testimonials'> Testimonials </Link> </h5>
                                             </Grid>
 
                                             <Grid className={styles.fooItems} item xs={12}>
