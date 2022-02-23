@@ -18,6 +18,7 @@ import AboutUs from './views/pages/static/AboutUs'
 import License from './views/pages/static/License';
 import SearchTips from './views/pages/static/SearchTips';
 import Testimonial from './views/pages/static/Testimonial';
+import Term from './views/pages/static/Terms'
 
 const App = () => {
   const [progress, setProgress] = useState(0)
@@ -87,6 +88,11 @@ const App = () => {
         <Route path="/static/testimonials">
           <Static user={user} setUser={setUser}>
             <Testimonial />
+          </Static>
+        </Route>
+        <Route path="/static/termsofuse">
+          <Static user={user} setUser={setUser}>
+            <Term />
           </Static>
         </Route>
         <Route path="/logout" component={LogOut} />
