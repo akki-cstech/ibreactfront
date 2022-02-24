@@ -26,6 +26,7 @@ import Technical from './views/pages/static/Technical'
 import Ordering from './views/pages/static/Ordering';
 import Downloading from './views/pages/static/Downloading';
 import Wishlist from './views/pages/static/Wishlist';
+import StaticAcc from './views/pages/static/StaticAcc';
 
 const App = () => {
   const [progress, setProgress] = useState(0)
@@ -137,6 +138,11 @@ const App = () => {
         <Route path="/static/lightbox">
           <Static user={user} setUser={setUser}>
             <Wishlist />
+          </Static>
+        </Route>
+        <Route path="/static/myaccountshelp">
+          <Static user={user} setUser={setUser}>
+            <StaticAcc />
           </Static>
         </Route>
         <Route path="/logout" component={LogOut} />
