@@ -175,3 +175,12 @@ export const sendMail = async formData => {
         return error.response.data
     }
 }
+
+export const ReqForSearch = async formData => {
+    try {
+        const res = await axios.post('/reqForSearch', formData)
+        return res.data
+    } catch (error) {
+        return error.response.data
+    }
+}

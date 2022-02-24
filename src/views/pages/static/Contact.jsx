@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import Header from '../../../components/navs/Header'
-import Footer from '../../../components/navs/Footer'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 import Alert from '@mui/material/Alert'
 import { Link } from 'react-router-dom'
@@ -20,19 +18,21 @@ const Contact = ({ user, setUser }) => {
     const [errMsg, setErrMsg] = useState(null)
     const [alertMsg, setAlertMsg] = useState(null)
 
-    const callApi = async () => {
-        const me = await getUser({email: user.f_email})
+    const callApi = async (user) => {
+        const me = await getUser({ email: user.f_email })
         setName(me.myDetails[0].f_fullname)
         setEmail(me.myDetails[0].f_email)
         setPhone(me.myDetails[0].f_mobileno)
     }
 
     useEffect(() => {
+        const user = JSON.parse(window.localStorage.getItem('loggedUser'))
+
         if (myCaptcha === '') {
             captchaGenerator()
         }
         if (name === '' && email === '' && phone === '' && user) {
-            callApi()
+            callApi(user)
         }
         if (isSubmitted) {
             afterSubmit()
@@ -50,7 +50,6 @@ const Contact = ({ user, setUser }) => {
 
         setMyCaptcha(captcha)
     }
-
 
     const afterSubmit = () => {
         let submitMe = true
@@ -120,9 +119,7 @@ const Contact = ({ user, setUser }) => {
         }
     }
 
-    return <>
-        <Header loggedInUser={user} setLoggedInUser={setUser} />
-        {/* Static Page */}
+    return (
         <Container className="section mt-4 pb-4">
             <Row className="justify-content-xs-center">
                 <Col md={3} sm={3} className="hidden-xs">
@@ -277,9 +274,7 @@ const Contact = ({ user, setUser }) => {
                 </Col>
             </Row>
         </Container>
-
-        <Footer />
-    </>
+    )
 }
 
 export default Contact

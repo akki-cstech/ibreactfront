@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Help = () => {
     return (
         <div>
-            <ListGroup className='My_AccountFields'>
+            <ListGroup className='My_AccountFields' style={{background: "white"}}>
                 <ListGroup.Item action >
                     <h4> Help Topics </h4>
                 </ListGroup.Item>

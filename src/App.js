@@ -21,6 +21,7 @@ import Testimonial from './views/pages/static/Testimonial';
 import Term from './views/pages/static/Terms'
 import FAQ from './views/pages/static/FAQ'
 import PrivacyPolicy from './views/pages/static/PrivacyPolicy';
+import FreeResearch from './views/pages/static/FreeResearch';
 
 const App = () => {
   const [progress, setProgress] = useState(0)
@@ -65,7 +66,9 @@ const App = () => {
     <AccountSection user={user} setUser={setUser} /> */}
       <Switch>
         <Route path="/static/contactus">
-          <Contact user={user} setUser={setUser} />
+          <Static user={user} setUser={setUser}>
+            <Contact/>
+          </Static>
         </Route>
         <Route path="/static/pricing">
           <Static user={user} setUser={setUser}>
@@ -105,6 +108,11 @@ const App = () => {
         <Route path="/static/privacypolicy">
           <Static user={user} setUser={setUser}>
             <PrivacyPolicy />
+          </Static>
+        </Route>
+        <Route path="/static/freeresearch">
+          <Static user={user} setUser={setUser}>
+            <FreeResearch />
           </Static>
         </Route>
         <Route path="/logout" component={LogOut} />
