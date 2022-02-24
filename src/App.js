@@ -23,6 +23,8 @@ import FAQ from './views/pages/static/FAQ'
 import PrivacyPolicy from './views/pages/static/PrivacyPolicy';
 import FreeResearch from './views/pages/static/FreeResearch';
 import Technical from './views/pages/static/Technical'
+import Ordering from './views/pages/static/Ordering';
+import Downloading from './views/pages/static/Downloading';
 
 const App = () => {
   const [progress, setProgress] = useState(0)
@@ -119,6 +121,16 @@ const App = () => {
         <Route path="/static/technical">
           <Static user={user} setUser={setUser}>
             <Technical />
+          </Static>
+        </Route>
+        <Route path="/static/ordering">
+          <Static user={user} setUser={setUser}>
+            <Ordering />
+          </Static>
+        </Route>
+        <Route path="/static/downloading">
+          <Static user={user} setUser={setUser}>
+            <Downloading />
           </Static>
         </Route>
         <Route path="/logout" component={LogOut} />

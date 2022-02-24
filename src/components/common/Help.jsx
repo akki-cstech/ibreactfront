@@ -22,12 +22,16 @@ const Help = () => {
                     </Link>
                 </ListGroup.Item>
                 <ListGroup.Item action >
-                    <i className="fa fa-angle-double-right"></i>{' '}
-                    Ordering
+                    <Link to="/static/ordering">
+                        <i className="fa fa-angle-double-right"></i>{' '}
+                        Ordering
+                    </Link>
                 </ListGroup.Item>
                 <ListGroup.Item action >
-                    <i className="fa fa-angle-double-right"></i>{' '}
-                    Downloading
+                    <Link to="/static/downloading">
+                        <i className="fa fa-angle-double-right"></i>{' '}
+                        Downloading
+                    </Link>
                 </ListGroup.Item>
                 <ListGroup.Item action >
                     <Link to="/static/licensing">
