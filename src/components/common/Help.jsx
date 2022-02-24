@@ -70,11 +70,13 @@ const Help = () => {
                     </Link>
                 </ListGroup.Item>
                 <ListGroup.Item action >
-                    <i className="fa fa-angle-double-right"></i>{' '}
-                    Be a Contributor
+                    <Link to="/static/contributor">
+                        <i className="fa fa-angle-double-right"></i>{' '}
+                        Be a Contributor
+                    </Link>
                 </ListGroup.Item>
             </ListGroup>
-        </div>
+        </div >
     )
 }
 

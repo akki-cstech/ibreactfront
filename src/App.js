@@ -28,6 +28,7 @@ import Downloading from './views/pages/static/Downloading';
 import Wishlist from './views/pages/static/Wishlist';
 import StaticAcc from './views/pages/static/StaticAcc';
 import Glossory from './views/pages/static/Glossory'
+import Contributor from './views/pages/static/Contributor';
 
 const App = () => {
   const [progress, setProgress] = useState(0)
@@ -149,6 +150,11 @@ const App = () => {
         <Route path="/static/glossary">
           <Static user={user} setUser={setUser}>
             <Glossory />
+          </Static>
+        </Route>
+        <Route path="/static/contributor">
+          <Static user={user} setUser={setUser}>
+            <Contributor />
           </Static>
         </Route>
         <Route path="/logout" component={LogOut} />
