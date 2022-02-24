@@ -22,6 +22,7 @@ import Term from './views/pages/static/Terms'
 import FAQ from './views/pages/static/FAQ'
 import PrivacyPolicy from './views/pages/static/PrivacyPolicy';
 import FreeResearch from './views/pages/static/FreeResearch';
+import Technical from './views/pages/static/Technical'
 
 const App = () => {
   const [progress, setProgress] = useState(0)
@@ -113,6 +114,11 @@ const App = () => {
         <Route path="/static/freeresearch">
           <Static user={user} setUser={setUser}>
             <FreeResearch />
+          </Static>
+        </Route>
+        <Route path="/static/technical">
+          <Static user={user} setUser={setUser}>
+            <Technical />
           </Static>
         </Route>
         <Route path="/logout" component={LogOut} />

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Help = () => {
     return (
         <div>
-            <ListGroup className='My_AccountFields' style={{background: "white"}}>
+            <ListGroup className='My_AccountFields bg-light'>
                 <ListGroup.Item action >
                     <h4> Help Topics </h4>
                 </ListGroup.Item>
@@ -17,8 +17,8 @@ const Help = () => {
                 </ListGroup.Item>
                 <ListGroup.Item action >
                     <Link to="/static/searchtips">
-                    <i className="fa fa-angle-double-right"></i>{' '}
-                    Search Tips
+                        <i className="fa fa-angle-double-right"></i>{' '}
+                        Search Tips
                     </Link>
                 </ListGroup.Item>
                 <ListGroup.Item action >
@@ -31,8 +31,8 @@ const Help = () => {
                 </ListGroup.Item>
                 <ListGroup.Item action >
                     <Link to="/static/licensing">
-                    <i className="fa fa-angle-double-right"></i>{' '}
-                    Licensing
+                        <i className="fa fa-angle-double-right"></i>{' '}
+                        Licensing
                     </Link>
                 </ListGroup.Item>
                 <ListGroup.Item action >
@@ -44,8 +44,10 @@ const Help = () => {
                     My Account
                 </ListGroup.Item>
                 <ListGroup.Item action >
-                    <i className="fa fa-angle-double-right"></i>{' '}
-                    Technical
+                    <Link to="/static/technical">
+                        <i className="fa fa-angle-double-right"></i>{' '}
+                        Technical
+                    </Link>
                 </ListGroup.Item>
                 <ListGroup.Item action >
                     <Link to="/static/contactus">

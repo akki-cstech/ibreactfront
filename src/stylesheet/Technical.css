@@ -1,0 +1,16 @@
+.sample_Image_Table td{
+    font-size: 16px;
+    text-align: center;
+    line-height: 25px;
+}
+
+.sample_Image_Table th{
+    width: auto
+}
+
+#smallImgDIV{
+    font-size: 18px;
+    padding: 23px 25px 10px 25px;
+    position: relative;
+    top: -16px
+}
