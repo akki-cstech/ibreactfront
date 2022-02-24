@@ -20,6 +20,7 @@ import SearchTips from './views/pages/static/SearchTips';
 import Testimonial from './views/pages/static/Testimonial';
 import Term from './views/pages/static/Terms'
 import FAQ from './views/pages/static/FAQ'
+import PrivacyPolicy from './views/pages/static/PrivacyPolicy';
 
 const App = () => {
   const [progress, setProgress] = useState(0)
@@ -99,6 +100,11 @@ const App = () => {
         <Route path="/static/faq">
           <Static user={user} setUser={setUser}>
             <FAQ />
+          </Static>
+        </Route>
+        <Route path="/static/privacypolicy">
+          <Static user={user} setUser={setUser}>
+            <PrivacyPolicy />
           </Static>
         </Route>
         <Route path="/logout" component={LogOut} />

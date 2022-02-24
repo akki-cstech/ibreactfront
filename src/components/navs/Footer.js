@@ -74,7 +74,7 @@ const Footer = () => {
                                             </Grid>
 
                                             <Grid className={styles.fooItems} item xs={12}>
-                                                <h5> <Link to='/'> Privacy Policy </Link> </h5>
+                                                <h5> <Link to='/static/privacypolicy'> Privacy Policy </Link> </h5>
                                             </Grid>
 
                                         </Grid>
