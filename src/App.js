@@ -25,6 +25,7 @@ import FreeResearch from './views/pages/static/FreeResearch';
 import Technical from './views/pages/static/Technical'
 import Ordering from './views/pages/static/Ordering';
 import Downloading from './views/pages/static/Downloading';
+import Wishlist from './views/pages/static/Wishlist';
 
 const App = () => {
   const [progress, setProgress] = useState(0)
@@ -70,7 +71,7 @@ const App = () => {
       <Switch>
         <Route path="/static/contactus">
           <Static user={user} setUser={setUser}>
-            <Contact/>
+            <Contact />
           </Static>
         </Route>
         <Route path="/static/pricing">
@@ -131,6 +132,11 @@ const App = () => {
         <Route path="/static/downloading">
           <Static user={user} setUser={setUser}>
             <Downloading />
+          </Static>
+        </Route>
+        <Route path="/static/lightbox">
+          <Static user={user} setUser={setUser}>
+            <Wishlist />
           </Static>
         </Route>
         <Route path="/logout" component={LogOut} />
