@@ -62,10 +62,14 @@ const Help = () => {
                         <i className="fa fa-angle-double-right"></i>{' '}
                         Contact Us
                     </Link>
-                </ListGroup.Item> <ListGroup.Item action >
-                    <i className="fa fa-angle-double-right"></i>{' '}
-                    Glossary
-                </ListGroup.Item> <ListGroup.Item action >
+                </ListGroup.Item>
+                <ListGroup.Item action >
+                    <Link to="/static/glossary">
+                        <i className="fa fa-angle-double-right"></i>{' '}
+                        Glossary
+                    </Link>
+                </ListGroup.Item>
+                <ListGroup.Item action >
                     <i className="fa fa-angle-double-right"></i>{' '}
                     Be a Contributor
                 </ListGroup.Item>
