@@ -184,3 +184,12 @@ export const ReqForSearch = async formData => {
         return error.response.data
     }
 }
+
+export const OrderProposalList = async email => {
+    try {
+        const res = await axios.post('/orderProposalList', email)
+        return res.data
+    } catch (error) {
+        return error.response.data
+    }
+}

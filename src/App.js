@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, createContext } from 'react';
 import { Route, Switch, Redirect } from "react-router-dom";
 import Home from './views/Home';
 import SearchImage from "./views/SearchImage";
@@ -29,12 +29,14 @@ import Wishlist from './views/pages/static/Wishlist';
 import StaticAcc from './views/pages/static/StaticAcc';
 import Glossory from './views/pages/static/Glossory'
 import Contributor from './views/pages/static/Contributor';
+import Proposal from './views/pages/ShowProposal';
+
+const BrandName = createContext([{}, () => { }]);
 
 const App = () => {
   const [progress, setProgress] = useState(0)
   const [user, setUser] = useState(null)
-
-  const [inputValue, setInputValue] = useState('');
+  const [brand, setBrand] = useState('')
   // const [progress, setProgress] = useState(0);
   const [Loader, setLoader] = useState(false);
   const ref = useRef(null)
@@ -174,7 +176,14 @@ const App = () => {
           {!user ? <IBRegistration setUser={setUser} /> : <Redirect to="/" />}
         </Route>
         <Route path="/myaccounts" onLoader={onLoader} >
-          <Dashboard user={user} setUser={setUser} brand="My Account" > <MyAccount user={user} setUser={setUser} />  </Dashboard>
+          <BrandName.Provider value={[brand, setBrand]}>
+            <Dashboard user={user} brand={brand} setUser={setUser}>
+              <MyAccount user={user} setUser={setUser} />
+            </Dashboard>
+          </BrandName.Provider>
+        </Route>
+        <Route path="/showAllProposal" onLoader={onLoader} >
+          <Dashboard user={user} setUser={setUser} > <Proposal />  </Dashboard>
         </Route>
         <Route path="/forgetPassword" onLoader={onLoader} >
           <ForgetPassword />
@@ -228,3 +237,4 @@ const App = () => {
 }
 
 export default App;
+export { BrandName }

@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useRouteMatch } from 'react-router-dom'
 import Header from '../components/navs/Header'
 import Footer from '../components/navs/Footer'
 import MyAccountNav from '../components/common/MyAccountNav'
@@ -12,10 +12,12 @@ const DashBoard = ({ user, setUser, children, brand }) => {
     //     }
     // }, [])
 
+    const { url } = useRouteMatch()
+
     return (
         <div>
             <Header loggedInUser={user} setLoggedInUser={setUser} />
-            <MyAccountNav brand={brand} />
+            {url === '/myaccounts' && <MyAccountNav brand={brand} />}
             {children}
             <Footer />
         </div>
