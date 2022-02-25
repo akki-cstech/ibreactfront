@@ -56,7 +56,7 @@ const SearchTips = () => {
                         <Col xs={12} className="mb-3 text-justify">
                             <h5 style={{ borderBottom: "2px solid", padding: "2px", display: "inline" }}>Free Research</h5>
                             <p className='mt-2'>
-                                If you are unable to find the EXACT image you are looking for then just fill up the <Link className='text-info'>Free Research form</Link> and our skilled researchers will search our collection of images and quickly create a selection just for you.
+                                If you are unable to find the EXACT image you are looking for then just fill up the <Link to="/static/freeresearch" className='text-info'>Free Research form</Link> and our skilled researchers will search our collection of images and quickly create a selection just for you.
                             </p>
                         </Col>
                     </Row>

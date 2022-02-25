@@ -15,7 +15,7 @@ import Contact from './views/pages/static/Contact';
 import Pricing from './views/pages/static/Pricing'
 import Static from './views/pages/static/Static';
 import AboutUs from './views/pages/static/AboutUs'
-import License from './views/pages/static/License';
+import LicenseRouter from './views/pages/static/license/index';
 import SearchTips from './views/pages/static/SearchTips';
 import Testimonial from './views/pages/static/Testimonial';
 import Term from './views/pages/static/Terms'
@@ -89,7 +89,7 @@ const App = () => {
         </Route>
         <Route path="/static/licensing">
           <Static user={user} setUser={setUser}>
-            <License />
+            <LicenseRouter />
           </Static>
         </Route>
         <Route path="/static/searchtips">

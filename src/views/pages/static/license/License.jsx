@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Row, Col  } from 'react-bootstrap'
-import Help from '../../../components/common/Help'
+import Help from '../../../../components/common/Help'
 import { Link } from 'react-router-dom'
 
 const License = () => {
@@ -23,15 +23,15 @@ const License = () => {
                         </Col>
                         <Col xs={12} className="mb-3">
                             <h4 style={{borderBottom: "3px solid", display: "inline", padding: "5px"}}>Mash Non-Exclusive Right Licence Agreement</h4>
-                            <p className="mt-3 text-justify"><Link className='text-info'>Click here</Link> for details</p>
+                            <p className="mt-3 text-justify"><Link to="/static/licensing/mashnonexeclusiverightagreement" className='text-info'>Click here</Link> for details</p>
                         </Col>
                         <Col xs={12} className="mb-3">
                             <h4 style={{borderBottom: "3px solid", display: "inline", padding: "5px"}}>Mash Editorial Agreement</h4>
-                            <p className="mt-3 text-justify"><Link className='text-info'>Click here</Link> for details</p>
+                            <p className="mt-3 text-justify"><Link to="/static/licensing/editorial" className='text-info'>Click here</Link> for details</p>
                         </Col>
                         <Col xs={12}>
                             <h4 style={{borderBottom: "3px solid", display: "inline", padding: "5px"}}>Mash Comp Usage Agreement</h4>
-                            <p className="mt-3 text-justify"><Link className='text-info'>Click here</Link> for details</p>
+                            <p className="mt-3 text-justify"><Link to="/static/licensing/compusagesagreement" className='text-info'>Click here</Link> for details</p>
                         </Col>
                     </Row>
                 </Col>

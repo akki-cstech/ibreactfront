@@ -118,7 +118,7 @@ const Term = () => {
                         </Col>
                         <Col xs={12} className="mb-3">
                             <h5 style={{ borderBottom: "2px solid", padding: "2px", display: "inline" }}>16. REFUND POLICY</h5>
-                            <p className="mt-2">If you are, for any reason, not entirely happy with your purchase, we will cheerfully issue a full refund. To request a refund, simply <Link className="text-info" to="/statics/contactus">contact us</Link> with your purchase details within ninety (90) days of your purchase. Please include your order number (sent to you via email after ordering) and optionally tell us why you're requesting a refund - we take customer feedback very seriously and use it to constantly improve our products and quality of service. Refunds are being processed within 21 days period.</p>
+                            <p className="mt-2">If you are, for any reason, not entirely happy with your purchase, we will cheerfully issue a full refund. To request a refund, simply <Link className="text-info" to="/static/contactus">contact us</Link> with your purchase details within ninety (90) days of your purchase. Please include your order number (sent to you via email after ordering) and optionally tell us why you're requesting a refund - we take customer feedback very seriously and use it to constantly improve our products and quality of service. Refunds are being processed within 21 days period.</p>
                         </Col>
                     </Row>
 

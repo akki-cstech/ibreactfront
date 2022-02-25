@@ -203,7 +203,7 @@ const Contact = ({ user, setUser }) => {
                                     <a href="mailto:careers@imagesbazaar.com">careers@imagesbazaar.com</a> </p>
                                 <p >For contributing your images, kindly email your portfolio at
                                     <a href="mailto:creative@imagesbazaar.com"> creative@imagesbazaar.com </a>
-                                    or call us in 011-66545450. <Link to="/contributor" target="_blank">Know more</Link>
+                                    or call us in 011-66545450. <Link to="/static/contributor">Know more</Link>
                                 </p>
                             </div>
                         </Col>
