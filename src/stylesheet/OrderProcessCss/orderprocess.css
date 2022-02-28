@@ -1,0 +1,145 @@
+.table>tbody>tr>td, .table>tfoot>tr>td{
+    vertical-align: middle;
+}
+.btn-inverse{
+	background:#333;
+	border:1px solid #333;
+	color:#fff;
+	font-size:20px;
+	border-radius:0px;
+	padding: 8px 90px;
+	margin-right:5px;
+	margin-bottom:7px;
+	margin-left: 7px;
+}
+.Product{
+	width:50%;
+}
+.Buy_Loader{
+	width: 144px;
+	height: 10px;
+	position: relative;
+    top: 27px;
+    left: 934px;
+}
+.btn.focus, .btn:focus, .btn:hover {
+    color: #fff;
+    text-decoration: none;
+}
+.table>tbody>tr>td{
+	border:none;
+	font-size:18px;
+} 
+.table>thead>tr>th{
+	background:#333;
+	    color: #fff;
+	border: 1px solid #333;
+	font-size:20px;
+}
+.Border-Bottom{
+	border-bottom:1px solid #eee;
+
+}
+.Border-Bottom p{
+	font-size:18px;
+}
+.Border-Bottom h4{
+	font-size:18px;
+}
+.page_title{
+	border-bottom: 1px solid #000;
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin: 35px 0 40px 0;
+}
+.page_title span b{
+	font-weight:500;
+}
+.page_title span{
+	    display: inline-block;
+    position: relative;
+    font-size: 27px;
+    color: #000;
+    margin-bottom: -12px;
+    background-color: #fff;
+    width: 40%;
+    
+    margin-top: 0px;
+    font-weight: normal;
+    top:8px;
+}
+#Shopping_Cart{
+	border: 1px solid #eee;
+    display: inline-block;
+    width: 100%;
+    padding: 0px 0px 0px 0px;
+    margin-bottom: 20px;
+}
+.Border-Bottom .btn-danger{
+	background:#333;
+	border:1px solid #333;
+	border-radius: 133px;
+    padding: 4px 7px;
+}
+.Border-Bottom .btn-danger:active:hover{
+	background:#333;
+	border:1px solid #333;
+}
+#Shopping_Cart .table{
+	margin-bottom:10px;
+}
+@media screen and (max-width: 600px) {
+    table#cart tbody td .form-control{
+		width:20%;
+		display: inline !important;
+	}
+	.actions .btn{
+		width:15%;
+		margin:1.5em 0;
+	}
+	
+	.actions .btn-info{
+		float:left;
+	}
+	.actions .btn-danger{
+		float:right;
+	}
+	
+	table#cart thead { display: none; }
+	table#cart tbody td { display: block; padding: .6rem; min-width:255px;}
+
+	table#cart tbody td:before {
+		content: attr(data-th); font-weight: bold;
+		display: inline-block; width: 8rem;
+	}
+	
+	
+	
+	table#cart tfoot td{display:block; }
+	table#cart tfoot td .btn{display:block;}
+	
+}  
+@media screen and (max-width: 767px) {
+.page_title span {
+  font-size: 18px;
+}
+.btn-inverse{
+	padding: 8px 80px !important;
+	font-size:16px;
+} 
+.table>tbody>tr>td {
+    border: none;
+    font-size: 16px;
+}
+.Border-Bottom h4 {
+    font-size: 15px;
+}
+.Border-Bottom p {
+    font-size: 15px;
+} 
+.pull-left {
+    float: right!important;
+}
+}
+

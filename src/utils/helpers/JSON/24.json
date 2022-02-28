@@ -1,0 +1,285 @@
+{
+	"NewDataSet": {
+		"Table": [
+			{
+				"sno": "665",
+				"catname": "View All",
+				"refid": "24",
+				"searchid": "family",
+				"type": "1",
+				"sortid": "0",
+				"dispname": "Lifestyle: Families >> View All"
+			},
+			{
+				"sno": "747",
+				"catname": "Indoors",
+				"refid": "24",
+				"searchid": "Indoors Family",
+				"type": "1",
+				"sortid": "4",
+				"dispname": "Lifestyle: Families >> Indoors"
+			},
+			{
+				"sno": "1033",
+				"catname": "Outdoors",
+				"refid": "24",
+				"searchid": "Outdoors Family",
+				"type": "1",
+				"sortid": "7",
+				"dispname": "Lifestyle: Families >> Outdoors"
+			},
+			{
+				"sno": "1034",
+				"catname": "Studio Shot",
+				"refid": "24",
+				"searchid": "Studio Family",
+				"type": "1",
+				"sortid": "10",
+				"dispname": "Lifestyle: Families >> Studio Shot"
+			},
+			{
+				"sno": "1035",
+				"catname": "Nuclear Family",
+				"refid": "24",
+				"searchid": "Two-generation",
+				"type": "1",
+				"sortid": "13",
+				"dispname": "Lifestyle: Families >> Nuclear Family"
+			},
+			{
+				"sno": "1036",
+				"catname": "Joint Family",
+				"refid": "24",
+				"searchid": "Joint Family 1xgroup",
+				"type": "1",
+				"sortid": "14",
+				"dispname": "Lifestyle: Families >> Joint Family"
+			},
+			{
+				"sno": "1242",
+				"catname": "Family with Kids",
+				"refid": "24",
+				"searchid": "family kids",
+				"type": "1",
+				"sortid": "15",
+				"dispname": "Lifestyle: Families >> Family with Kids"
+			},
+			{
+				"sno": "1243",
+				"catname": "Family with Teenagers",
+				"refid": "24",
+				"searchid": "family teen",
+				"type": "1",
+				"sortid": "16",
+				"dispname": "Lifestyle: Families >> Family with Teenagers"
+			},
+			{
+				"sno": "1244",
+				"catname": "Family with Adults",
+				"refid": "24",
+				"searchid": "family adult only",
+				"type": "1",
+				"sortid": "17",
+				"dispname": "Lifestyle: Families >> Family with Adults"
+			},
+			{
+				"sno": "1245",
+				"catname": "Caring & Affectionate",
+				"refid": "24",
+				"searchid": "Family 1xcare",
+				"type": "1",
+				"sortid": "18",
+				"dispname": "Lifestyle: Families >> Caring & Affectionate"
+			},
+			{
+				"sno": "1037",
+				"catname": "Freedom",
+				"refid": "24",
+				"searchid": "Family freedom",
+				"type": "1",
+				"sortid": "19",
+				"dispname": "Lifestyle: Families >> Freedom"
+			},
+			{
+				"sno": "1038",
+				"catname": "Fun & Entertainment",
+				"refid": "24",
+				"searchid": "Family fun",
+				"type": "1",
+				"sortid": "22",
+				"dispname": "Lifestyle: Families >> Fun & Entertainment"
+			},
+			{
+				"sno": "150",
+				"catname": "Grandparents",
+				"refid": "24",
+				"searchid": "Grandparents",
+				"type": "1",
+				"sortid": "25",
+				"dispname": "Lifestyle: Families >> Grandparents"
+			},
+			{
+				"sno": "1039",
+				"catname": "Happy Family",
+				"refid": "24",
+				"searchid": "Happy Family",
+				"type": "1",
+				"sortid": "28",
+				"dispname": "Lifestyle: Families >> Happy Family"
+			},
+			{
+				"sno": "148",
+				"catname": "Father Only",
+				"refid": "24",
+				"searchid": "2 father",
+				"type": "1",
+				"sortid": "31",
+				"dispname": "Lifestyle: Families >> Father Only"
+			},
+			{
+				"sno": "149",
+				"catname": "Mother Only",
+				"refid": "24",
+				"searchid": "Mother 2",
+				"type": "1",
+				"sortid": "34",
+				"dispname": "Lifestyle: Families >> Mother Only"
+			},
+			{
+				"sno": "932",
+				"catname": "Mother with Baby",
+				"refid": "24",
+				"searchid": "mother baby 2",
+				"type": "1",
+				"sortid": "37",
+				"dispname": "Lifestyle: Families >> Mother with Baby"
+			},
+			{
+				"sno": "1040",
+				"catname": "Father with Baby",
+				"refid": "24",
+				"searchid": "father baby 2",
+				"type": "1",
+				"sortid": "37",
+				"dispname": "Lifestyle: Families >> Father with Baby"
+			},
+			{
+				"sno": "1246",
+				"catname": "Money & Finance",
+				"refid": "24",
+				"searchid": "family finance",
+				"type": "1",
+				"sortid": "40",
+				"dispname": "Lifestyle: Families >> Money & Finance"
+			},
+			{
+				"sno": "1041",
+				"catname": "Party & Celebration",
+				"refid": "24",
+				"searchid": "family celebration",
+				"type": "1",
+				"sortid": "43",
+				"dispname": "Lifestyle: Families >> Party & Celebration"
+			},
+			{
+				"sno": "1042",
+				"catname": "Portraits",
+				"refid": "24",
+				"searchid": "family looking-at-camera",
+				"type": "1",
+				"sortid": "46",
+				"dispname": "Lifestyle: Families >> Portraits"
+			},
+			{
+				"sno": "1043",
+				"catname": "Pregnancy",
+				"refid": "24",
+				"searchid": "Pregnant",
+				"type": "1",
+				"sortid": "49",
+				"dispname": "Lifestyle: Families >> Pregnancy"
+			},
+			{
+				"sno": "1044",
+				"catname": "Rural Family",
+				"refid": "24",
+				"searchid": "Rural Family",
+				"type": "1",
+				"sortid": "52",
+				"dispname": "Lifestyle: Families >> Rural Family"
+			},
+			{
+				"sno": "483",
+				"catname": "Shopping",
+				"refid": "24",
+				"searchid": "family shopping",
+				"type": "1",
+				"sortid": "55",
+				"dispname": "Lifestyle: Families >> Shopping"
+			},
+			{
+				"sno": "1045",
+				"catname": "South Indian Family",
+				"refid": "24",
+				"searchid": "South Indian Family",
+				"type": "1",
+				"sortid": "58",
+				"dispname": "Lifestyle: Families >> South Indian Family"
+			},
+			{
+				"sno": "750",
+				"catname": "Tech Savvy",
+				"refid": "24",
+				"searchid": "family technology",
+				"type": "1",
+				"sortid": "61",
+				"dispname": "Lifestyle: Families >> Tech Savvy"
+			},
+			{
+				"sno": "1046",
+				"catname": "Togetherness",
+				"refid": "24",
+				"searchid": "Togetherness family",
+				"type": "1",
+				"sortid": "64",
+				"dispname": "Lifestyle: Families >> Togetherness"
+			},
+			{
+				"sno": "482",
+				"catname": "Vacations & Holidays",
+				"refid": "24",
+				"searchid": "family vacations",
+				"type": "1",
+				"sortid": "67",
+				"dispname": "Lifestyle: Families >> Vacations & Holidays"
+			},
+			{
+				"sno": "1047",
+				"catname": "With Laptop/Computer",
+				"refid": "24",
+				"searchid": "family computer",
+				"type": "1",
+				"sortid": "70",
+				"dispname": "Lifestyle: Families >> With Laptop/Computer"
+			},
+			{
+				"sno": "1048",
+				"catname": "With Mobile/Phone",
+				"refid": "24",
+				"searchid": "family phone",
+				"type": "1",
+				"sortid": "73",
+				"dispname": "Lifestyle: Families >> With Mobile/Phone"
+			},
+			{
+				"sno": "1247",
+				"catname": "With Camera",
+				"refid": "24",
+				"searchid": "family 1xcamera",
+				"type": "1",
+				"sortid": "75",
+				"dispname": "Lifestyle: Families >> With Camera"
+			}
+		]
+	}
+}

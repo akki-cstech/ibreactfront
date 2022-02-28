@@ -1,0 +1,231 @@
+{
+	"NewDataSet": {
+		"Table": [
+			{
+				"sno": "663",
+				"catname": "View All",
+				"refid": "21",
+				"searchid": "seniors",
+				"type": "1",
+				"sortid": "0",
+				"dispname": "Lifestyle: Seniors >> View All"
+			},
+			{
+				"sno": "1049",
+				"catname": "Indoors",
+				"refid": "21",
+				"searchid": "Indoors Senior",
+				"type": "1",
+				"sortid": "4",
+				"dispname": "Lifestyle: Seniors >> Indoors"
+			},
+			{
+				"sno": "1050",
+				"catname": "Outdoors",
+				"refid": "21",
+				"searchid": "Outdoors Senior",
+				"type": "1",
+				"sortid": "7",
+				"dispname": "Lifestyle: Seniors >> Outdoors"
+			},
+			{
+				"sno": "1051",
+				"catname": "Studio Shot",
+				"refid": "21",
+				"searchid": "Studio Senior",
+				"type": "1",
+				"sortid": "10",
+				"dispname": "Lifestyle: Seniors >> Studio Shot"
+			},
+			{
+				"sno": "1052",
+				"catname": "Activity & Leisure",
+				"refid": "21",
+				"searchid": "active seniors",
+				"type": "1",
+				"sortid": "13",
+				"dispname": "Lifestyle: Seniors >> Activity & Leisure"
+			},
+			{
+				"sno": "142",
+				"catname": "Couples",
+				"refid": "21",
+				"searchid": "Couples seniors",
+				"type": "1",
+				"sortid": "16",
+				"dispname": "Lifestyle: Seniors >> Couples"
+			},
+			{
+				"sno": "1053",
+				"catname": "Friends or Group",
+				"refid": "21",
+				"searchid": "friends seniors only",
+				"type": "1",
+				"sortid": "19",
+				"dispname": "Lifestyle: Seniors >> Friends or Group"
+			},
+			{
+				"sno": "1054",
+				"catname": "Freedom",
+				"refid": "21",
+				"searchid": "seniors freedom",
+				"type": "1",
+				"sortid": "22",
+				"dispname": "Lifestyle: Seniors >> Freedom"
+			},
+			{
+				"sno": "1055",
+				"catname": "Fun & Entertainment",
+				"refid": "21",
+				"searchid": "senior fun",
+				"type": "1",
+				"sortid": "25",
+				"dispname": "Lifestyle: Seniors >> Fun & Entertainment"
+			},
+			{
+				"sno": "464",
+				"catname": "Grandparents",
+				"refid": "21",
+				"searchid": "Grandparents",
+				"type": "1",
+				"sortid": "28",
+				"dispname": "Lifestyle: Seniors >> Grandparents"
+			},
+			{
+				"sno": "1056",
+				"catname": "Happy Moments",
+				"refid": "21",
+				"searchid": "happy seniors",
+				"type": "1",
+				"sortid": "31",
+				"dispname": "Lifestyle: Seniors >> Happy Moments"
+			},
+			{
+				"sno": "1240",
+				"catname": "Loneliness",
+				"refid": "21",
+				"searchid": "senior desolated",
+				"type": "1",
+				"sortid": "32",
+				"dispname": "Lifestyle: Seniors >> Loneliness"
+			},
+			{
+				"sno": "754",
+				"catname": "Health & Fitness",
+				"refid": "21",
+				"searchid": "Health senior",
+				"type": "1",
+				"sortid": "34",
+				"dispname": "Lifestyle: Seniors >> Health & Fitness"
+			},
+			{
+				"sno": "140",
+				"catname": "Men Only",
+				"refid": "21",
+				"searchid": "1xmeno senior man lifestyle",
+				"type": "1",
+				"sortid": "37",
+				"dispname": "Lifestyle: Seniors >> Men Only"
+			},
+			{
+				"sno": "141",
+				"catname": "Women Only",
+				"refid": "21",
+				"searchid": "1xwo senior woman lifestyle",
+				"type": "1",
+				"sortid": "40",
+				"dispname": "Lifestyle: Seniors >> Women Only"
+			},
+			{
+				"sno": "1241",
+				"catname": "Money & Finance",
+				"refid": "21",
+				"searchid": "senior finance",
+				"type": "1",
+				"sortid": "41",
+				"dispname": "Lifestyle: Seniors >> Money & Finance"
+			},
+			{
+				"sno": "757",
+				"catname": "Party & Celebration",
+				"refid": "21",
+				"searchid": "senior celebration",
+				"type": "1",
+				"sortid": "43",
+				"dispname": "Lifestyle: Seniors >> Party & Celebration"
+			},
+			{
+				"sno": "1057",
+				"catname": "Portraits",
+				"refid": "21",
+				"searchid": "seniors only looking-at-camera lifestyle",
+				"type": "1",
+				"sortid": "46",
+				"dispname": "Lifestyle: Seniors >> Portraits"
+			},
+			{
+				"sno": "465",
+				"catname": "Retirement",
+				"refid": "21",
+				"searchid": "Retirement",
+				"type": "1",
+				"sortid": "49",
+				"dispname": "Lifestyle: Seniors >> Retirement"
+			},
+			{
+				"sno": "759",
+				"catname": "Tech Savvy",
+				"refid": "21",
+				"searchid": "senior technology",
+				"type": "1",
+				"sortid": "52",
+				"dispname": "Lifestyle: Seniors >> Tech Savvy"
+			},
+			{
+				"sno": "1058",
+				"catname": "Togetherness",
+				"refid": "21",
+				"searchid": "senior togetherness",
+				"type": "1",
+				"sortid": "55",
+				"dispname": "Lifestyle: Seniors >> Togetherness"
+			},
+			{
+				"sno": "466",
+				"catname": "Vacations & Holidays",
+				"refid": "21",
+				"searchid": "senior vacation",
+				"type": "1",
+				"sortid": "58",
+				"dispname": "Lifestyle: Seniors >> Vacations & Holidays"
+			},
+			{
+				"sno": "1059",
+				"catname": "With Laptop/Computer",
+				"refid": "21",
+				"searchid": "senior computer",
+				"type": "1",
+				"sortid": "61",
+				"dispname": "Lifestyle: Seniors >> With Laptop/Computer"
+			},
+			{
+				"sno": "1060",
+				"catname": "With Family",
+				"refid": "21",
+				"searchid": "senior family",
+				"type": "1",
+				"sortid": "64",
+				"dispname": "Lifestyle: Seniors >> With Family"
+			},
+			{
+				"sno": "1061",
+				"catname": "With Mobile/Phone",
+				"refid": "21",
+				"searchid": "senior phone",
+				"type": "1",
+				"sortid": "67",
+				"dispname": "Lifestyle: Seniors >> With Mobile/Phone"
+			}
+		]
+	}
+}

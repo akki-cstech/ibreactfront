@@ -1,0 +1,142 @@
+.filSec {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #000;
+    color: #fff;
+}
+
+.filMainDiv {
+    float: left;
+    padding: 0px 0px;
+    margin-bottom: 0px;
+    width: 100vw;
+    background-color: #000;
+    color: #fff;
+}
+
+.filHead {
+    color: #333;
+    background: #000;
+    border: 1px solid #fff;
+    padding: 8px 15px;
+    float: left;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.filHead h4 {
+    color: #fff;
+    font-size: 21px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+}
+
+.fillHead h4>a {
+    cursor: pointer;
+}
+
+.fillIcon {
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+.Girl_VertiCal {
+    display: inline-block;
+    padding: 7px 20px;
+    color: #fff;
+    font-size: 20px;
+    margin: 0 0 0px;
+}
+
+.Girl_VertiCal b {
+    font-weight: 500;
+}
+
+.panel_body {
+    padding: 25px 15px 0px 15px;
+}
+
+.panel_body h5 {
+    font-size: 21px;
+    margin: 10px 0 5px 0px;
+}
+
+.panel_body h5 span {
+    display: inline;
+    padding: 0.2em 0.6em 0.3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25em;
+}
+
+.checkbox {
+    position: relative;
+    display: block;
+    /* margin-top: 10px;
+    margin-bottom: 10px; */
+}
+
+.checkbox label {
+    color: #fff;
+    font-size: 14px;
+    min-height: 20px;
+    padding-left: 20px;
+    margin-bottom: 0;
+    font-weight: 400;
+    cursor: pointer;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.checkbox label input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox .cr {
+    position: relative;
+    display: block;
+    float: left;
+    border: 1px solid #a9a9a9;
+    border-radius: 0.25em;
+    width: 1em;
+    height: 1em;
+    margin-right: 0.5em;
+}
+
+.checkbox label input[type="checkbox"]:checked+.cr>.cr_icon {
+    opacity: 1;
+}
+
+.checkbox label input[type="checkbox"]+.cr>.cr_icon {
+    opacity: 0;
+}
+
+.checkbox .cr .cr_icon {
+    position: absolute;
+    font-size: .6rem;
+    line-height: 0;
+    top: 50%;
+    left: 15%;
+}
+
+@media (max-width: 767px){
+    .filHead h4 {
+        font-size: 12px;
+    }
+    .filMainDiv {
+        width: 100%;
+        padding: 0px;
+    }
+    .filSec {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+}

@@ -1,0 +1,364 @@
+.card img {
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer
+}
+
+.galleryShadow {
+    display: none;
+    -webkit-transition: ease all .45s;
+    transition: ease all .45s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .9)
+}
+
+.galleryModal {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: ease all .45s;
+    transition: ease all .45s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #000000f7;
+    z-index: 999999999999999
+}
+
+.galleryModal .galleryContainer {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%)
+}
+
+.Horizontal_Image {
+    width: 900px!important;
+    height: 600px!important
+}
+
+.Vertical_Image {
+    width: 394px;
+    height: 591px
+}
+
+.Vertical_Image .Icons {
+    margin-top: 586px!important;
+    float: right
+}
+
+.Icons .fa {
+    font-size: 20px;
+    margin-right: 12px
+}
+
+.Img_Id {
+    color: #fff;
+    margin-top: -22px;
+    text-align: center;
+    width: 100%
+}
+
+.Left_IconsText {
+    float: left;
+    margin-top: 604px
+}
+
+.Left_IconsText a {
+    color: #fff;
+    margin-right: 3px
+}
+
+.Left_IconsText .fa {
+    margin-left: 4px;
+    margin-right: 6px
+}
+
+.Vertical_Image .Left_IconsText a {
+    color: #fff;
+    font-size: 11px
+}
+
+.Vertical_Image .Left_IconsText .fa {
+    margin-left: 0;
+    margin-right: 6px
+}
+
+.Vertical_Image .Left_IconsText {
+    float: left;
+    margin-top: 593px
+}
+
+.Vertical_Image .Icons .fa {
+    font-size: 13px;
+    margin-right: 3px
+}
+
+.Image_Text {
+    color: #fff;
+    margin-top: -23px
+}
+
+.Image_Count {
+    float: right;
+    margin-top: -23px;
+    color: #fff
+}
+
+.galleryModal .galleryContainer img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%
+}
+
+.galleryModal .galleryContainer .galleryText {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 100%;
+    color: #fff;
+    text-align: center
+}
+
+.galleryModal .galleryIcon {
+    position: absolute;
+    font-size: 2rem;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    color: #fff
+}
+
+.galleryModal .gIquit {
+    right: 25px;
+    top: 10px;
+    font-size: 30px
+}
+
+.galleryModal .gIleft {
+    top: 45%;
+    left: 10px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 11rem
+}
+
+.galleryModal .gIright {
+    top: 45%;
+    right: 30px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 11rem
+}
+
+.grid .productItem.V {
+    flex-grow: 66.667!important;
+    flex-basis: 192px!important;
+    margin: 3px;
+    position: relative
+}
+
+.grid .productItem.H {
+    flex-grow: 150!important;
+    flex-basis: 432px!important;
+    margin: 3px;
+    position: relative
+}
+
+.grid .productItem .zoom {
+    display: none;
+    position: absolute;
+    right: 0;
+    padding: 3px 12px 8px 12px;
+    background-color: rgba(0, 0, 0, .5);
+    font-size: 200%;
+    color: #fff
+}
+
+.grid .productItem .zoom a {
+    color: #fff
+}
+
+.grid .productItem:hover .zoom {
+    display: block
+}
+
+@media screen and (max-width:767px) {
+    .Horizontal_Image {
+        width: 80%!important;
+        height: 230px!important
+    }
+    .Vertical_Image {
+        width: 80%;
+        height: 450px !important;
+    }
+    .galleryModal .gIright {
+        top: 45%;
+        right: 10px;
+        font-size: 4rem
+    }
+    .galleryModal .gIleft {
+        top: 45%;
+        left: 10px;
+        font-size: 4rem
+    }
+    .Left_IconsText {
+        float: left;
+        margin-top: 0;
+        position: absolute;
+        top: 235px
+    }
+    .Icons {
+        position: relative;
+        top: 230px;
+        width: 20%;
+        margin-top: 0!important
+    }
+    .Without_Keyword {
+        padding-left: 10px;
+        padding-right: 10px
+    }
+    .cid-rgVrt4Q0UQ12 ul {
+        padding-left: 0
+    }
+    .Similar_Text {
+        display: none
+    }
+    .Icons .fa {
+        font-size: 15px;
+        margin-right: 5px
+    }
+    .Vertical_Image .Left_IconsText a {
+        color: #fff;
+        font-size: 15px
+    }
+    .Left_IconsText a {
+        color: #fff;
+        font-size: 15px
+    }
+    .galleryModal .Img_Id {
+        font-size: 12px;
+        top: 28px !important;
+        width: 100% !important;
+        text-align: center !important;
+        margin-top:-18px;
+    }
+    .Autofit_Start .card-columns .Vertical_Image .Img_Id {
+        font-size: 12px;
+        top: 28px !important;
+        width: 86% !important;
+        text-align: center !important;
+        
+    }
+    .HalfClass {
+        width: 100% !important;
+        margin-top: 45px !important;
+    }
+    .Image_Text {
+        font-size: 12px;
+        top: 28px !important;
+    }
+    .Image_Count {
+        font-size: 12px
+    }
+    .galleryModal .Vertical_Image .Image_Count{
+        float: right;
+        margin-top: 0;
+        color: #fff;
+        position: absolute;
+        top:-21px!important;
+        right: 47px !important;
+        left: 0;
+        width: 100% !Important;
+        margin: 0 auto;
+        text-align: right;
+    
+    }
+    .Autofit_Start .card-columns .Vertical_Image .Image_Count{
+        float: right;
+        margin-top: 0;
+        color: #fff;
+        position: absolute;
+        top: 28px!important;
+        right: 47px !important;
+        left: 0;
+        width: auto !Important;
+        margin: 0 auto;
+        text-align: right;
+    
+    }
+    .galleryModal .gIquit {
+        font-size: 20px
+    }
+    .Vertical_Image .Left_IconsText {
+        float: left;
+        margin-top: 0;
+        position: absolute;
+        top: 455px
+    }
+    .Vertical_Image .Icons {
+        margin-top: 0!important;
+        position: absolute;
+        top: 450px;
+        left: 240px
+    }
+    .Vertical_Image .Icons .fa {
+        font-size: 16px;
+        margin-right: 3px
+    }
+}
+
+.Left_IconsText a:hover {
+    text-decoration: none
+}
+
+.Left_IconsText a:focus {
+    text-decoration: none
+}
+
+.grid .productItem .zoom .fa {
+    font-size: 30px
+}
+
+/* top to bottom*/
+#scroll {
+    position:fixed;
+    z-index:99999;
+    right:10px;
+    bottom:10px;
+    cursor:pointer;
+    width:50px;
+    height:50px;
+    background-color:#333;
+    text-indent:-9999px;
+    display:none;
+    -webkit-border-radius:60px;
+    -moz-border-radius:60px;
+    border-radius:60px
+}
+#scroll span {
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-8px;
+    margin-top:-12px;
+    height:0;
+    width:0;
+    border:8px solid transparent;
+    border-bottom-color:#ffffff;
+}
+#scroll:hover {
+    background-color:#333;
+    opacity:1;filter:"alpha(opacity=100)";
+    -ms-filter:"alpha(opacity=100)";
+}

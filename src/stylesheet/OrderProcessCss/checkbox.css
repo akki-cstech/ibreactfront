@@ -1,0 +1,562 @@
+
+.steps {
+    margin-top: -41px;
+    display: inline-block;
+    float: right;
+    font-size: 16px
+}
+
+.step {
+    float: left;
+    background: white;
+    padding: 7px 13px;
+    border-radius: 1px;
+    text-align: center;
+    width: 100px;
+    position: relative
+}
+.step_line {
+    margin: 0;
+    width: 0;
+    height: 0;
+    border-left: 16px solid #fff;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    z-index: 1008;
+    position: absolute;
+    left: 99px;
+    top: 1px
+}
+.step_line.backline {
+    border-left: 20px solid #f7f7f7;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    z-index: 1006;
+    position: absolute;
+    left: 99px;
+    top: -3px
+}
+.step_complete {
+    background: #357ebd
+}
+.step_complete a.check-bc, .step_complete a.check-bc:hover,.afix-1,.afix-1:hover{
+    color: #eee;
+}
+.step_line.step_complete {
+    background: 0;
+    border-left: 16px solid #357ebd
+}
+.step_thankyou {
+    float: left;
+    background: white;
+    padding: 7px 13px;
+    border-radius: 1px;
+    text-align: center;
+    width: 100px;
+}
+.step.check_step {
+    margin-left: 5px;
+}
+.ch_pp {
+    text-decoration: underline;
+}
+.ch_pp.sip {
+    margin-left: 10px;
+}
+.check-bc,
+.check-bc:hover {
+    color: #222;
+}
+.SuccessField {
+    border-color: #458845 !important;
+    -webkit-box-shadow: 0 0 7px #9acc9a !important;
+    -moz-box-shadow: 0 0 7px #9acc9a !important;
+    box-shadow: 0 0 7px #9acc9a !important;
+    /* background: #f9f9f9 url(../images/valid.png) no-repeat 98% center !important */
+}
+
+.btn-xs{
+    line-height: 28px;
+}
+
+/*login form*/
+.login-container{
+    margin-top:30px ;
+}
+.login-container input[type=submit] {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.login-container input[type=text], input[type=password] {
+  height: 44px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #c0c0c0;
+  /* border-radius: 2px; */
+  padding: 0 8px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.login-container input[type=text]:hover, input[type=password]:hover {
+  border: 1px solid #b9b9b9;
+  border-top: 1px solid #a0a0a0;
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.login-container-submit {
+  /* border: 1px solid #3079ed; */
+  border: 0px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0,0,0,0.1); 
+  background-color: #357ebd;/*#4d90fe;*/
+  padding: 17px 0px;
+  font-family: roboto;
+  font-size: 14px;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+}
+
+.login-container-submit:hover {
+  /* border: 1px solid #2f5bb7; */
+  border: 0px;
+  text-shadow: 0 1px rgba(0,0,0,0.3);
+  background-color: #357ae8;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+}
+
+.login-help{
+  font-size: 12px;
+}
+
+.asterix{
+    
+}
+
+/* images*/
+ol, ul {
+  list-style: none;
+}
+.hand {
+  cursor: pointer;
+  cursor: pointer;
+}
+.cards{
+    padding-left:0;
+}
+
+.cards .mastercard {
+  background-position: -51px 0;
+}
+
+.cards .amex {
+  background-position: -102px 0;
+}
+
+.cards li:last-child {
+  margin-right: 0;
+}
+/* images end */
+
+
+
+/*
+ * BOOTSTRAP
+ */
+.container{
+    border: none;
+}
+.panel-footer{
+    background:#fff;
+}
+.btn{
+    border-radius: 1px;
+}
+.btn-sm, .btn-group-sm > .btn{
+    border-radius: 1px;
+}
+.input-sm, .form-horizontal .form-group-sm .form-control{
+    border-radius: 1px;
+}
+
+.panel-info {
+    border-color: #999;
+}
+
+.panel-heading {
+    border-top-left-radius: 1px;
+    border-top-right-radius: 1px;
+}
+.panel {
+    border-radius: 1px;
+}
+.panel-info > .panel-heading {
+    color: #eee;
+    border-color: #999;
+}
+.panel-info > .panel-heading {
+    background:#333;
+    border: 1px solid #333;
+    font-size: 20px;
+    font-weight: 600;
+}
+.Confirm_Order{
+	background:#333;
+	color:#fff;
+	border:1px solid #333;
+	padding:10px 40px;
+	font-size:17px;
+    margin-bottom:15px;
+    margin-top:10px;
+}
+.Order-ConFirm .btn.focus, .Order-ConFirm .btn:focus, .Order-ConFirm .btn:hover {
+    color: #fff;
+    text-decoration: none;
+}
+hr {
+    border-color: #999 -moz-use-text-color -moz-use-text-color;
+}
+
+.panel-footer {
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+    border-top: 1px solid #999;
+}
+
+.btn-link {
+    color: #888;
+}
+
+hr{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+/** MEDIA QUERIES **/
+@media only screen and (max-width: 989px){
+    .span1{
+        margin-bottom: 15px;
+        clear:both;
+    }
+}
+
+@media only screen and (max-width: 764px){
+    .inverse-1{
+        float:right;
+    }
+}
+
+@media only screen and (max-width: 586px){
+    .cart-titles{
+        display:none;
+    }
+    .panel {
+        margin-bottom: 20px;
+    }
+}
+
+.form-control {
+    border-radius: 1px;
+    font-size:16px;
+}
+
+@media only screen and (max-width: 486px){
+    .col-xss-12{
+        width:100%;
+    }
+    .cart-img-show{
+        display: none;
+    }
+    .btn-submit-fix{
+        width:100%;
+    }
+    
+}
+.LeftSide_Fields{
+	color:#666;
+	    font-size: 16px;
+}
+.RightSide_Fields{
+	color:#000;
+	font-size:16px;
+}
+.Order_Summary .col-md-5{
+	padding-right:0px;
+}
+.Review_Order1 .panel-body{
+	padding-right:0px;
+    padding-left:8px;
+}
+.Review_Order .panel-body{
+	padding-right:0px;
+    padding-left:8px;
+    height:350px;
+    overflow-y:auto;
+    display:inline-block;
+}
+.Summary_OrderCart{
+	height: 75px;
+    padding-right: 8px;
+    display: table;
+    margin-bottom: 10px;
+    width:100%;
+}
+.Order_Summary img{
+    width: 120px;
+}
+.Total_AmountPay{
+	padding: 1px 17px 4px 0px;
+}
+.Total_AmountPay span{
+    font-size:17px;
+}
+.Total_AmountPay .pull-right{
+    font-size:15px;
+}
+.Summary_OrderCart b{
+    font-size:17px;
+    font-weight:500;
+}
+.Summary_OrderCart small{
+    font-size:14px;
+}
+#online_payment .row1 {
+    padding: 0px;
+    float: left;
+    width: 100%;
+    margin-bottom: 15px;
+}
+#online_payment .row1 .summery-head {
+    box-shadow: 0 0px 0px 0px #eaeaea;
+    margin: 0 -16px 15px -16px;
+    padding: 4px 10px;
+    border: 0;
+    font-size: 20px;
+    color: #000;
+    background: #fff;
+    text-transform: none;
+    text-align: left;
+    font-weight: 500;
+}
+#online_payment .row1 .nav-tabs {
+    border-bottom: 0px;
+    margin-right: -1px;
+    border-top: 0px;
+    padding: 0px;
+}
+#online_payment .row1 .nav-tabs>li {
+    width: 100%;
+    background: #fff;
+    margin: 0px 0 10px 0;
+    z-index:0;
+}
+#online_payment .row1 .nav-tabs>li a {
+    padding: 12px 10px;
+    color: #000;
+    margin: 0px;
+    border: 1px #ccc solid;
+    border-radius: 0px;
+    font-size:17px
+}
+#online_payment .row1 .padding {
+    padding: 0px;
+}
+#online_payment .row1 .tab-content {
+    border: 1px #ccc solid;
+    padding: 10px 10px;
+    min-height: 200px;
+    max-height: 1000px;
+}
+#online_payment .row1 .tab-content .title {
+    width: 100%;
+    display: inline-block;
+    height: 30px;
+    padding: 0;
+    margin: 0;
+    background: #fff;
+}
+#online_payment .row1 .tab-content .title h4 {
+    font-size: 16px;
+    border: 0px;
+    margin: 7px 0 0 0;
+    float: left;
+    font-weight: normal;
+    width: auto;
+}
+#online_payment .row1 .tab-content .title img {
+    width: auto;
+    float: right;
+}
+#online_payment .row1 .tab-content .tab-pane .tab label {
+    width: 100%;
+    font-weight: 500;
+    margin: 3px 0 1px 0;
+    font-size: 13px;
+}
+#online_payment .row1 .tab-content .tab-pane .tab label span {
+    margin-left: 2px;
+    margin-bottom: 5px;
+    line-height: 20px;
+    font-size:15px;
+}
+#cdc_mobi{
+    margin-right:0px;
+}
+#neft{
+    margin-right:0px;
+}
+#chkbnk{
+    margin-right:0px;
+}
+#online_payment .row1 .tab-content .tab-pane .tab label input[type=radio]{
+	    position: relative;
+    top: 1px;
+}
+#online_payment .row1 .nav-tabs>li.active>a {
+    background: #f6f6f6;
+    border-bottom: 1px #ccc solid;
+    border-top: 1px #ccc solid;
+    border-left: 1px #ccc solid;
+    border-right: 0px #ccc solid;
+    padding: 12px 10px;
+    margin-right: -1px;
+    z-index: 999;
+    font-size:17px;
+}
+.page_title{
+	border-bottom: 1px solid #000;
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin: 35px 0 40px 0;
+}
+.page_title span b{
+    font-weight:500;
+}
+.page_title span{
+	    display: inline-block;
+    position: relative;
+    font-size: 27px;
+    color: #000;
+    margin-bottom: -12px;
+    background-color: #fff;
+    width: 40%;
+  
+    margin-top: 0px;
+    font-weight: normal;
+    top:8px;
+}
+.This_Enable{
+	font-size: 16px;
+    margin-top: 10px;
+    color: #ff0008;
+}
+@media screen and (max-width: 767px) {
+.page_title span {
+   font-size: 19px;
+}
+section{
+    padding-top:0px;
+}
+.LeftSide_Fields {
+    color: #666;
+    font-size: 11px;
+}
+.RightSide_Fields {
+    color: #000;
+    font-size: 11px;
+}
+.form-control {
+    border-radius: 1px;
+    font-size: 11px;
+}
+.panel-info .panel-heading {
+    font-size: 14px;
+}
+#online_payment .row1 .summery-head{
+    font-size: 17px;
+}
+.Btn_bottom ul li{
+    font-size: 14px !important;
+}
+.Porno_Graphic p{
+    font-size: 12px !important;
+}
+.This_Enable {
+    font-size: 12px;
+}
+.Total_AmountPay span {
+    font-size: 15px;
+}
+.Review_Order1 .panel-body {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.Summary_OrderCart b {
+    font-size: 14px!important;
+}
+.LeftSide_Fields[_ngcontent-c1] {
+    font-size: 14px;
+}
+.RightSide_Fields[_ngcontent-c1] {
+   
+    font-size: 14px;
+}
+.This_Enable[_ngcontent-c1] {
+    font-size: 13px;
+}
+.form-control[_ngcontent-c1] {
+    font-size: 14px;
+}
+
+#online_payment .row1 .nav-tabs > li a {
+    font-size: 14px;
+}
+#online_payment .row1 .nav-tabs > li.active > a{
+    font-size: 14px;
+}
+#online_payment .row1 .tab-content .title h4{
+    font-size: 14px; 
+}
+#online_payment .row1 .tab-content .tab-pane .tab label span{
+    font-size: 13px; 
+}
+.Porno_Graphic p{
+    font-size: 14px; 
+}
+.Btn_bottom[_ngcontent-c1] ul[_ngcontent-c1] li[_ngcontent-c1] {
+    list-style: disc;
+    line-height: 24px;
+    font-size: 14px;
+}
+} 
+
+.Porno_Graphic p{
+    color:red;
+    font-size:15px;
+}
+.Btn_bottom ul li{
+    list-style:disc;
+    line-height: 29px;
+    font-size:16px;
+}
+.Btn_bottom{
+    margin-bottom:15px;
+}
+
+.upi_list {
+    width:100% !important;
+    height:auto !important;
+}
+.card_list{
+    width:100% !important;
+    height: auto !important;
+}

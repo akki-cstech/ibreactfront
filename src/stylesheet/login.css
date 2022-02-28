@@ -1,0 +1,230 @@
+
+#Login_Registration{
+	background-image:url("../images/wrapper-bg.jpg");
+	    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    min-height: 100%;
+        padding: 15px 30px 25px 30px;
+    color: #fff;
+    background-color: #acacac;
+        position: fixed;
+    width: 100%;
+}
+#Login_Registration img{
+	width:100%;
+}
+#Registration_Page{
+	    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0px !important;
+    overflow-x: hidden;
+}
+/*#Login_Registration .panel-login {
+	border-color: #ccc;
+	-webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+}*/
+#Login_Registration .panel-login>.panel-heading {
+	color: #00415d;
+	background-color: #fff;
+	border-color: #fff;
+	text-align:center;
+	    padding: 10px 15px;
+}
+
+
+/**/
+#Login_Registration .panel-login input[type="text"],.panel-login input[type="email"],.panel-login input[type="password"] {
+	height: 39px;
+	border: 1px solid #ddd;
+	font-size: 16px;
+	-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+}
+#Login_Registration .form-control{
+	height: 44px !important;
+}
+#Login_Registration .panel-login input:hover,
+#Login_Registration .panel-login input:focus {
+	outline:none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	border-color: #ccc;
+}
+#Login_Registration .btn-login {
+	background-color: #333;
+	outline: none;
+	color: #fff;
+	font-size: 16px;
+	height: auto;
+	font-weight: normal;
+	padding: 9px 58px;
+	text-transform: uppercase;
+	border-color: #59B2E6;
+	font-weight:600;
+	margin-top:30px;
+}
+#Login_Registration .btn-login:hover,
+#Login_Registration .btn-login:focus {
+	color: #fff;
+	background-color: #333;
+	border-color: #333;
+}
+#Login_Registration .forgot-password {
+	text-decoration: none;
+	color: #fff;
+	font-size:18px;
+	    margin-bottom: 20px;
+}
+#Login_Registration .forgot-password:hover,
+#Login_Registration .forgot-password:focus {
+	text-decoration: none;
+	color: #fff;
+}
+
+#Login_Registration .btn-register {
+	background-color: #333;
+	outline: none;
+	color: #fff;
+	font-size: 16px;
+	height: auto;
+	font-weight: normal;
+	padding: 9px 0;
+	text-transform: uppercase;
+	border-color: #1CB94A;
+	font-weight:600;
+}
+#Login_Registration .btn-register:hover,
+#Login_Registration .btn-register:focus {
+	color: #fff;
+	background-color: #333;
+	border-color: #333;
+}
+#Login_Registration .panel-body {
+        padding: 15px 55px 15px 37px;
+   
+}
+#Login_Registration .form-control{
+	box-shadow:none;
+	border: 1px solid #494f50 !important;
+	background:#494f50;
+	    color: #fff !important;
+
+}
+#Login_Registration .panel-login{
+	padding: 0px 0px 0px 0px;
+    border-radius: 5px;
+        box-shadow: 1px -1px 16px -7px rgba(0,0,0,0.2);
+    margin:0px 0px 17px 0px;
+    background:#333;
+}
+
+.Ib_Logo{
+	text-align:center;
+}
+.Ib_Logo img{
+	margin-bottom: 17px;
+    vertical-align: middle;
+    width:22% !important;
+
+}
+.Forgot_Pass_word p{
+	text-align:center;
+	margin-bottom:0px;
+	margin-top:5px;
+}
+
+.Image_Left_Section img{
+	height: 530px;
+}
+
+
+#Forgot_PasswordForm p{
+  margin-bottom:0px;
+  margin-top:5px;
+  color:#000;
+}
+.Image_Left_Sectionfr img{
+	height:500px;
+}
+@media screen and (max-width: 992px) {
+#Login_Registration .panel-login {
+    padding: 15px 15px 11px 15px;
+    border-radius: 5px;
+}
+#RegisTration_Seperate .panel-body {
+    padding: 15px 20px;
+    background: #fff;
+    height: auto;
+}
+#Login_Registration{
+	position: relative !important;
+    width: 100%;
+}
+#Login_Registration .panel-body {
+    padding: 15px 0px 15px 0px;
+}
+#Registration_Page .panel-heading {
+    padding: 33px 0px 0px 0px !important;
+}
+#Login_Registration .btn-login{
+	margin-top:10px;
+}
+.Mbl_Btn{
+	text-align:center;
+}
+#Login_Registration .panel-login>.panel-heading a{
+	font-size:23px;
+}
+.panel-login label {
+    font-size: 15px;
+    font-weight: 600;
+}
+}
+#Registration_Page .panel-heading a{
+	    color: #fff;
+    font-size: 30px;
+    font-weight:700;
+}
+#Registration_Page .panel-heading a:hover{
+text-decoration:none;
+}
+#Registration_Page .panel-heading{
+	padding: 47px 0px 0px 37px;
+}
+#Registration_Page .panel-heading p{
+    margin-bottom: 16px;
+    margin-top: 16px;
+}
+.input-group-text{
+	    width: 41px;
+    background: #494f50;
+    border-right: 1px solid #ffffff42!important;
+    border: none;
+    color: #fff;
+}
+.input-group-prepend{
+border-right: 1px solid #ffffff42;
+}
+.Image_Left_Section{
+	background-image:url("../images/content-bg.jpg");   
+    display: flex;
+    min-height: 100%;
+    padding: 60px 30px;
+    color: #fff;
+    background-color: #acacac;
+        background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#login-submit{
+	box-shadow: none;
+    border: 1px solid #000 !important;
+    background: #000 !important;
+    color: #fff !important;
+}
