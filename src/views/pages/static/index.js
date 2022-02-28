@@ -20,93 +20,93 @@ import Glossory from './Glossory'
 import Contributor from './Contributor'
 
 
-const StaticRouteMain = ({user, setUser}) => {
+const StaticRouteMain = () => {
     const { path } = useRouteMatch()
 
     return (
         <React.Fragment>
             <Route path={`${path}/contactus`}>
-                <Static user={user} setUser={setUser}>
+                <Static>
                     <Contact />
                 </Static>
             </Route>
             <Route path={`${path}/pricing`}>
-                <Static user={user} setUser={setUser}>
+                <Static>
                     <Pricing />
                 </Static>
             </Route>
             <Route path={`${path}/aboutus`}>
-                <Static user={user} setUser={setUser}>
+                <Static>
                     <AboutUs />
                 </Static>
             </Route>
             <Route path={`${path}/licensing`}>
-                <Static user={user} setUser={setUser}>
+                <Static>
                     <LicenseRouter />
                 </Static>
             </Route>
             <Route path={`${path}/searchtips`}>
-                <Static user={user} setUser={setUser}>
+                <Static>
                     <SearchTips />
                 </Static>
             </Route>
             <Route path={`${path}/testimonials`}>
-                <Static user={user} setUser={setUser}>
+                <Static>
                     <Testimonial />
                 </Static>
             </Route>
             <Route path={`${path}/termsofuse`}>
-                <Static user={user} setUser={setUser}>
+                <Static>
                     <Term />
                 </Static>
             </Route>
             <Route path={`${path}/faq`}>
-                <Static user={user} setUser={setUser}>
+                <Static>
                     <FAQ />
                 </Static>
             </Route>
             <Route path={`${path}/privacypolicy`}>
-                <Static user={user} setUser={setUser}>
+                <Static>
                     <PrivacyPolicy />
                 </Static>
             </Route>
             <Route path={`${path}/freeresearch`}>
-                <Static user={user} setUser={setUser}>
+                <Static>
                     <FreeResearch />
                 </Static>
             </Route>
             <Route path={`${path}/technical`}>
-                <Static user={user} setUser={setUser}>
+                <Static>
                     <Technical />
                 </Static>
             </Route>
             <Route path={`${path}/ordering`}>
-                <Static user={user} setUser={setUser}>
+                <Static>
                     <Ordering />
                 </Static>
             </Route>
             <Route path={`${path}/downloading`}>
-                <Static user={user} setUser={setUser}>
+                <Static>
                     <Downloading />
                 </Static>
             </Route>
             <Route path={`${path}/lightbox`}>
-                <Static user={user} setUser={setUser}>
+                <Static>
                     <Wishlist />
                 </Static>
             </Route>
             <Route path={`${path}/myaccountshelp`}>
-                <Static user={user} setUser={setUser}>
+                <Static>
                     <StaticAcc />
                 </Static>
             </Route>
             <Route path={`${path}/glossary`}>
-                <Static user={user} setUser={setUser}>
+                <Static>
                     <Glossory />
                 </Static>
             </Route>
-            <Route path="/static/contributor" path={`${path}/licensing`}>
-                <Static user={user} setUser={setUser}>
+            <Route path="/static/contributor">
+                <Static>
                     <Contributor />
                 </Static>
             </Route>

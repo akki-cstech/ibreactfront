@@ -7,6 +7,7 @@ import { fontSize } from '@mui/system'
 import Confirm from '../../views/orderProcess/ConfirmList'
 import SubPlan from '../../views/orderProcess/SubOrderList'
 import IVSubPlan from '../../views/orderProcess/IVSubPlan'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Invoice = ({ type }) => {
     const orderID = atob(useParams().id)
@@ -55,12 +56,11 @@ const Invoice = ({ type }) => {
     return (
         // <h1>my name is akash {id} </h1>
         <Container style={{
-            maxWidth: '930px',
             background: '#fff',
             fontSize: '14px',
             color: '#000000',
             fontFamily: 'Trebuchet MS',
-        }}  >
+        }}>
             <Row className="justify-content-md-center" style={{ padding: "9px 0" }}>
                 <Col className="pl-4">
                     <img src="/images/invoiceLogo.jpg" style={{ width: "150px", height: "50px" }} alt="logo" />

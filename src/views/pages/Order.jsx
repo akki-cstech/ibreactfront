@@ -131,7 +131,7 @@ const Order = () => {
                                         <StyledTableCell align="center" className="font-weight-bold">{moment(row.orderDate).format("DD-MM-YYYY")}</StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold">{row.totalAmount}</StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold">
-                                            <a href={`${window.location.origin}/invoice/${window.btoa(row.orderId)}`} target="_blank"><i className="fa fa-search" title="Order Details" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i> </a>
+                                            <a href={`${window.location.origin}/myaccounts/invoice/${window.btoa(row.orderId)}`} target="_blank"><i className="fa fa-search" title="Order Details" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i> </a>
                                         </StyledTableCell>
                                     </StyledTableRow>
                                 ))}
@@ -167,9 +167,9 @@ const Order = () => {
                                         <StyledTableCell align="center" className="font-weight-bold">{Number(row.totalAmount).toFixed(0)}</StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold">{row.paymentStat === 'Paid' ? 'Recieved' : 'Pending'}</StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold">
-                                            <a href={`${window.location.origin}/invoice/${btoa(row.orderId)}`} target="_blank"><i className="fa fa-search" title="Invoice Performa" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i></a> {' '}
+                                            <a href={`${window.location.origin}/myaccounts/invoice/${btoa(row.orderId)}`} target="_blank"><i className="fa fa-search" title="Invoice Performa" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i></a> {' '}
                                             <i className="fa fa-download" title="Download" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i>{' '}
-                                            <a href={`${window.location.origin}/invoicedetail/${btoa(row.orderId)}`} target="_blank"><i className="fa fa-info-circle" title="Invoice Detail" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i></a>
+                                            <a href={`${window.location.origin}/myaccounts/invoicedetail/${btoa(row.orderId)}`} target="_blank"><i className="fa fa-info-circle" title="Invoice Detail" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i></a>
                                         </StyledTableCell>
                                     </StyledTableRow>
                                 ))}
@@ -205,7 +205,7 @@ const Order = () => {
                                         <StyledTableCell align="center" className="font-weight-bold">{moment(row.T_orderdate).format("DD-MM-YYYY")}</StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold">{Number(row.f_orderAmt).toFixed(0)}</StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold">
-                                            <a href={`${window.location.origin}/suborderinvoice/${btoa(row.T_orderid)}`} target="_blank"><i className="fa fa-search" title="Invoice Performa" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i></a>
+                                            <a href={`${window.location.origin}/myaccounts/suborderinvoice/${btoa(row.T_orderid)}`} target="_blank"><i className="fa fa-search" title="Invoice Performa" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i></a>
                                         </StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold">Confirm</StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold">
@@ -245,7 +245,7 @@ const Order = () => {
                                         <StyledTableCell align="center" className="font-weight-bold">{moment(row.orderDate).format("DD-MM-YYYY")}</StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold">{Number(row.totalAmount).toFixed(0)}</StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold">
-                                            <a href={`${window.location.origin}/ivsuborderinvoice/${btoa(row.orderId)}`} target="_blank"><i className="fa fa-search" title="Invoice Details" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i></a>
+                                            <a href={`${window.location.origin}/myaccounts/ivsuborderinvoice/${btoa(row.orderId)}`} target="_blank"><i className="fa fa-search" title="Invoice Details" style={{ cursor: "pointer", background: '#333', color: '#fff', padding: '5px 7px', borderRadius: '4px' }} ></i></a>
                                         </StyledTableCell>
                                         <StyledTableCell align="center" className="font-weight-bold">
                                             {row.stat === "C" && row.paymentStat === "Paid" ? "Recieved" : "Pending"}

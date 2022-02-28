@@ -2,10 +2,10 @@ import React from 'react'
 import Header from '../../../components/navs/Header'
 import Footer from '../../../components/navs/Footer'
 
-const Static = ({ children, user, setUser }) => {
+const Static = ({ children }) => {
     return (
         <>
-            <Header loggedInUser={user} setLoggedInUser={setUser} />
+            <Header />
             {children}
             <Footer />
         </>

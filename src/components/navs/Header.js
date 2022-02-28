@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useLocation, useHistory, Link } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
+import { UserContext } from '../../App';
 
 import { SearchItems } from "../../utils/helpers/AutocompleteList";
 // import { makeStyles } from "@mui/styles";
@@ -21,11 +22,12 @@ function useQuery() {
     const { search } = useLocation();
     return React.useMemo(() => new URLSearchParams(search), [search]);
 }
-const Header = ({ loggedInUser, setLoggedInUser }) => {
+// const Header = ({ loggedInUser, setLoggedInUser }) => {
+const Header = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const [sideBar, setSideBar] = useState("sideInActive");
     const [zeynepO, setZeynepO] = useState("zClosed");
     const [overflow, setOverflow] = useState('')
-
 
     const [tvShow, settvShow] = React.useState('');
 
@@ -145,6 +147,7 @@ const Header = ({ loggedInUser, setLoggedInUser }) => {
             alert('Please enter a search keyword')
         }
     };
+
     const onKeyDown = e => {
         var countClick = isCount
         if (e.keyCode === 40) {
@@ -348,8 +351,8 @@ const Header = ({ loggedInUser, setLoggedInUser }) => {
                             <div>
                                 <ul>
                                     <li>
-                                        {!loggedInUser && <Link className={styles.pricing} to='/ibregistration'>Sign in</Link>}
-                                        {loggedInUser && loggedDropDown()}
+                                        {(!loggedInUser || Object.keys(loggedInUser).length === 0) && <Link className={styles.pricing} to='/ibregistration'>Sign in</Link>}
+                                        {(loggedInUser && Object.keys(loggedInUser).length > 0) && loggedDropDown()}
                                         {/* <ul className={styles.navItems}>
                                             <li></li>
                                             <li></li>

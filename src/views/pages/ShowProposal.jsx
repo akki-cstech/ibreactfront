@@ -70,10 +70,10 @@ const Proposal = () => {
                                 <td className="text-center"> {Math.round(parseInt(item.f_sertax))} </td>
                                 <td className="text-center"> {parseInt(item.f_amt) + Math.round(parseInt(item.f_sertax)) - parseInt(item.f_discount)} </td>
                                 <td className="text-center">
-                                    <span style={{ cursor: "pointer" }} onClick={() => sendMail(`/proposalgst?id=${btoa(item.T_orderid)}`)} > Email </span>
+                                    <span style={{ cursor: "pointer" }} onClick={() => sendMail(`/myaccounts/proposalgst?id=${btoa(item.T_orderid)}`)} > Email </span>
                                 </td>
                                 <td className="text-center">
-                                    <i className="fa fa-search pr7table" onClick={() => history.push(`/proposalgst?id=${btoa(item.T_orderid)}`)} style={{ cursor: "pointer" }}></i> </td>
+                                    <i className="fa fa-search pr7table" onClick={() => history.push(`/myaccounts/proposalgst?id=${btoa(item.T_orderid)}`)} style={{ cursor: "pointer" }}></i> </td>
                                 <td className="text-center"> <i className="fa fa-trash pr7table" onClick={() => deleteHandler(item.T_orderid)} style={{ cursor: "pointer" }}></i> </td>
                             </tr>)}
                         </tbody>

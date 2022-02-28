@@ -15,12 +15,12 @@ import Proposal from './views/pages/ShowProposal';
 import ProposalGST from './views/pages/ProposalGST';
 import StaticRouteMain from './views/pages/static';
 
-const BrandName = createContext([{}, () => { }]);
+const UserContext = createContext([{}, () => { }]);
 
 const App = () => {
   const [progress, setProgress] = useState(0)
-  const [user, setUser] = useState(null)
-  const [brand, setBrand] = useState('')
+  const [loggedInUser, setLoggedInUser] = useState(null)
+  // const [brand, setBrand] = useState('')
   // const [progress, setProgress] = useState(0);
   const [Loader, setLoader] = useState(false);
   const ref = useRef(null)
@@ -28,7 +28,7 @@ const App = () => {
   useEffect(() => {
     const loggedUser = window.localStorage.getItem("loggedUser")
     const usr = JSON.parse(loggedUser)
-    setUser(usr)
+    setLoggedInUser(usr)
     return () => {
       clearTimeout(ref.current);
     };
@@ -58,43 +58,27 @@ const App = () => {
       {user && <ManageProfile user={user} setUser={setUser} />}
     <AccountSection user={user} setUser={setUser} /> */}
       <Switch>
-        <Route path="/proposalgst">
-          <ProposalGST />
-        </Route>
         <Route path="/static">
-          <StaticRouteMain user={user} setUser={setUser} />
+          <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+            <StaticRouteMain />
+          </UserContext.Provider>
         </Route>
         <Route path="/logout" component={LogOut} />
-        <Route path="/invoice/:id" onLoader={onLoader} >
-          <Invoice type="confirm" />
-        </Route>
-        <Route path="/suborderinvoice/:id" onLoader={onLoader} >
-          <Invoice type="subscriptionplan" />
-        </Route>
-        <Route path="/ivsuborderinvoice/:id" onLoader={onLoader} >
-          <Invoice type="ivsubscriptionplan" />
-        </Route>
-        <Route path="/invoicedetail/:id" onLoader={onLoader} >
-          <Invoice type="invoice" />
-        </Route>
         <Route path="/ibregistration" onLoader={onLoader} >
-          {!user ? <IBRegistration setUser={setUser} /> : <Redirect to="/" />}
+          {!loggedInUser ? <IBRegistration setUser={setLoggedInUser} /> : <Redirect to="/" />}
         </Route>
         <Route path="/myaccounts" onLoader={onLoader} >
-          <BrandName.Provider value={[brand, setBrand]}>
-            <Dashboard user={user} brand={brand} setUser={setUser}>
-              <MyAccount user={user} setUser={setUser} />
+          <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+            <Dashboard>
+              <MyAccount />
             </Dashboard>
-          </BrandName.Provider>
-        </Route>
-        <Route path="/showAllProposal" onLoader={onLoader} >
-          <Dashboard user={user} setUser={setUser} > <Proposal />  </Dashboard>
+          </UserContext.Provider>
         </Route>
         <Route path="/forgetPassword" onLoader={onLoader} >
           <ForgetPassword />
         </Route>
         <Route path="/register" onLoader={onLoader} >
-          <Register setUser={setUser} />
+          <Register setUser={setLoggedInUser} />
         </Route>
         <Route path="/search" onLoader={onLoader}
           children={
@@ -121,17 +105,20 @@ const App = () => {
               />
           }
         />
-        <Route exact path="/"
+        {/* <Route exact path="/"
           children={
             () => <Home
               Loader={Loader}
               progress={100}
               setProgress={setProgress}
-              user={user}
-              setUser={setUser}
             />
           }
-        />
+        /> */}
+        <Route path="/" >
+          <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+            <Home Loader={Loader} progress={100} setProgress={setProgress} />
+          </UserContext.Provider>
+        </Route>
         <Route path="*">
           <NoMatch />
         </Route>
@@ -142,4 +129,4 @@ const App = () => {
 }
 
 export default App;
-export { BrandName }
+export { UserContext }

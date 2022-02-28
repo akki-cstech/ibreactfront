@@ -1,10 +1,10 @@
-import React, {useEffect} from 'react'
-import { useHistory, useRouteMatch } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { useHistory, useRouteMatch, useLocation } from 'react-router-dom'
 import Header from '../components/navs/Header'
 import Footer from '../components/navs/Footer'
 import MyAccountNav from '../components/common/MyAccountNav'
 
-const DashBoard = ({ user, setUser, children, brand }) => {
+const DashBoard = ({ children }) => {
     // const history = useHistory()
     // useEffect(() => {
     //     if(!user){
@@ -13,13 +13,36 @@ const DashBoard = ({ user, setUser, children, brand }) => {
     // }, [])
 
     const { url } = useRouteMatch()
-
+    const { pathname } = useLocation()
+    console.log('check path', pathname)
     return (
         <div>
-            <Header loggedInUser={user} setLoggedInUser={setUser} />
-            {url === '/myaccounts' && <MyAccountNav brand={brand} />}
+            {(
+                pathname.indexOf('/myaccounts/invoice') === -1
+                && pathname.indexOf('/myaccounts/suborderinvoice') === -1
+                && pathname.indexOf('/myaccounts/ivsuborderinvoice') === -1
+                && pathname.indexOf('/myaccounts/invoicedetail') === -1
+                && pathname.indexOf('/myaccounts/proposalgst') === -1
+            )
+                && <Header />}
+            {(
+                pathname.indexOf('/myaccounts/invoice') === -1
+                && pathname.indexOf('/myaccounts/suborderinvoice') === -1
+                && pathname.indexOf('/myaccounts/ivsuborderinvoice') === -1
+                && pathname.indexOf('/myaccounts/invoicedetail') === -1
+                && pathname.indexOf('/myaccounts/showAllProposal') === -1
+                && pathname.indexOf('/myaccounts/proposalgst') === -1
+            )
+                && <MyAccountNav />}
             {children}
-            <Footer />
+            {(
+                pathname.indexOf('/myaccounts/invoice') === -1
+                && pathname.indexOf('/myaccounts/suborderinvoice') === -1
+                && pathname.indexOf('/myaccounts/ivsuborderinvoice') === -1
+                && pathname.indexOf('/myaccounts/invoicedetail') === -1
+                && pathname.indexOf('/myaccounts/proposalgst') === -1
+            )
+                && <Footer />}
         </div>
     )
 }
