@@ -220,3 +220,12 @@ export const ProposalMail = async FormData => {
         return error.response.data
     }
 }
+
+export const DeleteProposal = async data => {
+    try {
+        const res = await axios.post('/deleteProposal', data)
+        return res.data
+    } catch (error) {
+        return error.response.data
+    }
+}

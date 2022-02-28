@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Table } from 'react-bootstrap'
-import { OrderProposalList } from '../../utils/apis/api'
+import { OrderProposalList, DeleteProposal } from '../../utils/apis/api'
 import '../../stylesheet/ShowProposal.css'
 import SimpleMail from '../../components/Modal/SimpleMail'
 import { useHistory } from 'react-router-dom';
@@ -23,13 +23,16 @@ const Proposal = () => {
         checkProposal()
     }, [])
 
-    // const showDetails = item => {
-    //     console.log('check item', item)
-    // }
-
     const sendMail = (myUrl) => {
         setMailModalShow(true)
         setLink(myUrl)
+    }
+
+    const deleteHandler = async (orderId) => {
+        const confirm = window.confirm('Are you sure to delete it?');
+        if(confirm){
+            await DeleteProposal({orderId})
+        }
     }
 
     return (
@@ -67,7 +70,7 @@ const Proposal = () => {
                                 </td>
                                 <td className="text-center">
                                     <i className="fa fa-search pr7table" onClick={() => history.push(`/proposalgst?id=${btoa(item.T_orderid)}`)} style={{ cursor: "pointer" }}></i> </td>
-                                <td className="text-center"> <i className="fa fa-trash pr7table" style={{ cursor: "pointer" }}></i> </td>
+                                <td className="text-center"> <i className="fa fa-trash pr7table" onClick={() => deleteHandler(item.T_orderid)} style={{ cursor: "pointer" }}></i> </td>
                             </tr>)}
                         </tbody>
                     </Table>

@@ -11,26 +11,9 @@ import Register from './views/account/UserRegister';
 import Invoice from './components/common/InvoiceReciept'
 import LogOut from './views/account/Logout';
 import NoMatch from './NoMatch'
-import Contact from './views/pages/static/Contact';
-import Pricing from './views/pages/static/Pricing'
-import Static from './views/pages/static/Static';
-import AboutUs from './views/pages/static/AboutUs'
-import LicenseRouter from './views/pages/static/license/index';
-import SearchTips from './views/pages/static/SearchTips';
-import Testimonial from './views/pages/static/Testimonial';
-import Term from './views/pages/static/Terms'
-import FAQ from './views/pages/static/FAQ'
-import PrivacyPolicy from './views/pages/static/PrivacyPolicy';
-import FreeResearch from './views/pages/static/FreeResearch';
-import Technical from './views/pages/static/Technical'
-import Ordering from './views/pages/static/Ordering';
-import Downloading from './views/pages/static/Downloading';
-import Wishlist from './views/pages/static/Wishlist';
-import StaticAcc from './views/pages/static/StaticAcc';
-import Glossory from './views/pages/static/Glossory'
-import Contributor from './views/pages/static/Contributor';
 import Proposal from './views/pages/ShowProposal';
 import ProposalGST from './views/pages/ProposalGST';
+import StaticRouteMain from './views/pages/static';
 
 const BrandName = createContext([{}, () => { }]);
 
@@ -78,90 +61,8 @@ const App = () => {
         <Route path="/proposalgst">
           <ProposalGST />
         </Route>
-        <Route path="/static/contactus">
-          <Static user={user} setUser={setUser}>
-            <Contact />
-          </Static>
-        </Route>
-        <Route path="/static/pricing">
-          <Static user={user} setUser={setUser}>
-            <Pricing />
-          </Static>
-        </Route>
-        <Route path="/static/aboutus">
-          <Static user={user} setUser={setUser}>
-            <AboutUs />
-          </Static>
-        </Route>
-        <Route path="/static/licensing">
-          <Static user={user} setUser={setUser}>
-            <LicenseRouter />
-          </Static>
-        </Route>
-        <Route path="/static/searchtips">
-          <Static user={user} setUser={setUser}>
-            <SearchTips />
-          </Static>
-        </Route>
-        <Route path="/static/testimonials">
-          <Static user={user} setUser={setUser}>
-            <Testimonial />
-          </Static>
-        </Route>
-        <Route path="/static/termsofuse">
-          <Static user={user} setUser={setUser}>
-            <Term />
-          </Static>
-        </Route>
-        <Route path="/static/faq">
-          <Static user={user} setUser={setUser}>
-            <FAQ />
-          </Static>
-        </Route>
-        <Route path="/static/privacypolicy">
-          <Static user={user} setUser={setUser}>
-            <PrivacyPolicy />
-          </Static>
-        </Route>
-        <Route path="/static/freeresearch">
-          <Static user={user} setUser={setUser}>
-            <FreeResearch />
-          </Static>
-        </Route>
-        <Route path="/static/technical">
-          <Static user={user} setUser={setUser}>
-            <Technical />
-          </Static>
-        </Route>
-        <Route path="/static/ordering">
-          <Static user={user} setUser={setUser}>
-            <Ordering />
-          </Static>
-        </Route>
-        <Route path="/static/downloading">
-          <Static user={user} setUser={setUser}>
-            <Downloading />
-          </Static>
-        </Route>
-        <Route path="/static/lightbox">
-          <Static user={user} setUser={setUser}>
-            <Wishlist />
-          </Static>
-        </Route>
-        <Route path="/static/myaccountshelp">
-          <Static user={user} setUser={setUser}>
-            <StaticAcc />
-          </Static>
-        </Route>
-        <Route path="/static/glossary">
-          <Static user={user} setUser={setUser}>
-            <Glossory />
-          </Static>
-        </Route>
-        <Route path="/static/contributor">
-          <Static user={user} setUser={setUser}>
-            <Contributor />
-          </Static>
+        <Route path="/static">
+          <StaticRouteMain user={user} setUser={setUser} />
         </Route>
         <Route path="/logout" component={LogOut} />
         <Route path="/invoice/:id" onLoader={onLoader} >
