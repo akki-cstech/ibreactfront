@@ -11,16 +11,19 @@ const Proposal = () => {
     const [pList, setPList] = useState([])
     const [mailModalShow, setMailModalShow] = useState(false)
     const [link, setLink] = useState('')
+    const [loggedInUser, setLoggedInUser] = useState(null)
+
+    const checkProposal = async (user) => {
+        const { list } = await OrderProposalList({ email: user.f_email })
+        if (list) {
+            setPList(list)
+        }
+    }
 
     useEffect(() => {
         const user = JSON.parse(window.localStorage.getItem('loggedUser'))
-        const checkProposal = async () => {
-            const { list } = await OrderProposalList({ email: user.f_email })
-            if (list) {
-                setPList(list)
-            }
-        }
-        checkProposal()
+        setLoggedInUser(user)
+        checkProposal(user)
     }, [])
 
     const sendMail = (myUrl) => {
@@ -32,6 +35,7 @@ const Proposal = () => {
         const confirm = window.confirm('Are you sure to delete it?');
         if(confirm){
             await DeleteProposal({orderId})
+            checkProposal(loggedInUser)
         }
     }
 
