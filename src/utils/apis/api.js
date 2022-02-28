@@ -211,3 +211,12 @@ export const GetAProposalUser = async data => {
         return error.response.data
     }
 }
+
+export const ProposalMail = async FormData => {
+    try {
+        const res = await axios.post('/proposalMail', FormData)
+        return res.data
+    } catch (error) {
+        return error.response.data
+    }
+}

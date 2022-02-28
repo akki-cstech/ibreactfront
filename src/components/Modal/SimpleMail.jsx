@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Button, Form } from 'react-bootstrap'
+import { ProposalMail } from '../../utils/apis/api';
 import Alert from '@mui/material/Alert'
 
 const MODEL_STYLES = {
@@ -25,18 +26,19 @@ const OVERLAY_STYLE = {
     zIndex: 1000,
 };
 
-const SimpleMail = ({ open, onClose }) => {
+const SimpleMail = ({ open, onClose, link }) => {
     const [email, setEmail] = useState('')
     const [subject, setSubject] = useState('')
     const [msg, setMsg] = useState('')
     const [alertMsg, setAlertMsg] = useState(null)
+    const [successMsg, setSuccessMsg] = useState(null)
 
     if (!open) return null;
 
     const byeAlert = () => setTimeout(() => setAlertMsg(null), 3000);
 
     const afterSubmit = () => {
-        if(email === '' && subject === '' && msg === ''){
+        if (email === '' && subject === '' && msg === '') {
             setAlertMsg("Please Fill the Form..!")
             byeAlert()
             return false
@@ -63,7 +65,7 @@ const SimpleMail = ({ open, onClose }) => {
             byeAlert()
             return false
         }
-       
+
         return true
     }
 
@@ -73,34 +75,46 @@ const SimpleMail = ({ open, onClose }) => {
             return
         }
 
-        alert("submitted")
+        const {message} = await ProposalMail({email, subject, msg, url: {proposal: `${window.location.origin}${link}`, order: `${window.location.origin}/static/ordering`, license: `${window.location.origin}/static/licensing`}})
+      
+        if(message === 'Proposal mail sent successfully!'){
+            setEmail('')
+            setMsg('')
+            setSubject('')
+            setSuccessMsg(message)
+            setTimeout(() => {
+                setSuccessMsg(null)
+                onClose()
+            }, 3000)
+        }
     }
 
     return (
         <>
             <div style={OVERLAY_STYLE}></div>
             <div style={MODEL_STYLES}>
-                <Button variant="dark" onClick={onClose} style={{marginLeft: "310px", marginTop: "-10px"}}>X</Button>
-                {alertMsg && <Alert className="font-weight-bolder" severity="error"> {alertMsg} </Alert>}
+                <Button variant="dark" onClick={onClose} style={{ marginLeft: "310px", marginTop: "-10px" }}>X</Button>
+                {alertMsg && <Alert className="font-weight-bolder mt-2" severity="error"> {alertMsg} </Alert>}
+                {successMsg && <Alert className="font-weight-bolder mt-2" severity="success"> {successMsg} </Alert>}
                 <Form onSubmit={submitHandler}>
-                        <Form.Group className="mb-3">
-                            <Form.Label>To Email</Form.Label>
-                            <Form.Control value={email} onChange={({target}) => setEmail(target.value)} />
-                        </Form.Group>
+                    <Form.Group className="mb-3">
+                        <Form.Label>To Email</Form.Label>
+                        <Form.Control value={email} onChange={({ target }) => setEmail(target.value)} />
+                    </Form.Group>
 
-                        <Form.Group className="mb-3">
-                            <Form.Label>Subject</Form.Label>
-                            <Form.Control value={subject} onChange={({target}) => setSubject(target.value)} />
-                        </Form.Group>
+                    <Form.Group className="mb-3">
+                        <Form.Label>Subject</Form.Label>
+                        <Form.Control value={subject} onChange={({ target }) => setSubject(target.value)} />
+                    </Form.Group>
 
-                        <Form.Group className="mb-3">
-                            <Form.Label>Message</Form.Label>
-                            <Form.Control as="textarea" rows="5" value={msg} onChange={({target}) => setMsg(target.value)} />
-                        </Form.Group>
-                        <Button variant="dark" className="btn-block" type="submit">
-                            Submit
-                        </Button>
-                    </Form>
+                    <Form.Group className="mb-3">
+                        <Form.Label>Message</Form.Label>
+                        <Form.Control as="textarea" rows="5" value={msg} onChange={({ target }) => setMsg(target.value)} />
+                    </Form.Group>
+                    <Button variant="dark" className="btn-block" type="submit">
+                        Submit
+                    </Button>
+                </Form>
             </div>
         </>
     );

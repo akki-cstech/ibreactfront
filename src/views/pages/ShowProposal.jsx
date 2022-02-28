@@ -10,6 +10,7 @@ const Proposal = () => {
     const history = useHistory()
     const [pList, setPList] = useState([])
     const [mailModalShow, setMailModalShow] = useState(false)
+    const [link, setLink] = useState('')
 
     useEffect(() => {
         const user = JSON.parse(window.localStorage.getItem('loggedUser'))
@@ -26,9 +27,14 @@ const Proposal = () => {
     //     console.log('check item', item)
     // }
 
+    const sendMail = (myUrl) => {
+        setMailModalShow(true)
+        setLink(myUrl)
+    }
+
     return (
         <Container className="mt-4">
-            <SimpleMail open={mailModalShow} onClose={() => setMailModalShow(false)} />
+            <SimpleMail open={mailModalShow} onClose={() => setMailModalShow(false)} link={link} />
             <Row>
                 <Col xs={12} className="pt-4 bg-light mx-auto" id="showPropOsal">
                     <h4>MY CURRENT PROPOSAL</h4>
@@ -57,7 +63,7 @@ const Proposal = () => {
                                 <td className="text-center"> {Math.round(parseInt(item.f_sertax))} </td>
                                 <td className="text-center"> {parseInt(item.f_amt) + Math.round(parseInt(item.f_sertax)) - parseInt(item.f_discount)} </td>
                                 <td className="text-center">
-                                    <span style={{ cursor: "pointer" }} onClick={() => setMailModalShow(true)} > Email </span>
+                                    <span style={{ cursor: "pointer" }} onClick={() => sendMail(`/proposalgst?id=${btoa(item.T_orderid)}`)} > Email </span>
                                 </td>
                                 <td className="text-center">
                                     <i className="fa fa-search pr7table" onClick={() => history.push(`/proposalgst?id=${btoa(item.T_orderid)}`)} style={{ cursor: "pointer" }}></i> </td>
