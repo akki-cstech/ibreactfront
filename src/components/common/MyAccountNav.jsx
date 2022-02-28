@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Nav, Row, Col, Navbar, DropdownButton, Dropdown, ButtonGroup } from 'react-bootstrap'
-import { useHistory, useRouteMatch, useLocation } from 'react-router-dom'
+import { useHistory, useLocation } from 'react-router-dom'
 import { OrderProposalList } from '../../utils/apis/api'
 
 const MyAccountNav = ({ brand }) => {
@@ -20,7 +20,7 @@ const MyAccountNav = ({ brand }) => {
     }, [])
 
     return (
-        <Row lg="12">
+        <Row lg="12" className="mt-4">
             <Navbar expand="lg" bg="light" style={{ height: "auto" }}>
                 <Row className="justify-content-lg-center">
                     <Col lg={{ span: 1, offset: 1 }} xs={12}>

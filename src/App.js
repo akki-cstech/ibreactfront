@@ -30,6 +30,7 @@ import StaticAcc from './views/pages/static/StaticAcc';
 import Glossory from './views/pages/static/Glossory'
 import Contributor from './views/pages/static/Contributor';
 import Proposal from './views/pages/ShowProposal';
+import ProposalGST from './views/pages/ProposalGST';
 
 const BrandName = createContext([{}, () => { }]);
 
@@ -74,6 +75,9 @@ const App = () => {
       {user && <ManageProfile user={user} setUser={setUser} />}
     <AccountSection user={user} setUser={setUser} /> */}
       <Switch>
+        <Route path="/proposalgst">
+          <ProposalGST />
+        </Route>
         <Route path="/static/contactus">
           <Static user={user} setUser={setUser}>
             <Contact />

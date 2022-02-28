@@ -3,8 +3,11 @@ import { Container, Row, Col, Table } from 'react-bootstrap'
 import { OrderProposalList } from '../../utils/apis/api'
 import '../../stylesheet/ShowProposal.css'
 import SimpleMail from '../../components/Modal/SimpleMail'
+import { useHistory } from 'react-router-dom';
+import moment from 'moment';
 
 const Proposal = () => {
+    const history = useHistory()
     const [pList, setPList] = useState([])
     const [mailModalShow, setMailModalShow] = useState(false)
 
@@ -18,6 +21,10 @@ const Proposal = () => {
         }
         checkProposal()
     }, [])
+
+    // const showDetails = item => {
+    //     console.log('check item', item)
+    // }
 
     return (
         <Container className="mt-4">
@@ -43,14 +50,17 @@ const Proposal = () => {
                         <tbody>
                             {pList.length > 0 && pList.map(item => <tr>
                                 <td className="text-center"> {item.f_heading} </td>
-                                <td className="text-center"> {item.T_orderdate} </td>
+                                <td className="text-center"> {moment(item.T_orderdate).format('DD-MM-YYYY')} </td>
                                 <td className="text-center"> {item.f_totimg} </td>
                                 <td className="text-center"> {item.f_amt} </td>
                                 <td className="text-center"> {item.f_discount} </td>
                                 <td className="text-center"> {Math.round(parseInt(item.f_sertax))} </td>
                                 <td className="text-center"> {parseInt(item.f_amt) + Math.round(parseInt(item.f_sertax)) - parseInt(item.f_discount)} </td>
-                                <td className="text-center"> <span style={{ cursor: "pointer" }} onClick={() => setMailModalShow(true)} > Email </span> </td>
-                                <td className="text-center"> <i className="fa fa-search pr7table" style={{ cursor: "pointer" }}></i> </td>
+                                <td className="text-center">
+                                    <span style={{ cursor: "pointer" }} onClick={() => setMailModalShow(true)} > Email </span>
+                                </td>
+                                <td className="text-center">
+                                    <i className="fa fa-search pr7table" onClick={() => history.push(`/proposalgst?id=${btoa(item.T_orderid)}`)} style={{ cursor: "pointer" }}></i> </td>
                                 <td className="text-center"> <i className="fa fa-trash pr7table" style={{ cursor: "pointer" }}></i> </td>
                             </tr>)}
                         </tbody>

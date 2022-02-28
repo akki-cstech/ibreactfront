@@ -193,3 +193,21 @@ export const OrderProposalList = async email => {
         return error.response.data
     }
 }
+
+export const ProposalDetails = async data => {
+    try {
+        const res = await axios.post('/proposalDetails', data)
+        return res.data
+    } catch (error) {
+        return error.response.data
+    }
+}
+
+export const GetAProposalUser = async data => {
+    try {
+        const res = await axios.post('/getAProposalUser', data)
+        return res.data
+    } catch (error) {
+        return error.response.data
+    }
+}

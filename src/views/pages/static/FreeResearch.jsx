@@ -109,7 +109,6 @@ const FreeResearch = () => {
             return
         }
 
-        alert('submitted')
         const res = await ReqForSearch({ name, email, phone, company, pTitle, imgDes })
         if (res) {
             setIsSubmitted(false)
