@@ -1,20 +1,12 @@
-import React, { useEffect } from 'react'
-import { useHistory, useRouteMatch, useLocation } from 'react-router-dom'
+import React from 'react'
+import { useLocation } from 'react-router-dom'
 import Header from '../components/navs/Header'
 import Footer from '../components/navs/Footer'
 import MyAccountNav from '../components/common/MyAccountNav'
 
 const DashBoard = ({ children }) => {
-    // const history = useHistory()
-    // useEffect(() => {
-    //     if(!user){
-    //         history.push('/')
-    //     }
-    // }, [])
-
-    const { url } = useRouteMatch()
     const { pathname } = useLocation()
-    console.log('check path', pathname)
+
     return (
         <div>
             {(

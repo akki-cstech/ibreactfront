@@ -28,7 +28,7 @@ const Header = () => {
     const [sideBar, setSideBar] = useState("sideInActive");
     const [zeynepO, setZeynepO] = useState("zClosed");
     const [overflow, setOverflow] = useState('')
-
+    console.log('check logged uSer', loggedInUser)
     const [tvShow, settvShow] = React.useState('');
 
     const handleChange = (event) => {
